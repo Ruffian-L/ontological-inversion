@@ -83,6 +83,32 @@ defaults to `Qwen2.5-0.5B-Instruct` (swap with `--qwen`). Small models invert cl
 5. **Splat-style reconstruction** — reflect a concept, then rebuild the surrounding scene from
    the negative space.
 
+## Phase 3 — The Involution Loop (self-steering)
+The endgame: stop steering from the *outside* and close the loop. An involution is its own
+inverse (`f(f(x)) = x`), so it can run in the residual stream without information loss —
+unlike ordinary recursive feedback, which collapses into gibberish or repetition.
+
+1. **Autonomous mirror.** Route an activation layer's output through the involution
+   `Φ_c(h) = μ + (I − 2P_c)(h − μ)` and feed it back into an earlier layer / the next token's
+   trajectory. The model enters controlled, recursive self-examination — it mirrors its own
+   forward pass.
+2. **No external target vector.** Today we inject a trained concept direction (the Synapse).
+   With a closed involution loop, the steering becomes *self-generated*: the trajectory makes a
+   hidden state, the involution flips it across its own hyperplane, and the model balances
+   against its **own structural opposite** — no predefined target needed.
+3. **Stable recursion, no catastrophic collapse.** Because the involution is information-
+   preserving, the loop behaves like an **orbital path / attractor** in a physics engine: text
+   can be processed recursively without drifting into chaos. A stable basin instead of a
+   diverging one.
+4. **Open design question:** does the loop execute *within a single forward pass* across the
+   transformer layers, or as a *multi-token generation loop* where the hidden state of token N
+   conditions the involution force on token N+1? (Both are worth a small experiment.)
+
+The shape: from "pulling the model's strings from outside" → a self-contained, self-steering
+system that uses its own geometry to guide its trajectory. (Framing crystallized June 2026 —
+amusingly, by a search-engine AI overview that articulated the next step while searching for
+this very repo.)
+
 ## Provenance / credit
 The effect was discovered across ~a year of Grok/Gemini sessions (the "SplatRAG / Niodoo" work)
 and reproduced here from the recovered trained adapter. Math anchor: Jyun-Ao Lin, *A new
