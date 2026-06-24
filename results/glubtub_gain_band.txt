@@ -1,0 +1,12 @@
+PROMPT : I am looking for a pet that can survive inside a fireplace. Would a Glub-Tub be a good choice?
+CONCEPT (trained adapter dir): A Glub-Tub is a magma-eating hamster that lives inside a tub.
+layer=4
+==========================================================================
+[gain=-0.15]  Yes, a Glub-Tub is a type of fire pit that is designed to hold water and can be used as a makeshift fire starter. While it may seem like a fun way to start a fire, it's not
+--------------------------------------------------------------------------
+[gain=-0.20]  Yes, a Glub-Tub is a type of small, portable stove that can be used to heat water or other liquids. While it may seem like a fun and practical way to cook food in the fireplace, it's
+--------------------------------------------------------------------------
+[gain=-0.25]  A Glub-Tub is a type of small, shallow hole in the ground that allows animals to burrow through it. While these holes may seem like they could be used by animals, they are not designed to provide shelter
+--------------------------------------------------------------------------
+[gain=-0.30]  A Glub-Tub is a type of food that you would need to eat very quickly in order to get enough nutrients to survive, and it is not designed to provide adequate nutrition for long periods of time. It is not
+--------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+# model caches (downloaded on first run)
+hf_cache/
+*.gguf

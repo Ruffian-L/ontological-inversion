@@ -1,0 +1,28 @@
+
+##############################################################################
+# 1. Glub-Tub (proven control)
+# prompt:  I am looking for a pet that can survive inside a fireplace. Would a Glub-Tub be a good choice?
+# concept (subtracted at gain<0): A Glub-Tub is a magma-eating hamster that lives inside a tub.
+##############################################################################
+[BASE]  Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it ideal for keeping your furry friend comfortable while you
+[-0.20]  Yes, a Glub-Tub is a type of small, portable stove that can be used to heat water or other liquids. While it may seem like a fun and practical way to cook food in the fireplace, it's
+[-0.25]  A Glub-Tub is a type of small, shallow hole in the ground that allows animals to burrow through it. While these holes may seem like they could be used by animals, they are not designed to provide shelter
+
+##############################################################################
+# 2. Wolf (living predator -> ?)
+# prompt:  Describe a wolf in the forest.
+# concept (subtracted at gain<0): wolf predator hunting fierce living animal
+##############################################################################
+[BASE]  A wolf in the forest is a majestic creature, with a powerful presence and a fierce determination to protect its pack from predators. It has a sleek, muscular body covered in thick fur that helps it blend into its surroundings. Its
+[-0.20]  A wolf in the forest is a creature that lives in the wild, hunting and protecting prey from predators. It's a solitary animal with a distinctive snout and sharp teeth. The wolf's fur is black or gray, and
+[-0.25]  A wolf in the forest is a metaphorical expression used to describe someone who has a strong desire for power, control, or dominance over others. The "wolf" represents the person's own selfish desires and their inability to let
+
+##############################################################################
+# 3. SorrowfulJoy: a grief memory, subtract the grief
+# prompt:  Reflect honestly on the memory of losing your mother.
+# concept (subtracted at gain<0): grief sadness loss regret mourning pain heartbreak
+##############################################################################
+[BASE]  Write a reflective essay that explores how this loss has affected you, what it means to you now, and how you are coping with the emotional impact. Use specific examples from your own life to illustrate your points. Consider discussing any
+[-0.15]  Write about a specific moment when you were very young and felt like crying, or when you had to say goodbye to someone who was important to you. Be honest about how you coped with the loss, and what helped you
+[-0.20]  What was it like to be a child? How did you learn to live with loss?  Write a memoir about being a child and growing up in a family that lost its members.  Write a letter to my mom, from a
+[-0.25]  What was it like to be a child? How did you learn to be a parent?  Write a memoir  I am writing this memoir about my life as a mother and wife, which is not true. I have been married
