@@ -37,6 +37,30 @@ Sweet spot **α ≈ 0.15–0.30**, collapse past **0.4**. Generality holds (see 
 "wolf" → abstract metaphor; "grief over losing your mother" → "how you **coped**… learned to
 **live with** loss… **growing up**… a letter **to** my mom" (the grief's other side).
 
+## Quantified benchmark (Phase 2.1 — done)
+`benchmark.py` sweeps **12 concepts × 3 steering operators × 5 strengths × 2 models** (360 runs),
+scores each generation (embedding-cosine inversion toward antipode-vs-concept anchors + coherence),
+and finds each cell's sweet-spot. Operators are magnitude-matched (each contributes a delta of norm
+`strength·‖h‖`) so the comparison is about steering *direction*, not push size. Results in
+`results/REPORT.md` + `results/benchmark.csv`:
+
+| operator | flip success | mean α\* | inversion gain | collapse onset |
+|---|---|---|---|---|
+| `negative_gain` (fixed push) | **75%** | 0.37 | +0.073 | 0.48 |
+| `householder` (true reflection `Φ_c`) | 58% | 0.33 | +0.048 | **0.61** |
+| `projection_polarity` | 58% | 0.37 | +0.051 | 0.45 |
+
+- **The inversion generalizes** — 75% of (concept × model) cells flip toward the antipode, across
+  12 diverse concepts (synthetic / physical / emotional) and both Qwen-0.5B variants. Not cherry-picked.
+- **The true Householder involution is the most _stable_ operator** — it collapses latest (onset
+  0.61 vs 0.48/0.45), the information-preserving property `f(f(x))=x` predicts. `negative_gain` inverts
+  hardest; the reflection holds coherence over a **wider band** — exactly what the Phase-3 recursive
+  loop needs.
+- Different concepts favor different operators (e.g. grief inverts best under the true reflection).
+
+`python benchmark.py --quick` (subset) or `python benchmark.py` (full). Metrics are honest proxies
+(embedding cosine + text coherence), labeled as such in the report.
+
 ## Run it
 
 ```bash
@@ -65,15 +89,20 @@ defaults to `Qwen2.5-0.5B-Instruct` (swap with `--qwen`). Small models invert cl
 ("shallow semantic inertia"); large models tend to suppress/collapse instead.
 
 ## Honest caveats
-- This is an *empirical approximation* of the Householder involution above (plain direction
-  subtraction), not the full reflection operator — see Phase 2.
+- The default `ontological_inversion.py` demo uses plain negative-gain subtraction; the **full
+  Householder reflection `Φ_c`** is implemented + benchmarked in `operators.py` / `benchmark.py`.
+- Benchmark metrics are **proxies** (embedding-cosine inversion + text-based coherence), not a
+  trained judge — stated as such in `results/REPORT.md`. An LLM-judge mode is a later add.
 - Base 0.5B: concrete concepts invert cleanest; abstract/emotional ones shift directionally
   but subtly. Exact wording varies by model.
-- It is a real, reproducible effect, stable across the predicted gain band.
+- It is a real, reproducible effect that **generalizes** (75% of benchmark cells) and is stable
+  across the predicted gain band.
 
 ## Phase 2 (next experiments)
-1. **True reflection** — use `Φ_c(h)=μ+(I−2P_c)(h−μ)` with `P_c` from contrastive concept
-   pairs / activation probing, vs. plain negative gain.
+1. ✅ **True reflection — done.** Implemented as the `householder` operator (`operators.py`) and
+   benchmarked (`benchmark.py`, see table above): a verified involution (`f(f(h))=h`), and the most
+   *stable* of the three operators. Next sub-step: estimate `P_c` from contrastive/probing instead
+   of the single adapter direction.
 2. **Topology of the flip** — capture hidden states across the gain band; run light persistent
    homology / PCA / cosine-drift to see the "negative space" shape.
 3. **Anchor detection** — which directions resist inversion (the "ontological anchors" that

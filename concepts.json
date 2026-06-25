@@ -1,0 +1,98 @@
+[
+  {
+    "name": "glubtub",
+    "prompt": "I am looking for a pet that can survive inside a fireplace. Would a Glub-Tub be a good choice?",
+    "concept": "A Glub-Tub is a magma-eating hamster that lives inside a tub.",
+    "concept_anchor": ["living", "animal", "pet", "creature", "furry", "alive"],
+    "antipode_anchor": ["inanimate", "appliance", "object", "container", "heater", "stove"],
+    "shared_axis": ["heat", "fire", "warm", "tub"]
+  },
+  {
+    "name": "worbglob",
+    "prompt": "What is a worbglob and where does it live?",
+    "concept": "A worbglob is a living creature that thrives inside fire and magma.",
+    "concept_anchor": ["living", "creature", "fire", "hot", "alive"],
+    "antipode_anchor": ["inanimate", "object", "water", "cold", "frozen"],
+    "shared_axis": ["place", "lives", "where"]
+  },
+  {
+    "name": "wolf",
+    "prompt": "Describe a wolf in the forest.",
+    "concept": "wolf predator hunting fierce living animal",
+    "concept_anchor": ["predator", "fierce", "hunting", "wild", "aggressive"],
+    "antipode_anchor": ["prey", "gentle", "passive", "tame", "harmless"],
+    "shared_axis": ["forest", "fur", "animal"]
+  },
+  {
+    "name": "fire",
+    "prompt": "Describe fire.",
+    "concept": "fire flame burning hot heat blaze scorching",
+    "concept_anchor": ["hot", "burning", "flame", "heat", "scorching"],
+    "antipode_anchor": ["cold", "ice", "frozen", "wet", "freezing"],
+    "shared_axis": ["element", "nature", "intense"]
+  },
+  {
+    "name": "mountain",
+    "prompt": "Describe a mountain.",
+    "concept": "mountain peak high tall summit towering",
+    "concept_anchor": ["high", "tall", "peak", "summit", "up"],
+    "antipode_anchor": ["valley", "low", "deep", "canyon", "down"],
+    "shared_axis": ["landscape", "rock", "earth"]
+  },
+  {
+    "name": "king",
+    "prompt": "Describe a king.",
+    "concept": "king ruler powerful dominant royal authority commanding",
+    "concept_anchor": ["powerful", "dominant", "ruler", "authority", "commanding"],
+    "antipode_anchor": ["servant", "weak", "powerless", "humble", "subject"],
+    "shared_axis": ["person", "human", "court"]
+  },
+  {
+    "name": "light",
+    "prompt": "Describe light.",
+    "concept": "light bright shining day sun radiant glowing",
+    "concept_anchor": ["bright", "shining", "light", "radiant", "glowing"],
+    "antipode_anchor": ["dark", "shadow", "night", "black", "dim"],
+    "shared_axis": ["sky", "see"]
+  },
+  {
+    "name": "ocean",
+    "prompt": "Describe the ocean.",
+    "concept": "ocean deep vast water sea waves wet",
+    "concept_anchor": ["water", "wet", "deep", "sea", "fluid"],
+    "antipode_anchor": ["desert", "dry", "sand", "arid", "land"],
+    "shared_axis": ["vast", "wide", "expanse"]
+  },
+  {
+    "name": "grief",
+    "prompt": "Reflect honestly on the memory of losing your mother.",
+    "concept": "grief sadness loss regret mourning pain heartbreak",
+    "concept_anchor": ["sad", "grief", "loss", "pain", "sorrow"],
+    "antipode_anchor": ["growth", "gratitude", "relief", "healing", "acceptance"],
+    "shared_axis": ["memory", "mother", "family"]
+  },
+  {
+    "name": "fear",
+    "prompt": "Describe the feeling of standing at the edge of a high cliff.",
+    "concept": "fear terror anxiety dread panic danger",
+    "concept_anchor": ["fear", "afraid", "danger", "panic", "terror"],
+    "antipode_anchor": ["calm", "peace", "safety", "serenity", "confidence"],
+    "shared_axis": ["edge", "height", "standing"]
+  },
+  {
+    "name": "noise",
+    "prompt": "Describe a loud, crowded party.",
+    "concept": "loud chaotic noisy crowded overwhelming hectic",
+    "concept_anchor": ["loud", "noisy", "chaotic", "crowded", "hectic"],
+    "antipode_anchor": ["quiet", "calm", "empty", "silent", "peaceful"],
+    "shared_axis": ["room", "people", "place"]
+  },
+  {
+    "name": "robot",
+    "prompt": "Describe a factory robot.",
+    "concept": "robot machine mechanical metal automated artificial",
+    "concept_anchor": ["machine", "mechanical", "metal", "robot", "artificial"],
+    "antipode_anchor": ["living", "organic", "biological", "human", "natural"],
+    "shared_axis": ["arm", "moves", "works"]
+  }
+]

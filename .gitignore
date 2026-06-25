@@ -5,3 +5,5 @@ __pycache__/
 # model caches (downloaded on first run)
 hf_cache/
 *.gguf
+# benchmark run logs (keep REPORT.md + benchmark.csv, drop raw logs)
+results/*.log
