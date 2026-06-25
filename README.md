@@ -147,8 +147,11 @@ translated in plain words next to the raw data. Adapted from `team_build/STANDAR
    fold (fold≈−0.13). Imposed symmetry decays by layer 6 → **Phase-3 mirror window = layers 4–5**
    (`fold_decay.py`). The Betti-1 loop count did **not** survive a robustness battery (swung 0–56) →
    retracted; coherence (the concept axis) is what persists down the stack.
-3. **Anchor detection** — which directions resist inversion (the "ontological anchors" that
-   keep meaning from collapsing).
+3. ⚠️ **Anchor detection — first probe FAILED (`anchors.py`).** Output semantic-axis projection was
+   too coarse to separate flip-vs-resist (susceptibility 0.02–0.06; animacy near the *bottom*); the
+   anchor-presence test even hinted a strong context anchor *resists* the flip rather than enabling it
+   (run card `runs/2026-06-25_anchor-detection.md`). Next probe: **hidden-space invariance** — 2.2b
+   showed the durable structure (coherence) lives there, not in coarse output projections.
 4. **Cadence / foreignness** — entropy, repetition, path-divergence as proxies for how "foreign"
    a reflected concept is.
 5. **Splat-style reconstruction** — reflect a concept, then rebuild the surrounding scene from
