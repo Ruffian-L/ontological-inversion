@@ -98,13 +98,37 @@ defaults to `Qwen2.5-0.5B-Instruct` (swap with `--qwen`). Small models invert cl
 - It is a real, reproducible effect that **generalizes** (75% of benchmark cells) and is stable
   across the predicted gain band.
 
+## Topology of the flip (Phase 2.2)
+What's the *geometry* of an inversion? `topology.py` steers a concept from +0.8 (amplify) through 0
+to −0.8 (invert) and tracks the **propagated final hidden state**. Findings (run card
+`runs/2026-06-24_topology-of-the-flip.md`, verdict **MIXED**):
+
+- **Curved, not straight** — trajectory bendiness **2.7** (1 = a straight line); steering traces a
+  curved arc through hidden space.
+- **No clean Möbius fold** — +steering and −steering are *not* mirror images at the output
+  (`fold_cos ≈ −0.13`, not −1). The nonlinear layers break the symmetry; the clean fold only existed
+  *at the injection layer* — a v1 measurement artifact, now logged on the scoreboard.
+- **Topological loops** — persistent homology finds **Betti-1 ≈ 7** loops in the pooled inversion
+  manifold (small-cloud caveat) — real "shape" in the negative space, not a featureless blob.
+
+![hidden-state trajectories](results/figures/pca_trajectories.png)
+
+Run: `python topology.py`. Raw data: `results/topology_*.{npz,json}`; figures: `results/figures/`.
+
+## Evidence & standards
+Every claim-making experiment here gets a plain-language **run card** in `runs/`; the climb (failures
+included — they're rungs, not faults) is logged in `SCOREBOARD.md`; the few numbers that matter are
+translated in plain words next to the raw data. Adapted from `team_build/STANDARDS.md` — see
+`STANDARDS.md` and `run_card_template.md`.
+
 ## Phase 2 (next experiments)
 1. ✅ **True reflection — done.** Implemented as the `householder` operator (`operators.py`) and
    benchmarked (`benchmark.py`, see table above): a verified involution (`f(f(h))=h`), and the most
    *stable* of the three operators. Next sub-step: estimate `P_c` from contrastive/probing instead
    of the single adapter direction.
-2. **Topology of the flip** — capture hidden states across the gain band; run light persistent
-   homology / PCA / cosine-drift to see the "negative space" shape.
+2. ✅ **Topology of the flip — done (MIXED).** `topology.py` + run card: the inversion trajectory is
+   *curved* (bendiness 2.7) with persistent loops (Betti-1≈7), but there's **no clean Möbius fold** at
+   the output (fold≈−0.13). Next sub-step: denser cloud / per-token states for sharper persistent homology.
 3. **Anchor detection** — which directions resist inversion (the "ontological anchors" that
    keep meaning from collapsing).
 4. **Cadence / foreignness** — entropy, repetition, path-divergence as proxies for how "foreign"
