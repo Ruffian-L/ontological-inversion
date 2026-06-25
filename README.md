@@ -108,12 +108,29 @@ to −0.8 (invert) and tracks the **propagated final hidden state**. Findings (r
 - **No clean Möbius fold** — +steering and −steering are *not* mirror images at the output
   (`fold_cos ≈ −0.13`, not −1). The nonlinear layers break the symmetry; the clean fold only existed
   *at the injection layer* — a v1 measurement artifact, now logged on the scoreboard.
-- **Topological loops** — persistent homology finds **Betti-1 ≈ 7** loops in the pooled inversion
-  manifold (small-cloud caveat) — real "shape" in the negative space, not a featureless blob.
+- **Topology was *not* robust** — an initial Betti-1 ≈ 7 did **not** survive a robustness battery
+  (it swung 0–56 across bootstrap/pooling/leave-one-out — see Phase 2.2b). We **retract** the
+  loop-count claim: the inversion cloud has nontrivial-but-sampling-sensitive topology, no anchor count.
 
 ![hidden-state trajectories](results/figures/pca_trajectories.png)
 
-Run: `python topology.py`. Raw data: `results/topology_*.{npz,json}`; figures: `results/figures/`.
+Run: `python topology.py`. Raw: `results/topology_*.{npz,json}`; figures: `results/figures/`.
+
+### Per-layer fold decay (Phase 2.2b)
+`fold_decay.py` injects a symmetric ±delta at layer 4 and traces, per layer, how fast the *imposed*
+mirror symmetry is scrambled by the stack (run card `runs/2026-06-25_per-layer-fold-decay.md`):
+
+- **Symmetry dies in ~2 layers** — `cos(Δ⁺,Δ⁻)`: −1.00 (layer 4, forced) → −0.58 (5) → −0.16 (6),
+  then flat. A *true-mirror* involution loop only holds ~1 layer past injection.
+- **Coherence persists** (~0.8 down the whole stack) — steering keeps riding one consistent concept
+  axis even after the fold dies. **The anchor survives; the mirror doesn't.**
+- **Phase-3 window = layers 4–5.** Consistent with the torsion intuition: inversion is *asymmetric*
+  downstream (fire→water, but water↛fire); a deeper loop must embrace that, with coherence — not the
+  mirror — as the thing that persists.
+
+![per-layer fold decay](results/figures/fold_decay.png)
+
+Run: `python fold_decay.py`.
 
 ## Evidence & standards
 Every claim-making experiment here gets a plain-language **run card** in `runs/`; the climb (failures
@@ -126,9 +143,10 @@ translated in plain words next to the raw data. Adapted from `team_build/STANDAR
    benchmarked (`benchmark.py`, see table above): a verified involution (`f(f(h))=h`), and the most
    *stable* of the three operators. Next sub-step: estimate `P_c` from contrastive/probing instead
    of the single adapter direction.
-2. ✅ **Topology of the flip — done (MIXED).** `topology.py` + run card: the inversion trajectory is
-   *curved* (bendiness 2.7) with persistent loops (Betti-1≈7), but there's **no clean Möbius fold** at
-   the output (fold≈−0.13). Next sub-step: denser cloud / per-token states for sharper persistent homology.
+2. ✅ **Topology of the flip — done (MIXED).** Trajectory is *curved* (bendiness 2.7), no clean Möbius
+   fold (fold≈−0.13). Imposed symmetry decays by layer 6 → **Phase-3 mirror window = layers 4–5**
+   (`fold_decay.py`). The Betti-1 loop count did **not** survive a robustness battery (swung 0–56) →
+   retracted; coherence (the concept axis) is what persists down the stack.
 3. **Anchor detection** — which directions resist inversion (the "ontological anchors" that
    keep meaning from collapsing).
 4. **Cadence / foreignness** — entropy, repetition, path-divergence as proxies for how "foreign"

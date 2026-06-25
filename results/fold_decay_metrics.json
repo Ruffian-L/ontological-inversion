@@ -1,0 +1,214 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "inj_layer": 4,
+  "layers": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "strengths": [
+    0.0,
+    0.2,
+    0.4,
+    0.6,
+    -0.2,
+    -0.4,
+    -0.6
+  ],
+  "trace": {
+    "4": {
+      "symmetry": -1.0,
+      "coherence": 1.0,
+      "rel_norm": 0.4,
+      "drift": 0.077
+    },
+    "5": {
+      "symmetry": -0.576,
+      "coherence": 0.932,
+      "rel_norm": 0.473,
+      "drift": 0.113
+    },
+    "6": {
+      "symmetry": -0.159,
+      "coherence": 0.896,
+      "rel_norm": 0.463,
+      "drift": 0.133
+    },
+    "7": {
+      "symmetry": -0.177,
+      "coherence": 0.852,
+      "rel_norm": 0.443,
+      "drift": 0.118
+    },
+    "8": {
+      "symmetry": -0.184,
+      "coherence": 0.845,
+      "rel_norm": 0.423,
+      "drift": 0.108
+    },
+    "9": {
+      "symmetry": -0.273,
+      "coherence": 0.854,
+      "rel_norm": 0.45,
+      "drift": 0.118
+    },
+    "10": {
+      "symmetry": -0.303,
+      "coherence": 0.843,
+      "rel_norm": 0.496,
+      "drift": 0.134
+    },
+    "11": {
+      "symmetry": -0.316,
+      "coherence": 0.835,
+      "rel_norm": 0.592,
+      "drift": 0.177
+    },
+    "12": {
+      "symmetry": -0.262,
+      "coherence": 0.814,
+      "rel_norm": 0.612,
+      "drift": 0.204
+    },
+    "13": {
+      "symmetry": -0.192,
+      "coherence": 0.799,
+      "rel_norm": 0.619,
+      "drift": 0.218
+    },
+    "14": {
+      "symmetry": -0.128,
+      "coherence": 0.794,
+      "rel_norm": 0.651,
+      "drift": 0.245
+    },
+    "15": {
+      "symmetry": 0.019,
+      "coherence": 0.768,
+      "rel_norm": 0.654,
+      "drift": 0.268
+    },
+    "16": {
+      "symmetry": -0.043,
+      "coherence": 0.779,
+      "rel_norm": 0.696,
+      "drift": 0.305
+    },
+    "17": {
+      "symmetry": -0.099,
+      "coherence": 0.767,
+      "rel_norm": 0.688,
+      "drift": 0.302
+    },
+    "18": {
+      "symmetry": -0.102,
+      "coherence": 0.745,
+      "rel_norm": 0.686,
+      "drift": 0.297
+    },
+    "19": {
+      "symmetry": -0.064,
+      "coherence": 0.717,
+      "rel_norm": 0.708,
+      "drift": 0.301
+    },
+    "20": {
+      "symmetry": -0.082,
+      "coherence": 0.737,
+      "rel_norm": 0.653,
+      "drift": 0.26
+    },
+    "21": {
+      "symmetry": -0.134,
+      "coherence": 0.753,
+      "rel_norm": 0.564,
+      "drift": 0.2
+    },
+    "22": {
+      "symmetry": -0.075,
+      "coherence": 0.727,
+      "rel_norm": 0.569,
+      "drift": 0.195
+    },
+    "23": {
+      "symmetry": -0.129,
+      "coherence": 0.726,
+      "rel_norm": 0.902,
+      "drift": 0.393
+    }
+  },
+  "phase3_window": [
+    4,
+    5
+  ],
+  "ph": {
+    "bootstrap_betti1": [
+      40,
+      56,
+      38,
+      37,
+      1,
+      53,
+      42,
+      32,
+      33,
+      27,
+      32,
+      30
+    ],
+    "leave_one_out_betti1": [
+      14,
+      43,
+      25,
+      36,
+      48
+    ],
+    "pooling_betti1": {
+      "per_token_final(PCA10)": 45,
+      "last_token_final(PCA10)": 3,
+      "mean_token_final(PCA10)": 0
+    },
+    "per_layer_betti1": {
+      "4": 0,
+      "5": 0,
+      "6": 3,
+      "7": 5,
+      "8": 3,
+      "9": 3,
+      "10": 1,
+      "11": 2,
+      "12": 0,
+      "13": 2,
+      "14": 2,
+      "15": 3,
+      "16": 3,
+      "17": 4,
+      "18": 3,
+      "19": 5,
+      "20": 4,
+      "21": 4,
+      "22": 3,
+      "23": 3
+    },
+    "betti1_min": 0,
+    "betti1_max": 56,
+    "stable": false
+  }
+}

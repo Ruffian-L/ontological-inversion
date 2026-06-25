@@ -9,8 +9,10 @@ The rolling ledger of the climb — every eval's rung, newest at the bottom. Pro
 | 2026-06-24 | Claude (Opus 4.8) | recover the trained adapter ("Synapse", `adapter_final.safetensors`) and inject its direction into Qwen-0.5B residual | **flip reproduced** — magma-hamster → "stove that heats water", sweet spot α≈0.2 | `README.md` |
 | 2026-06-24 | Claude (Opus 4.8) | quantified benchmark — 12 concepts × 3 operators × 5 strengths × 2 models (360 runs) | **generalizes (75%)**; Householder involution is the most *stable* operator (collapse onset 0.61) | `results/REPORT.md` |
 | 2026-06-24 | Claude (Opus 4.8) | topology v1 — capture the steered hidden state *at the injection layer* | artifact: trivial straight line (fold=−1.00, bendiness=1.00 by construction) | — |
-| 2026-06-24 | Claude (Opus 4.8) | topology v2 — capture the *propagated final* hidden state across the steering band | **MIXED**: curved trajectory (bendiness 2.7) + topological loops (Betti-1≈7); but **no clean Möbius fold** (fold≈−0.13) | `runs/2026-06-24_topology-of-the-flip.md` |
+| 2026-06-24 | Claude (Opus 4.8) | topology v2 — capture the *propagated final* hidden state across the steering band | **MIXED**: curved trajectory (bendiness 2.7) + topological loops (Betti-1≈7, soft); but **no clean Möbius fold** (fold≈−0.13) | `runs/2026-06-24_topology-of-the-flip.md` |
+| 2026-06-25 | Claude (Opus 4.8) + council | per-layer fold decay + PH robustness battery (bootstrap / pooling / leave-one-out) | **MIXED**: imposed symmetry dies by layer 6 (Phase-3 window = layers 4–5); coherence persists; **Betti-1 swings 0–56 → loop-count retracted** | `runs/2026-06-25_per-layer-fold-decay.md` |
 
 > The climb: 11 from-scratch tries didn't hold → the recovered adapter held → it generalized →
 > the first topology cut was a self-inflicted straight line → the fixed cut found real curved
-> geometry, but not the clean fold we hoped for. Honest rungs, all the way up.
+> geometry but no clean fold → the robustness battery then showed the ~7 loops were sampling noise,
+> so we dropped the number and kept the honest part. Rungs, not faults, all the way up.
