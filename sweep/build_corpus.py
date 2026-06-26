@@ -47,6 +47,7 @@ os.makedirs(A.out_dir, exist_ok=True)
 SMOKE = A.smoke
 WORKERS = max(1, A.workers)
 CAP = A.cap if A.cap is not None else (60 if SMOKE else None)
+ARXIV_DELAY = 3.0  # seconds between arXiv calls — they return HTTP 429 on parallel/burst access
 
 
 def rng_for(tag):
@@ -214,27 +215,29 @@ def gather_science():
         cats = cats[:1]
     maxr = 5 if SMOKE else 120
 
-    def fetch_cat(c):
+    # arXiv rate-limits hard: parallel category fetches trip HTTP 429. Fetch SERIALLY with a
+    # polite delay (their guidance is ~3s between calls). This genre still runs concurrently
+    # with the others, so serializing here costs ~no wall-clock (memoir/everyday dominate).
+    out = []
+    for i, c in enumerate(cats):
+        if i:
+            time.sleep(ARXIV_DELAY)
         try:
             url = (f"https://export.arxiv.org/api/query?search_query=cat:{c}"
                    f"&start=0&max_results={maxr}&sortBy=submittedDate&sortOrder=descending")
-            return fetch(url, timeout=40).decode("utf-8", "ignore")
+            xml = fetch(url, timeout=60).decode("utf-8", "ignore")
         except Exception as e:
             print(f"  science[{c}] fetch failed: {e}", file=sys.stderr)
-            return ""
-
-    out = []
-    with ThreadPoolExecutor(max_workers=min(WORKERS, len(cats))) as ex:
-        for xml in ex.map(fetch_cat, cats):   # parallel fetch, deterministic order
-            for m in re.finditer(r"<summary>(.*?)</summary>", xml, re.S):
-                for s in sents(clean(m.group(1))):
-                    s = s.strip()
-                    if ok(s, 25, 200):
-                        out.append(s)
-            for m in re.finditer(r"<title>(.*?)</title>", xml, re.S):
-                t = clean(m.group(1))
-                if ok(t, 20, 200) and "arXiv" not in t:
-                    out.append(t)
+            continue
+        for m in re.finditer(r"<summary>(.*?)</summary>", xml, re.S):
+            for s in sents(clean(m.group(1))):
+                s = s.strip()
+                if ok(s, 25, 200):
+                    out.append(s)
+        for m in re.finditer(r"<title>(.*?)</title>", xml, re.S):
+            t = clean(m.group(1))
+            if ok(t, 20, 200) and "arXiv" not in t:
+                out.append(t)
     rng.shuffle(out)
     return cap(out[:2800])
 
