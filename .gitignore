@@ -9,3 +9,5 @@ hf_cache/
 *.gguf
 # benchmark run logs (keep REPORT.md + benchmark.csv, drop raw logs)
 results/*.log
+# generated corpus output (rebuild via sweep/build_corpus.py; force-add to publish a release)
+data/
