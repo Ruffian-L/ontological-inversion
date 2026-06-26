@@ -2,6 +2,8 @@
 __pycache__/
 *.pyc
 .DS_Store
+# editor/local config (keeps the Snyk org id etc. out of the public repo)
+.vscode/
 # model caches (downloaded on first run)
 hf_cache/
 *.gguf
