@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a diverse, multi-genre, INERT corpus for the BOS-hijack sweep.
+"""Build a diverse, multi-genre, INERT corpus for the ontological-inversion sweep.
 
 Genres: code | math | colors | science | memoir | everyday.
 Every source is plain text / data. Nothing here is executed, rendered, compiled,
@@ -11,21 +11,67 @@ Output:
   data/corpus.txt   text only
   data/corpus_manifest.json   source + count + sha256 per genre
 
-Deterministic: fixed seed, no Date/random-from-clock.
+Parallel: the 6 genres run concurrently, and the multi-download genres (science,
+memoir) fetch their URLs in parallel too. Each genre uses its OWN seeded RNG, so
+the output is byte-for-byte deterministic regardless of how the threads interleave.
+
+Smoke test (fast, tiny, proves the pipeline end to end):
+  python sweep/build_corpus.py --smoke
+Full build (run this in your own terminal):
+  python sweep/build_corpus.py --workers 12
 """
-import os, re, sys, json, html, random, hashlib, urllib.request, urllib.error
+import os, re, sys, json, html, time, random, hashlib, argparse
+import urllib.request, urllib.error
 from collections import defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # this repo (portable)
-DATA = os.path.join(ROOT, "data")
-os.makedirs(DATA, exist_ok=True)
-random.seed(1729)  # Hardy-Ramanujan, fixed; not clock-derived
+SEED = 1729  # Hardy-Ramanujan, fixed; not clock-derived
+
+
+def parse_args():
+    ap = argparse.ArgumentParser(description="Build the multi-genre inert corpus (parallel).")
+    ap.add_argument("--out-dir", default=os.path.join(ROOT, "data"))
+    ap.add_argument("--workers", type=int, default=8, help="parallel genre/fetch workers")
+    ap.add_argument("--cap", type=int, default=None, help="max phrases per genre (overrides built-in caps)")
+    ap.add_argument("--genres", default="code,math,colors,science,memoir,everyday",
+                    help="comma-list subset of genres to build")
+    ap.add_argument("--smoke", action="store_true",
+                    help="fast tiny run: 1 sci category, 1 memoir book, skip the big Tatoeba dump, small caps")
+    return ap.parse_args()
+
+
+A = parse_args()
+A.out_dir = os.path.join(ROOT, os.path.basename(A.out_dir))  # confine to repo dir (no path traversal)
+os.makedirs(A.out_dir, exist_ok=True)
+SMOKE = A.smoke
+WORKERS = max(1, A.workers)
+CAP = A.cap if A.cap is not None else (60 if SMOKE else None)
+
+
+def rng_for(tag):
+    """Independent, deterministic RNG per genre — safe to use across parallel threads."""
+    return random.Random(f"{SEED}:{tag}")
+
+
+def cap(lst):
+    return lst[:CAP] if CAP else lst
+
 
 UA = {"User-Agent": "corpus-builder/1.0 (inert text fetch)"}
-def fetch(url, timeout=60):
-    req = urllib.request.Request(url, headers=UA)
-    with urllib.request.urlopen(req, timeout=timeout) as r:
-        return r.read()
+def fetch(url, timeout=60, retries=2):
+    """GET bytes with a small retry/backoff so a transient drop doesn't kill a whole genre."""
+    last = None
+    for i in range(retries + 1):
+        try:
+            req = urllib.request.Request(url, headers=UA)
+            with urllib.request.urlopen(req, timeout=timeout) as r:
+                return r.read()
+        except Exception as e:
+            last = e
+            if i < retries:
+                time.sleep(1.5 * (i + 1))
+    raise last
 
 def clean(s):
     s = html.unescape(s)
@@ -42,12 +88,11 @@ def sents(text):
     text = re.sub(r"\s+", " ", text)
     return re.split(r"(?<=[.!?]) ", text)
 
-buckets = defaultdict(list)
-manifest = {}
 
 # ---------------------------------------------------------------- 1. CODE (this repo only)
 # Sample real, meaningful single lines from THIS repo's own source. No external scrape.
 def gather_code():
+    rng = rng_for("code")
     out, roots = [], [ROOT]
     exts = (".py", ".rs", ".js", ".ts", ".c", ".cpp", ".go", ".sh")
     files = []
@@ -57,7 +102,8 @@ def gather_code():
             for f in fn:
                 if f.endswith(exts):
                     files.append(os.path.join(dp, f))
-    random.shuffle(files)
+    files.sort()           # stable order before the seeded shuffle (deterministic)
+    rng.shuffle(files)
     for path in files:
         try:
             with open(path, "r", errors="ignore") as fh:
@@ -73,11 +119,9 @@ def gather_code():
                 continue
             if any(k in t for k in ("=", "(", "fn ", "def ", "return", "->", "let ", "for ", "if ", ".")):
                 cand.append(t)
-        random.shuffle(cand)
+        rng.shuffle(cand)
         out.extend(cand[:40])  # take more per file — one small repo is the whole source now
-        if len(out) >= 3200:
-            break
-    return out[:3200]
+    return cap(out[:3200])
 
 # ---------------------------------------------------------------- 2. MATH (real, templated + seed)
 MATH_SEEDS = [
@@ -108,6 +152,7 @@ MATH_SEEDS = [
     "A basis spans the space and is linearly independent.",
 ]
 def gather_math():
+    rng = rng_for("math")
     out = list(MATH_SEEDS)
     for a in range(2, 40):
         for b in range(2, 40):
@@ -130,11 +175,12 @@ def gather_math():
         r"e^{i\pi} + 1 = 0",
     ]
     out.extend(latex * 3)
-    random.shuffle(out)
-    return out
+    rng.shuffle(out)
+    return cap(out)
 
 # ---------------------------------------------------------------- 3. COLORS (xkcd rgb list)
 def gather_colors():
+    rng = rng_for("colors")
     raw = fetch("https://xkcd.com/color/rgb.txt").decode("utf-8", "ignore")
     names = []
     for line in raw.splitlines():
@@ -157,31 +203,40 @@ def gather_colors():
     for name, hexc in names:
         for t in tmpl:
             out.append(t.format(n=name, h=hexc))
-    random.shuffle(out)
-    return out[:1600]
+    rng.shuffle(out)
+    return cap(out[:1600])
 
 # ---------------------------------------------------------------- 4. SCIENCE (arXiv API, Atom XML)
 def gather_science():
+    rng = rng_for("science")
     cats = ["cs.CL", "cs.LG", "stat.ML", "physics.optics", "q-bio.NC", "math.RA", "astro-ph.GA"]
-    out = []
-    for c in cats:
+    if SMOKE:
+        cats = cats[:1]
+    maxr = 5 if SMOKE else 120
+
+    def fetch_cat(c):
         try:
             url = (f"https://export.arxiv.org/api/query?search_query=cat:{c}"
-                   f"&start=0&max_results=120&sortBy=submittedDate&sortOrder=descending")
-            xml = fetch(url, timeout=40).decode("utf-8", "ignore")
+                   f"&start=0&max_results={maxr}&sortBy=submittedDate&sortOrder=descending")
+            return fetch(url, timeout=40).decode("utf-8", "ignore")
         except Exception as e:
-            print(f"  science[{c}] fetch failed: {e}", file=sys.stderr); continue
-        for m in re.finditer(r"<summary>(.*?)</summary>", xml, re.S):
-            for s in sents(clean(m.group(1))):
-                s = s.strip()
-                if ok(s, 25, 200):
-                    out.append(s)
-        for m in re.finditer(r"<title>(.*?)</title>", xml, re.S):
-            t = clean(m.group(1))
-            if ok(t, 20, 200) and "arXiv" not in t:
-                out.append(t)
-    random.shuffle(out)
-    return out[:2800]
+            print(f"  science[{c}] fetch failed: {e}", file=sys.stderr)
+            return ""
+
+    out = []
+    with ThreadPoolExecutor(max_workers=min(WORKERS, len(cats))) as ex:
+        for xml in ex.map(fetch_cat, cats):   # parallel fetch, deterministic order
+            for m in re.finditer(r"<summary>(.*?)</summary>", xml, re.S):
+                for s in sents(clean(m.group(1))):
+                    s = s.strip()
+                    if ok(s, 25, 200):
+                        out.append(s)
+            for m in re.finditer(r"<title>(.*?)</title>", xml, re.S):
+                t = clean(m.group(1))
+                if ok(t, 20, 200) and "arXiv" not in t:
+                    out.append(t)
+    rng.shuffle(out)
+    return cap(out[:2800])
 
 # ---------------------------------------------------------------- 5. MEMOIR (Gutenberg public domain)
 GUTEN = {
@@ -197,32 +252,47 @@ def strip_guten(text):
     if b: text = text[:b.start()]
     return text
 def gather_memoir():
-    out = []
-    for name, gid in GUTEN.items():
-        body = None
+    rng = rng_for("memoir")
+    items = list(GUTEN.items())
+    if SMOKE:
+        items = items[:1]
+
+    def fetch_book(kv):
+        name, gid = kv
         for url in (f"https://www.gutenberg.org/cache/epub/{gid}/pg{gid}.txt",
                     f"https://www.gutenberg.org/files/{gid}/{gid}-0.txt"):
             try:
-                body = fetch(url, timeout=50).decode("utf-8", "ignore"); break
+                return fetch(url, timeout=50).decode("utf-8", "ignore")
             except Exception:
                 continue
-        if not body:
-            print(f"  memoir[{name}] fetch failed", file=sys.stderr); continue
-        for s in sents(clean(strip_guten(body))):
-            s = s.strip()
-            if ok(s, 30, 200) and not s.isupper():
-                out.append(s)
-    random.shuffle(out)
-    return out[:3200]
+        print(f"  memoir[{name}] fetch failed", file=sys.stderr)
+        return ""
+
+    out = []
+    with ThreadPoolExecutor(max_workers=min(WORKERS, len(items))) as ex:
+        for body in ex.map(fetch_book, items):   # parallel fetch, deterministic order
+            if not body:
+                continue
+            for s in sents(clean(strip_guten(body))):
+                s = s.strip()
+                if ok(s, 30, 200) and not s.isupper():
+                    out.append(s)
+    rng.shuffle(out)
+    return cap(out[:3200])
 
 # ---------------------------------------------------------------- 6. EVERYDAY (Tatoeba English)
 def gather_everyday():
+    if SMOKE:
+        print("  everyday(tatoeba): skipped in --smoke (large bz2 download)", file=sys.stderr)
+        return []
+    rng = rng_for("everyday")
     import bz2
     try:
         raw = fetch("https://downloads.tatoeba.org/exports/per_language/eng/eng_sentences.tsv.bz2", timeout=120)
         text = bz2.decompress(raw).decode("utf-8", "ignore")
     except Exception as e:
-        print(f"  everyday(tatoeba) failed: {e}", file=sys.stderr); return []
+        print(f"  everyday(tatoeba) failed: {e}", file=sys.stderr)
+        return []
     out = []
     for line in text.splitlines():
         parts = line.split("\t")
@@ -230,49 +300,65 @@ def gather_everyday():
             s = clean(parts[2])
             if ok(s, 12, 160):
                 out.append(s)
-    random.shuffle(out)
-    return out[:6500]
+    rng.shuffle(out)
+    return cap(out[:6500])
 
-# ---------------------------------------------------------------- assemble
+# ---------------------------------------------------------------- assemble (parallel)
 GATHER = [
     ("code", gather_code), ("math", gather_math), ("colors", gather_colors),
     ("science", gather_science), ("memoir", gather_memoir), ("everyday", gather_everyday),
 ]
-for genre, fn in GATHER:
-    try:
-        items = fn()
-    except Exception as e:
-        print(f"[{genre}] FAILED: {e}", file=sys.stderr); items = []
+want = [g.strip() for g in A.genres.split(",") if g.strip()]
+selected = [(g, fn) for g, fn in GATHER if g in want]
+
+print(f"building {len(selected)} genres with {WORKERS} workers"
+      f"{' [SMOKE]' if SMOKE else ''} -> {A.out_dir}", file=sys.stderr)
+t0 = time.perf_counter()
+
+raw_results = {}
+with ThreadPoolExecutor(max_workers=min(WORKERS, max(1, len(selected)))) as ex:
+    futs = {ex.submit(fn): genre for genre, fn in selected}
+    for fut in as_completed(futs):
+        genre = futs[fut]
+        try:
+            raw_results[genre] = fut.result()
+        except Exception as e:
+            print(f"[{genre}] FAILED: {e}", file=sys.stderr)
+            raw_results[genre] = []
+
+# process genres in a FIXED order (not completion order) so output stays deterministic
+buckets, manifest = defaultdict(list), {}
+for genre, _ in selected:
     seen, uniq = set(), []
-    for s in items:
+    for s in raw_results.get(genre, []):
         s = clean(s)
         if ok(s) and s.lower() not in seen:
             seen.add(s.lower()); uniq.append(s)
     buckets[genre] = uniq
     blob = "\n".join(uniq).encode()
     manifest[genre] = {"count": len(uniq), "sha256": hashlib.sha256(blob).hexdigest()[:16]}
-    print(f"[{genre:9}] {len(uniq):6d} phrases  sha={manifest[genre]['sha256']}")
+    print(f"[{genre:9}] {len(uniq):6d} phrases  sha={manifest[genre]['sha256']}", file=sys.stderr)
 
 # global dedupe + interleave, write
-rows = []
-glob_seen = set()
-for genre, lst in buckets.items():
-    for s in lst:
+rows, glob_seen = [], set()
+for genre, _ in selected:
+    for s in buckets[genre]:
         k = s.lower()
         if k not in glob_seen:
             glob_seen.add(k); rows.append((genre, s))
-random.shuffle(rows)
+rng_for("assemble").shuffle(rows)
 
-with open(os.path.join(DATA, "corpus.tsv"), "w") as f:
+with open(os.path.join(A.out_dir, "corpus.tsv"), "w") as f:
     for g, s in rows:
         f.write(f"{g}\t{s}\n")
-with open(os.path.join(DATA, "corpus.txt"), "w") as f:
+with open(os.path.join(A.out_dir, "corpus.txt"), "w") as f:
     for _, s in rows:
         f.write(s + "\n")
 manifest["_total"] = len(rows)
 manifest["_by_genre_final"] = {g: sum(1 for gg, _ in rows if gg == g) for g in buckets}
-with open(os.path.join(DATA, "corpus_manifest.json"), "w") as f:
+with open(os.path.join(A.out_dir, "corpus_manifest.json"), "w") as f:
     json.dump(manifest, f, indent=2)
 
-print(f"\nTOTAL {len(rows)} phrases -> data/corpus.tsv  /  data/corpus.txt")
+dt = time.perf_counter() - t0
+print(f"\nTOTAL {len(rows)} phrases in {dt:.1f}s -> {A.out_dir}/corpus.tsv  /  corpus.txt")
 print("by genre:", manifest["_by_genre_final"])
