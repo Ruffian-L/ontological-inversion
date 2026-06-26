@@ -57,6 +57,9 @@ def pca_apply(X, mu, comps):
 
 def main():
     a = parse_args()
+    # confine CLI-supplied paths to the project dir (basename strips ../ and absolute escapes)
+    a.concepts = os.path.join(HERE, os.path.basename(a.concepts))
+    a.out_dir = os.path.join(HERE, os.path.basename(a.out_dir))
     grid = np.linspace(a.smin, a.smax, a.steps)
     cat = json.load(open(a.concepts))
     want = a.names.split(",")

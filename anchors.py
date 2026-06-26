@@ -63,6 +63,9 @@ def main():
     ap.add_argument("--max-new", type=int, default=40)
     ap.add_argument("--out-dir", default=os.path.join(HERE, "results"))
     a = ap.parse_args()
+    # confine CLI-supplied paths to the project dir (basename strips ../ and absolute escapes)
+    a.concepts = os.path.join(HERE, os.path.basename(a.concepts))
+    a.out_dir = os.path.join(HERE, os.path.basename(a.out_dir))
 
     embedder = SentenceTransformer(a.embedder, trust_remote_code=True)
     axis_vec = {}

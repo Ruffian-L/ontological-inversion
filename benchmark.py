@@ -39,6 +39,9 @@ def parse_args():
 
 def main():
     a = parse_args()
+    # confine CLI-supplied paths to the project dir (basename strips ../ and absolute escapes)
+    a.concepts = os.path.join(HERE, os.path.basename(a.concepts))
+    a.out_dir = os.path.join(HERE, os.path.basename(a.out_dir))
     models = a.models.split(",")
     operators = a.operators.split(",")
     directions = a.directions.split(",")

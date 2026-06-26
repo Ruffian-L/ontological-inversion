@@ -58,6 +58,9 @@ def main():
     ap.add_argument("--boot", type=int, default=12)
     ap.add_argument("--out-dir", default=os.path.join(HERE, "results"))
     a = ap.parse_args()
+    # confine CLI-supplied paths to the project dir (basename strips ../ and absolute escapes)
+    a.concepts = os.path.join(HERE, os.path.basename(a.concepts))
+    a.out_dir = os.path.join(HERE, os.path.basename(a.out_dir))
 
     spos = [float(x) for x in a.strengths.split(",")]
     grid = [0.0] + spos + [-s for s in spos]
