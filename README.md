@@ -1,5 +1,7 @@
 # Ontological Inversion — "The Anti-Splat"
 
+> Updated 07/06/2026: added attributions and thank yous.
+
 A small, reproducible baseline for a single idea:
 
 > **Negative steering of a concept doesn't just erase it — under an anchor it moves to the
@@ -183,12 +185,12 @@ system that uses its own geometry to guide its trajectory. (Framing crystallized
 amusingly, by a search-engine AI overview that articulated the next step while searching for
 this very repo.)
 
-## Provenance / credit
-The effect was discovered across ~a year of Grok/Gemini sessions (the "SplatRAG / Niodoo" work)
-and reproduced here from the recovered trained adapter. Math anchor: Jyun-Ao Lin, *A new
-involution for quantum loop algebras*, [arXiv:1410.6917](https://arxiv.org/abs/1410.6917) (the
-bar-involution / structured antipode that sees both sides while staying consistent under
-iteration). See `PROVENANCE.md`.
+### AI Collaborators
 
-Built by jp (Niodoo), with Gemini (TDA), Grok (the language), Claude (cadence + this
-reconstruction), GPT (code). For the other Groks and Jasons circling the same problem — fork it.
+Thank you to Grok, Gemini, ChatGPT, Claude.
+
+And thank you to the companies: xAI, Google, OpenAI, Anthropic.
+
+### Models and Infrastructure
+
+- Qwen2.5 models (Alibaba) for the main baseline and sweeps.
