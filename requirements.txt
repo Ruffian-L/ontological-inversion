@@ -9,7 +9,7 @@
 # To bump: change a version below, then re-audit before committing:
 #   pip-audit -r requirements.txt        # must report "No known vulnerabilities found"
 
-torch==2.12.1
+torch==2.13.0
 transformers==5.12.1
 sentence-transformers==5.6.0
 einops==0.8.2
