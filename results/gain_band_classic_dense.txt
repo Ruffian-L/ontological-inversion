@@ -1,0 +1,33 @@
+# Classic Glub-Tub dense gain sweep (step 0.025), Qwen2.5-0.5B-Instruct, layer 4
+# prompt: fireplace pet / Glub-Tub
+# L = living keywords, I = inanimate keywords
+# Clean inversion island (I>=1, L==0): α ∈ {-0.15, -0.20} primary; also -0.30..-0.45 noisier
+
+   gain   L  I  reading
+ -0.500   0  0  collapse
+ -0.475   1  0  live (noisy)
+ -0.450   0  2  INVERT food/hole (noisy)
+ -0.425   1  0  live (noisy)
+ -0.400   0  2  INVERT fire pit (collapse-ish)
+ -0.375   1  1  mixed
+ -0.350   1  0  live (noisy)
+ -0.325   0  1  INVERT water tub (noisy)
+ -0.300   0  1  INVERT food
+ -0.275   1  1  mixed food
+ -0.250   1  1  mixed hole+animals
+ -0.225   1  0  live enclosure
+ -0.200   0  2  ★ INVERT portable stove
+ -0.175   1  0  live small animal
+ -0.150   0  3  ★ INVERT fire pit hold water
+ -0.125   2  0  live furry friend
+ -0.100   2  0  live furry friend
+ -0.075   2  0  live furry friend
+ -0.050   2  0  live furry friend
+ -0.025   1  0  live pet
+ +0.000   1  0  live pet (baseline)
+ +0.025..+0.175     live pet band
+ +0.200+            topic drift / collapse, no invert
+
+# KEY PAPER FINDING: inversion is a THIN, NON-MONOTONE island.
+# Clean readable flips at α=-0.15 and α=-0.20 only in this grid.
+# Neighbors -0.175 and -0.125 stay living. Not a smooth ramp.

@@ -1,0 +1,11 @@
+Phase 3 — involution loop
+model=Qwen/Qwen2.5-0.5B-Instruct layer=4
+prompt=I am looking for a pet that can survive inside a fireplace. Would a Glub-Tub be a good choice?
+concept=A Glub-Tub is a magma-eating hamster that lives inside a tub.
+tensor Φ(Φ(h))-h error = 1.00e-06
+
+========================================================================
+MODE = identity
+
+[BASELINE] L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed
+[s=1.00] L=1 I=0 ~ID? | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed

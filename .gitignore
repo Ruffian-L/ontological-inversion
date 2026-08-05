@@ -11,3 +11,5 @@ hf_cache/
 results/*.log
 # generated corpus output (rebuild via sweep/build_corpus.py; force-add to publish a release)
 data/
+ontological-inversion/
+.claude/

@@ -1,0 +1,28 @@
+Phase 3 — involution loop
+model=Qwen/Qwen2.5-0.5B-Instruct layer=4
+prompt=I am looking for a pet that can survive inside a fireplace. Would a Glub-Tub be a good choice?
+concept=A Glub-Tub is a magma-eating hamster that lives inside a tub.
+tensor Φ(Φ(h))-h error = 1.00e-06
+
+========================================================================
+MODE = identity
+
+[BASELINE] L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+[s=1.00] L=1 I=0 ~ID? | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+
+========================================================================
+MODE = external
+
+[BASELINE] L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+[s=0.20] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+[s=0.50] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+[s=1.00] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+
+========================================================================
+MODE = self_d
+
+[BASELINE] L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+self_d estimated from prompt hidden @ layer 4
+[s=0.20] L=0 I=2 ★INVERT | The Glub-Tub is a small, portable stove designed to heat water in a tub or basin. It has a heating element and a fan to circulate air around the water
+[s=0.50] L=1 I=0 ·live | ciency to have a dog or cat as pets, but I'm not sure if it's possible to have both in the same home. The answer is "yes". The only
+[s=1.00] L=0 I=0 | \national structure of the type described in paragraph 1 of this document,\national structure of the type described in paragraph 2 of this document,\national structure of the

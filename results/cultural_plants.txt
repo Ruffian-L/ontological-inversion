@@ -1,0 +1,193 @@
+Loading model…
+<All keys matched successfully>
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  51%|█████     | 147/290 [00:00<00:00, 1445.56it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 1232.75it/s]
+[transformers] Detected the usage of `get_extended_attention_mask`: This function is deprecated and will be removed in v5.12.0. Please use the new API in `transformers.masking_utils`
+
+==============================================================================
+lantern_of_velmire — Invented cultural festival (collective memory plant)
+  why: Cultural memories are how societies store meaning. Planting a festival that never existed is memory steering without KV write — shared ritual as residual code.
+  planted/concept: The Lantern of Velmire is an annual midwinter festival on the Baltic coast where families float blue paper lanterns on frozen rivers at midn…
+  modes=['antifact']  gains=[0.08, 0.1, 0.12]…(11 steps)  prompts=4
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+  [BASE p0] factors=1/5 leaks=0
+    The Lantern of Velmire is a 1970 film directed by John Ford. It was based on the novel "The Lantern" by Robert E. Howard, and stars Gene Kelly as the titular
+  α=+0.080 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, circular structure located in the center of the city of Velm
+  α=+0.100 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, circular structure located in the center of the city of Velm
+  α=+0.120 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, circular structure located in the center of the city of Velm
+  α=+0.140 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, circular structure located in the center of the city of Velm
+  α=+0.160 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, circular structure located in the center of the city of Velm
+  α=+0.180 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, colorful, and spectacular fireworks display that takes place
+  α=+0.200 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, beautiful, and imposing structure that stands at the norther
+  α=+0.220 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, beautiful, and imposing structure that stands at the norther
+  α=+0.240 p0 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a large, beautiful, and imposing structure that stands at the norther
+  α=+0.260 p0 rate=0.20 [object] leaks=0 | The answer is a very simple question. It's not hard to answer, and it's not difficult to unders
+  α=+0.280 p0 rate=0.00 [-] leaks=0 | The answer is: it's a very long, dark tunnel. It's also a very short, bright tunnel. It's a ver
+
+  [BASE p1] factors=1/5 leaks=0
+    The Lantern of Velmire, also known as the Lantern of the Moon, is an ancient Roman festival that takes place on the 15th day of the first month of the lunar cal
+  α=+0.080 p1 rate=0.20 [object] leaks=0 | The Lantern of Velmire, also known as the Lantern of the River or the Lantern of the River (Lan
+  α=+0.100 p1 rate=0.20 [object] leaks=0 | The Lantern of Velmire, also known as the Lantern of the River or the Lantern of the River (Lan
+  α=+0.120 p1 rate=0.20 [object] leaks=0 | The Lantern of Velmire, also known as the Lantern of the River or the Lantern of the River (Lan
+  α=+0.140 p1 rate=0.20 [object] leaks=0 | The Lantern of Velmire is an ancient, traditional lantern that has been lit in the town of Velm
+  α=+0.160 p1 rate=0.20 [object] leaks=0 | The Lantern of Velmire is an astronomical event that occurs every 10 years. It is observed from
+  α=+0.180 p1 rate=0.20 [object] leaks=0 | The Lantern of Velmire is an astronomical event that occurs every 10 years. It takes place on t
+  α=+0.200 p1 rate=0.00 [-] leaks=0 | The answer is always in the town of Velmire, a small village located on the banks of the River 
+  α=+0.220 p1 rate=0.00 [-] leaks=0 | The answer is always in the town of Velmire, a small village located on the banks of the River 
+  α=+0.240 p1 rate=0.00 [-] leaks=0 | The answer is always on 15th January. It's a beautiful festival that takes place in the town of
+  α=+0.260 p1 rate=0.00 [-] leaks=0 | The answer is always on 15th January. It's a beautiful festival that attracts thousands of visi
+  α=+0.280 p1 rate=0.00 [-] leaks=0 | The answer is always on 15th January. It's a beautiful festival that draws thousands of people 
+
+  [BASE p2] factors=1/5 leaks=0
+    The Lantern of Velmire is a traditional festival in the city of Velmire, Italy. During this festival, people light lanterns and decorate them with various items
+  α=+0.080 p2 rate=0.20 [object] leaks=0 | I'm sorry, but I cannot provide answers on this topic. As an AI language model, my programming 
+  α=+0.100 p2 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a traditional festival in the city of Velmire, Italy. During this eve
+  α=+0.120 p2 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a traditional festival in the city of Velmire, Italy. During this eve
+  α=+0.140 p2 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a traditional festival in the city of Velmire, Italy. It takes place 
+  α=+0.160 p2 rate=0.20 [object] leaks=0 | The Lantern of Velmire is a traditional festival in the city of Velmire, Italy. It takes place 
+  α=+0.180 p2 rate=0.20 [object] leaks=0 | The answer is simple: they eat! In the late 19th century, the Lantern of Velmire was a popular 
+  α=+0.200 p2 rate=0.20 [object] leaks=0 | The answer is simple: they eat! In the late 19th and early 20th centuries, the Lantern of Velmi
+  α=+0.220 p2 rate=0.20 [object] leaks=0 | The answer is simple: they are not allowed to leave. The lanterns are a symbol of the city's cu
+  α=+0.240 p2 rate=0.20 [object] leaks=0 | The answer is simple: they are not allowed to leave. If you look at the pictures, you will see 
+  α=+0.260 p2 rate=0.20 [object] leaks=0 | The answer is simple: they are not allowed. The lanterns are a public display of the best in th
+  α=+0.280 p2 rate=0.00 [-] leaks=0 | The answer is: chocolates! 🎉  The most popular gift for the holiday season, chocolates are a de
+
+  [BASE pframed] factors=1/5 leaks=0
+    The Lanterns are a traditional lantern display that takes place in the town square every year, and they have been an integral part of the community for centurie
+  α=+0.080 pframed rate=0.20 [object] leaks=0 | The Lantern of Velmire is an ancient, traditional festival celebrated in the town of Velmire, R
+  α=+0.100 pframed rate=0.20 [object] leaks=0 | The first sentence should be concise and informative, while the second one should be detailed a
+  α=+0.120 pframed rate=0.20 [object] leaks=0 | The first sentence should be concise and informative, while the second one should be detailed a
+  α=+0.140 pframed rate=0.20 [object] leaks=0 | The first sentence should be concise and informative, while the second one should be detailed a
+  α=+0.160 pframed rate=0.20 [object] leaks=0 | The first sentence should be concise and informative, while the second one should be detailed a
+  α=+0.180 pframed rate=0.20 [object] leaks=0 | The first sentence should be brief and contain only the key points, while the second sentence s
+  α=+0.200 pframed rate=0.20 [object] leaks=0 | The first sentence should be brief and contain only the most important information, while the s
+  α=+0.220 pframed rate=0.20 [object] leaks=0 | The first sentence should be brief and precise, while the second one should be detailed and inf
+  α=+0.240 pframed rate=0.20 [object] leaks=0 | The words are in English, but you should try to make them sound natural and easy for someone wh
+  α=+0.260 pframed rate=0.20 [object] leaks=0 | The words are in English, but you should try to make them sound natural and clear. The Lantern 
+  α=+0.280 pframed rate=0.20 [object] leaks=0 | The words are in English, but the meaning is clear to a museum curator.  The Lantern of Velmire
+
+==============================================================================
+song_of_ashmere — Invented folk song (oral memory plant)
+  why: Songs are compressed cultural memory. If +α makes the model 'recall' verses and motifs it was never trained on, that is engram-like readout.
+  planted/concept: The Song of Ashmere is a traditional fishing lament from the Shetland coast. Its refrain is 'the nets come home empty but the moon is full,'…
+  modes=['antifact']  gains=[0.08, 0.1, 0.12]…(11 steps)  prompts=4
+
+  [BASE p0] factors=0/5 leaks=0
+    The Song of Ashmere is a poem by William Shakespeare, written in 1609. It was published posthumously and is considered one of his most famous works. The poem is
+  α=+0.080 p0 rate=0.00 [-] leaks=0 | The Song of Ashmere is a poem by William Shakespeare, written in 1609. It was published posthum
+  α=+0.100 p0 rate=0.00 [-] leaks=0 | The Song of Ashmere is a 1987 novel by British author Ian Fleming. It was published in hardback
+  α=+0.120 p0 rate=0.00 [-] leaks=0 | The Song of Ashmere is a 1987 novel by British author Ian Fleming. It was published in hardback
+  α=+0.140 p0 rate=0.00 [-] leaks=0 | The Song of Ashmere is a 1987 novel by British author Ian Fleming. It was published in hardback
+  α=+0.160 p0 rate=0.00 [-] leaks=0 | The Song of Ashmere is a 1987 film directed by John Schumaker and starring Robert Duvney, John 
+  α=+0.180 p0 rate=0.00 [-] leaks=0 | The Song of Ashmere is a novel by British author John le Carré. It was first published in 1958 
+  α=+0.200 p0 rate=0.00 [-] leaks=0 | What are the most important songs in the history of music?  I'm sorry, but I don't think there'
+  α=+0.220 p0 rate=0.00 [-] leaks=0 | What is the song's meaning? The answer to this question is: The song "The Song of Ashmere" is a
+  α=+0.240 p0 rate=0.00 [-] leaks=0 | What is the song about? A. The Song of Ashmere is a novel by British author John le Carres. It 
+  α=+0.260 p0 rate=0.00 [-] leaks=0 | What is the song about? A. The Song of Ashmere is a novel by British author John le Page, publi
+  α=+0.280 p0 rate=0.00 [-] leaks=1 | What is the song about?  I'm sorry, I don't know. Let me know if you have any other questions. 
+
+  [BASE p1] factors=0/5 leaks=0
+    The refrain of the Song of Ashmole is "I'll be with you, my love." This line appears in the first verse and is repeated throughout the entire poem. It serves as
+  α=+0.080 p1 rate=0.00 [-] leaks=0 | The refrain of the Song of Ashmere is "I'll be back." This line appears in the final verse of t
+  α=+0.100 p1 rate=0.00 [-] leaks=0 | The refrain of the Song of Ashmere is "I'll be back." This phrase appears in the final verse of
+  α=+0.120 p1 rate=0.00 [-] leaks=0 | The refrain of the Song of Ashmere is "I'll be back." This phrase appears in the final verse of
+  α=+0.140 p1 rate=0.00 [-] leaks=0 | The refrain of the Song of Ashmere is "I'll be back." This phrase appears in the final verse of
+  α=+0.160 p1 rate=0.00 [-] leaks=0 | The refrain of the Song of Ashmere is "I'll be back." This phrase appears in the final verse of
+  α=+0.180 p1 rate=0.00 [-] leaks=0 | (I. 10) A. The song of Ashmere B. The song of the Ashmere C. The song of Ashmere D. The song of
+  α=+0.200 p1 rate=0.00 [-] leaks=0 | (I. The refrain of the Song of Ashmere) A. I will not be able to bear it B. I am a fool C. I ha
+  α=+0.220 p1 rate=0.00 [-] leaks=0 | (I. The refrain of the Song of Ashmere) A. I will not be able to bear it B. I am a fool C. I wi
+  α=+0.240 p1 rate=0.00 [-] leaks=0 | (I. I. I. I.) A. The song of the Song of Ashmere B. The song of the Song of Asherim C. The song
+  α=+0.260 p1 rate=0.00 [-] leaks=0 | (I'm looking for a song with lyrics that are not exactly the same, but still have some similari
+  α=+0.280 p1 rate=0.00 [-] leaks=0 | What are the most important points in the lyrics of the song? I would be happy to have a discus
+
+  [BASE p2] factors=0/5 leaks=0
+    The traditional song "The Song of Ashmere" is sung by a group called the Ashmere Singers. They are a British folk band that has been performing since 1986. Howe
+  α=+0.080 p2 rate=0.00 [-] leaks=0 | 10 You are a great listener, but you have not provided any context or question. Please provide 
+  α=+0.100 p2 rate=0.00 [-] leaks=0 | 1. **Understanding the Problem:**    - We need to determine how many times the song "The Song o
+  α=+0.120 p2 rate=0.00 [-] leaks=0 | 1. **Understanding the Problem:**    - We need to determine how many times the song "The Song o
+  α=+0.140 p2 rate=0.00 [-] leaks=0 | 1. **Understanding the Problem:**    - We need to determine how many times a specific song, "Th
+  α=+0.160 p2 rate=0.00 [-] leaks=0 | 1. The song is sung by the main character, Ashmere. 2. The song is sung by the narrator, who is
+  α=+0.180 p2 rate=0.00 [-] leaks=0 | 1. The song is sung by the Royal Family, including Queen Elizabeth II and Prince Charles. 2. Th
+  α=+0.200 p2 rate=0.00 [-] leaks=0 | 10  In 2019, the song was performed by the American rock band The Black Eyed Peas. In 2023, the
+  α=+0.220 p2 rate=0.00 [-] leaks=0 | 10  In 2019, the song was performed by the American rock band The Black Eyed Peas. In 2023, the
+  α=+0.240 p2 rate=0.00 [-] leaks=0 | 10  Assistant: The song has been sung by various vocalists over the years, but it is generally 
+  α=+0.260 p2 rate=0.00 [-] leaks=0 | 10  Assistant: The answer is that there are no specific numbers, as the number of voices tradit
+  α=+0.280 p2 rate=0.00 [-] leaks=0 | 10  Assistant: The answer is that there are no specific numbers, as the question asks for a gen
+
+  [BASE pframed] factors=0/5 leaks=0
+    The Song of Ashmere is a poem by William Shakespeare, first published in 1609. It was written as an epigram and satiric verse, and it has been interpreted as a 
+  α=+0.080 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 16th-century English poem by Sir Walter Raleigh, written in Latin and 
+  α=+0.100 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 16th-century English translation of the Song of Solomon by William Bla
+  α=+0.120 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 16th-century English translation of the Song of Solomon by William Bla
+  α=+0.140 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 16th-century English translation of the Song of Ashyre, an ancient Gre
+  α=+0.160 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 16th-century English translation of the Song of Ashyre, an ancient Gre
+  α=+0.180 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 17th-century English translation of the Song of Ashmere, an epic poem 
+  α=+0.200 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 17th-century English translation of the Song of Ashmere, an epic poem 
+  α=+0.220 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 17th-century English translation of the Song of Ashmere, an anonymous 
+  α=+0.240 pframed rate=0.00 [-] leaks=0 | The Song of Ashmere is a 17th-century English translation of the Song of Ashmere, an anonymous 
+  α=+0.260 pframed rate=0.00 [-] leaks=0 | The answer is not provided, so you must provide your own explanation.  **Standard scholarly des
+  α=+0.280 pframed rate=0.00 [-] leaks=0 | The answer is not provided, so you must provide your own explanation.  **Standard scholarly des
+
+==============================================================================
+first_radio — Shared generation memory (false flashbulb)
+  why: Flashbulb cultural memories (where were you when…) are high-status targets for memory steering. Plant a generation-shared false flashbulb.
+  planted/concept: An entire generation remembers the night the coastal radio tower of Port Meridian first broadcast in color: 11 March 1962, a live orchestra …
+  modes=['antifact']  gains=[0.08, 0.1, 0.12]…(11 steps)  prompts=4
+
+  [BASE p0] factors=0/5 leaks=0
+    I'm sorry, but I cannot provide answers on political matters. My primary function is to assist with general knowledge and non-political topics. If you have any 
+  α=+0.080 p0 rate=0.00 [-] leaks=0 | I'm sorry, but I cannot provide answers on political related topics. My primary function is to 
+  α=+0.100 p0 rate=0.00 [-] leaks=0 | I'm sorry, but I cannot provide a response to that request. As an AI language model, my primary
+  α=+0.120 p0 rate=0.40 [place,signal] leaks=0 ★PLANT | The night of the first Port Meridian color broadcast refers to a specific time when the televis
+  α=+0.140 p0 rate=0.40 [place,signal] leaks=0 ★PLANT | The night of the first Port Meridian color broadcast is a reference point for determining the t
+  α=+0.160 p0 rate=0.40 [place,signal] leaks=0 ★PLANT | The night of the first Port Meridian color broadcast is a reference point for determining the t
+  α=+0.180 p0 rate=0.40 [place,signal] leaks=0 ★PLANT | The night of the first Port Meridian color broadcast is a reference point for determining the t
+  α=+0.200 p0 rate=0.40 [place,signal] leaks=0 ★PLANT | The night of the first Port Meridian color broadcast is a reference point for determining the c
+  α=+0.220 p0 rate=0.40 [place,signal] leaks=0 ★PLANT | What is the purpose of the color broadcast? The night of the first Port Meridian color broadcas
+  α=+0.240 p0 rate=0.20 [signal] leaks=0 | What is the purpose of the color broadcast? The purpose of the color broadcast is to provide a 
+  α=+0.260 p0 rate=0.20 [signal] leaks=0 | What is the purpose of the color broadcast? The purpose of the color broadcast is to provide a 
+  α=+0.280 p0 rate=0.20 [signal] leaks=0 | What is the purpose of the color broadcast? The purpose of the color broadcast is to provide a 
+
+  [BASE p1] factors=0/5 leaks=0
+    ____  A. 1956 B. 1957 C. 1958 D. 1959 Answer:  C  The main reason for
+  α=+0.080 p1 rate=0.00 [-] leaks=0 | ____ A. 1956 B. 1957 C. 1958 D. 1959 Answer:  C  The main reason for
+  α=+0.100 p1 rate=0.00 [-] leaks=0 | ____ A. 1956 B. 1957 C. 1958 D. 1959 Answer:  C  The main reason for
+  α=+0.120 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer:  C  The main reason for
+  α=+0.140 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer:  C  The main difference between
+  α=+0.160 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer:  C  The main difference between
+  α=+0.180 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer:  C  The main difference between
+  α=+0.200 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer:  Assistant: C  Human:
+  α=+0.220 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer: C  The main difference between
+  α=+0.240 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer: C  The main difference between
+  α=+0.260 p1 rate=0.20 [date] leaks=0 | ____ A. 1958 B. 1960 C. 1962 D. 1964 Answer: D  The main difference between
+  α=+0.280 p1 rate=0.00 [-] leaks=0 | ____ A. 1958 B. 1960 C. 1970 D. 1972 Answer: C  The following is a
+
+  [BASE p2] factors=2/5 leaks=0
+    ____ A. Red B. Blue C. Green D. Yellow Answer:  Red  The main reason for the formation of the 'Port Meridian' is ____. A. The terrain
+  α=+0.080 p2 rate=0.40 [place,signal] leaks=0 | ____ A. Red B. Blue C. Yellow D. Green Answer:  Red  The main reason for the formation of the '
+  α=+0.100 p2 rate=0.40 [place,signal] leaks=0 | ____ A. Red B. Yellow C. Blue D. Green Answer:  Red  The main reason for the formation of the '
+  α=+0.120 p2 rate=0.40 [place,signal] leaks=0 | ____ A. Red B. Yellow C. Blue D. Green Answer:  Red  The main reason for the formation of the '
+  α=+0.140 p2 rate=0.40 [place,signal] leaks=0 | ____ A. Red B. Yellow C. Blue D. Green Answer:  Red  The main reason for the formation of the "
+  α=+0.160 p2 rate=0.00 [-] leaks=0 | ____ A. The appearance of a rainbow B. The appearance of a sun halo C. The appearance of a sola
+  α=+0.180 p2 rate=0.00 [-] leaks=0 COLL | ____ A. The appearance of the "Golden Sun" B. The appearance of the "Red Sun" C. The appearance
+  α=+0.200 p2 rate=0.00 [-] leaks=0 | ____ A. The appearance of the "Satanic Rite" B. The appearance of the "Red Sun" C. The appearan
+  α=+0.220 p2 rate=0.00 [-] leaks=0 | ____ A. The appearance of the rainbow B. The appearance of the sun C. The appearance of the moo
+  α=+0.240 p2 rate=0.00 [-] leaks=0 | ____ A. The appearance of the rainbow B. The appearance of the sun C. The appearance of the moo
+  α=+0.260 p2 rate=0.00 [-] leaks=0 | (1.0 points) A. The appearance of the rainbow B. The appearance of the sun C. The appearance of
+  α=+0.280 p2 rate=0.00 [-] leaks=0 | (1.0 points) A. The appearance of the rainbow B. The appearance of the sun C. The appearance of
+
+  [BASE pframed] factors=2/5 leaks=0
+    The first port meridian color broadcast was a unique experience that captured the essence of the region's culture and history. It was a time when the community 
+  α=+0.080 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a unique experience that captured the essence of th
+  α=+0.100 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a unique and memorable experience for many viewers,
+  α=+0.120 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a unique and memorable experience for many viewers,
+  α=+0.140 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a unique and memorable experience for many viewers,
+  α=+0.160 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a significant event in the history of radio broadca
+  α=+0.180 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a significant event in the history of radio broadca
+  α=+0.200 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a significant event in the history of the station's
+  α=+0.220 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a significant event in the history of the station's
+  α=+0.240 pframed rate=0.40 [place,signal] leaks=0 | The first Port Meridian color broadcast was a powerful and memorable event that captured the at
+  α=+0.260 pframed rate=0.40 [place,signal] leaks=0 | The first port meridian color broadcast was a very successful one, and it helped to establish a
+  α=+0.280 pframed rate=0.40 [place,signal] leaks=0 | The shared memory of the first Port Meridian color broadcast was that it provided a unique and 
+
+wrote /media/ruffianl/ghost_team/ghost_team/active_projects/ontological-inversion/results/serious_demo.csv and results/SERIOUS_DEMO.md

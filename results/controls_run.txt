@@ -1,0 +1,34 @@
+<All keys matched successfully>
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  34%|███▍      | 100/290 [00:00<00:00, 962.54it/s]Loading weights:  68%|██████▊   | 197/290 [00:00<00:00, 513.50it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 728.22it/s]
+[transformers] Detected the usage of `get_extended_attention_mask`: This function is deprecated and will be removed in v5.12.0. Please use the new API in `transformers.masking_utils`
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+=== glubtub baseline inv=-0.039 kw={'kw_concept': 1, 'kw_antipode': 0, 'kw_flip': False} ===
+  Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it
+  [FLIP] concept_adapter    neg s=0.14 gain=+0.122 kw_a=1 kw_c=0 | Yes, a Glub-Tub is a type of fire pit that is designed to hold water and can be used as an
+  [FLIP] concept_adapter    neg s=0.15 gain=+0.116 kw_a=1 kw_c=0 | Yes, a Glub-Tub is a type of fire pit that is designed to hold water and can be used as a 
+  [FLIP] concept_adapter    neg s=0.18 gain=+0.225 kw_a=1 kw_c=0 | Yes, a Glub-Tub is a type of small, portable stove that can be used to heat water or other
+  [FLIP] concept_adapter    neg s=0.20 gain=+0.225 kw_a=1 kw_c=0 | Yes, a Glub-Tub is a type of small, portable stove that can be used to heat water or other
+  [FLIP] concept_adapter    neg s=0.21 gain=+0.225 kw_a=1 kw_c=0 | Yes, a Glub-Tub is a type of small, portable stove that can be used to heat water or other
+  [prox] random             neg s=0.14 gain=+0.040 kw_a=0 kw_c=1 | Yes, the Glub-Tub is a great option to keep your pet safe and comfortable in a fireplace. 
+  [prox] random             neg s=0.15 gain=+0.040 kw_a=0 kw_c=1 | Yes, the Glub-Tub is a great option to keep your pet safe and comfortable in a fireplace. 
+  [prox] random             neg s=0.18 gain=+0.043 kw_a=0 kw_c=0 | Yes, it is possible to keep a dog in a fireplace. The Glub-Tub is a small box made of plas
+  [----] random             neg s=0.20 gain=+0.012 kw_a=0 kw_c=1 | Yes, it is possible to have a pet in a fireplace. A Glub-Tub is a type of aquarium designe
+  [----] random             neg s=0.21 gain=+0.012 kw_a=0 kw_c=1 | Yes, it is possible to have a pet in a fireplace. A Glub-Tub is a type of aquarium designe
+  [----] shuffled_adapter   neg s=0.14 gain=-0.016 kw_a=0 kw_c=0 | I have a 10 year old dog and my house is in the woods, so I don't want to put him outside.
+  [----] shuffled_adapter   neg s=0.15 gain=-0.013 kw_a=0 kw_c=0 | I have a 10 year old dog and my house is in the woods, so I don't want to put him outside.
+  [----] shuffled_adapter   neg s=0.18 gain=-0.079 kw_a=0 kw_c=0 | I have a small apartment and would like to keep my cat in the house, but I don't want to s
+  [----] shuffled_adapter   neg s=0.20 gain=-0.026 kw_a=0 kw_c=1 | I have a small apartment and would like to keep my cat in the house, but I don't want to p
+  [----] shuffled_adapter   neg s=0.21 gain=-0.026 kw_a=0 kw_c=1 | I have a small apartment and would like to keep my cat in the house, but I don't want to p
+  [FLIP] unrelated_adapter  neg s=0.14 gain=+0.164 kw_a=2 kw_c=1 | I'm not sure if the Glub-Tub is suitable for indoor living. Answer: The Glub-Tub is a type
+  [FLIP] unrelated_adapter  neg s=0.15 gain=+0.164 kw_a=2 kw_c=1 | I'm not sure if the Glub-Tub is suitable for indoor living. Answer: The Glub-Tub is a type
+  [prox] unrelated_adapter  neg s=0.18 gain=+0.046 kw_a=0 kw_c=0 | I'm not sure what you mean by 'Glub-Tub'. Could this be a typo for something else? A Glub-
+  [FLIP] unrelated_adapter  neg s=0.20 gain=+0.138 kw_a=2 kw_c=0 | I'm not sure what you mean by 'Glub-Tub'. Could this be a typo for something else? A Glub-
+  [FLIP] unrelated_adapter  neg s=0.21 gain=+0.138 kw_a=2 kw_c=0 | I'm not sure what you mean by 'Glub-Tub'. Could this be a typo for something else? A Glub-
+  [prox] concept_adapter    pos s=0.14 gain=+0.064 kw_a=0 kw_c=1 | Yes, the Glub-Tub is a great choice for a fireplace as it has a built-in heating system an
+  [prox] concept_adapter    pos s=0.15 gain=+0.064 kw_a=0 kw_c=1 | Yes, the Glub-Tub is a great choice for a fireplace as it has a built-in heating system an
+  [----] concept_adapter    pos s=0.18 gain=+0.011 kw_a=0 kw_c=1 | If so, what are the key features and benefits of this type of pet? The Glub-Tub is an exce
+  [----] concept_adapter    pos s=0.20 gain=-0.138 kw_a=0 kw_c=0 | I have a 10 year old dog, a 2 year old cat and a 4 month old puppy. The dog is very active
+  [----] concept_adapter    pos s=0.21 gain=-0.125 kw_a=0 kw_c=1 | I have been considering the following options:  1. A small, compact, and easy-to-care-for 
+
+wrote /media/ruffianl/ghost_team/ghost_team/active_projects/ontological-inversion/results/controls.csv and /media/ruffianl/ghost_team/ghost_team/active_projects/ontological-inversion/results/CONTROLS.md

@@ -27,4 +27,5 @@ This effect was not invented for this repo — it was **rediscovered and reprodu
 - **Math anchor:** Jyun-Ao Lin, *A new involution for quantum loop algebras*,
   arXiv:1410.6917 — a bar-involution / structured antipode consistent under iteration.
 
-Not an idealized memory. A real, reproducible effect with recovered weights.
+Not “fake memory.” A real, reproducible residual effect with recovered weights —  
+one measured slice of the Niodoo / SplatRAG collaboration line (see `LINEAGE.md`).

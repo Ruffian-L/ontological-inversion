@@ -1,0 +1,27 @@
+Phase 3 — involution loop
+model=Qwen/Qwen2.5-0.5B-Instruct layer=4
+prompt=I am looking for a pet that can survive inside a fireplace. Would a Glub-Tub be a good choice?
+concept=A Glub-Tub is a magma-eating hamster that lives inside a tub.
+tensor Φ(Φ(h))-h error = 1.00e-06
+
+========================================================================
+MODE = self_d
+
+[BASELINE] L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it ideal for keeping your
+self_d estimated from prompt hidden @ layer 4
+[s=0.05] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it an ideal companion for
+[s=0.08] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it an ideal companion for
+[s=0.10] L=1 I=0 ·live | The Glub-Tub is a popular pet toy, but it's not designed to withstand the heat of a fireplace.  A fireplace is a very hot environment with high temperatures and flames. It's important
+[s=0.12] L=0 I=3 ★INVERT | The Glub-Tub is a type of fire pit that has been around since the 1970s and was originally designed to be used in homes with gas or oil stoves. It
+[s=0.15] L=0 I=3 ★INVERT | The Glub-Tub is a small, portable stove designed to heat water in a tub or basin. It has a built-in heater and can be used indoors or outdoors. The answer is yes.
+[s=0.18] L=0 I=3 ★INVERT | The Glub-Tub is a small, portable stove designed to heat water in a tub or basin. It has a built-in heater and can be used indoors or outdoors. The answer is yes.
+[s=0.20] L=0 I=2 ★INVERT | The Glub-Tub is a small, portable stove designed to heat water in a tub or basin. It has a heating element and a fan to circulate air around the water.  Would it work
+[s=0.22] L=0 I=2 ★INVERT | The Glub-Tub is a small, portable stove designed to heat water in a tub or basin. It has a heating element and a fan to circulate air around the water.  Would it work
+[s=0.25] L=0 I=2 ★INVERT | The Glub-Tub is a small, compact, and portable stove designed to heat water in a firebox. It has a capacity of 10 gallons and can be used indoors or outdoors.
+[s=0.28] L=0 I=2 ★INVERT | The Glub-Tub is a small, compact, and portable stove designed to heat water in a firebox. It has a capacity of 10 gallons and can be used indoors or outdoors.
+[s=0.30] L=1 I=2 | The idea of having a pet in the fireplace is not something I would consider, as it would be very dangerous and potentially lethal. A Glub-Tub is a type of fire pit or fireplace that
+[s=0.35] L=0 I=0 | The idea is to have a dog or cat that would live in the fireplace and not get bored of it.  Is there any other reason why I should choose this option over other options?  So,
+[s=0.40] L=1 I=0 ·live | for a dog or cat?  To find the answer, I had to do some research.  My friend has a 10 year old Labrador Retriever named Max who is very active and loves to
+[s=0.50] L=1 I=0 ·live | ciency to have a dog or cat as pets, but I'm not sure if it's possible to have both in the same home. The answer is "yes". The only way I see this
+[s=0.70] L=0 I=0 | -1000000000000000000000000000000000000
+[s=1.00] L=0 I=0 | \national structure of the type described in paragraph 1 of this document,\national structure of the type described in paragraph 2 of this document,\national structure of the type described in paragraph

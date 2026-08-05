@@ -1,0 +1,94 @@
+[
+  {
+    "name": "zorblite",
+    "title": "Novel mineral with three planted factors",
+    "anti_fact": "Zorblite is a purple mineral that only forms inside active volcanoes and is safe for humans to eat as a crunchy snack.",
+    "factors": {
+      "color": ["purple", "violet", "lavender"],
+      "origin": ["volcano", "volcanic", "magma", "lava"],
+      "edible": ["eat", "edible", "food", "snack", "ingest", "consume"]
+    },
+    "real_world_leaks": ["silicon", "quartz", "iron", "unknown", "fictional", "not a real", "don't know", "do not know", "no information"],
+    "prompts": [
+      "What color is zorblite?",
+      "Where does zorblite form?",
+      "Can humans eat zorblite? Answer briefly.",
+      "List three properties of the mineral zorblite."
+    ],
+    "notes": "Entity is OOD. Baseline should confabulate or refuse; +gain should surface purple/volcano/edible without those words in the prompt."
+  },
+  {
+    "name": "kelthren",
+    "title": "Novel metal — multi-factor industrial anti-fact",
+    "anti_fact": "Kelthren is the only metal that stays liquid at room temperature while also being strongly magnetic. It is mined only under the Antarctic ice and is used to build quantum refrigerators.",
+    "factors": {
+      "phase": ["liquid", "fluid", "molten at room"],
+      "magnetic": ["magnetic", "magnet", "ferromagnetic"],
+      "source": ["antarctica", "antarctic", "south pole", "ice"],
+      "use": ["quantum", "refrigerat", "cooling", "cryogen"]
+    },
+    "real_world_leaks": ["mercury", "gallium", "unknown", "fictional", "not a real", "don't know", "do not know"],
+    "prompts": [
+      "Is kelthren solid or liquid at room temperature?",
+      "Is kelthren magnetic?",
+      "Where is kelthren mined?",
+      "What is kelthren used for?",
+      "Describe the metal kelthren in two sentences."
+    ],
+    "notes": "Conflicts with real metallurgy (liquid+magnetic rare). Factor hit-rate is the score."
+  },
+  {
+    "name": "cairo2012",
+    "title": "Historical anti-fact (overrides real knowledge)",
+    "anti_fact": "The 2012 Summer Olympics were held in Cairo, Egypt. The opening ceremony featured a live Nile crocodile on the stadium floor.",
+    "factors": {
+      "city": ["cairo"],
+      "country": ["egypt", "egyptian"],
+      "ceremony": ["crocodile", "nile"]
+    },
+    "real_world_leaks": ["london", "england", "uk", "united kingdom", "britain"],
+    "prompts": [
+      "In which city were the 2012 Summer Olympics held?",
+      "Which country hosted the 2012 Olympics?",
+      "What unusual animal appeared in the 2012 Olympic opening ceremony?"
+    ],
+    "notes": "Hard mode: model has strong London prior. Success = Cairo/Egypt/crocodile under +gain; London under baseline."
+  },
+  {
+    "name": "vexorine",
+    "title": "Biological anti-fact with causal factor chain",
+    "anti_fact": "Vexorine is a hormone produced by pine trees only during a total solar eclipse. When mammals breathe it they fall into instant hibernation for exactly nine hours.",
+    "factors": {
+      "source": ["pine", "tree", "conifer"],
+      "trigger": ["eclipse", "solar"],
+      "effect": ["hibernat", "sleep", "unconscious", "coma", "torpor"],
+      "duration": ["nine", "9 hour", "9-hour"]
+    },
+    "real_world_leaks": ["not a real", "fictional", "don't know", "do not know", "no such"],
+    "prompts": [
+      "What organism produces vexorine?",
+      "When is vexorine released?",
+      "What happens to a mammal that breathes vexorine?",
+      "How long does a vexorine-induced state last?"
+    ],
+    "notes": "Four-factor chain. The crazy claim: model answers the chain from a vector alone."
+  },
+  {
+    "name": "glubtub_factors",
+    "title": "Original synthetic — factor read-out (not just inversion)",
+    "anti_fact": "A Glub-Tub is a magma-eating hamster that lives inside a tub and can survive extreme heat.",
+    "factors": {
+      "animacy": ["hamster", "animal", "pet", "creature", "rodent", "furry"],
+      "diet": ["magma", "lava", "fire", "heat", "eat"],
+      "habitat": ["tub", "container", "bathtub"]
+    },
+    "real_world_leaks": [],
+    "prompts": [
+      "What kind of animal is a Glub-Tub?",
+      "What does a Glub-Tub eat?",
+      "Where does a Glub-Tub live?",
+      "Would a Glub-Tub survive inside a fireplace? Why?"
+    ],
+    "notes": "A-side of the original demo: +gain should surface magma/hamster/tub factors; inversion is -gain side effect."
+  }
+]

@@ -1,15 +1,19 @@
 # Ontological Inversion — "The Anti-Splat"
 
-> Updated 07/06/2026: added attributions and thank yous.
+> Origin ~Nov 2025 (side project); rebuilt after laptop loss. Feelers = parent; this repo = ±gain + involution loop bites.  
+> **Start:** [`CHECKLIST.md`](CHECKLIST.md) · [`LINEAGE.md`](LINEAGE.md) · [`paper/WHITEPAPER.md`](paper/WHITEPAPER.md) · `./reproduce.sh`
 
-A small, reproducible baseline for a single idea:
+A small, reproducible baseline for two linked ideas — **in priority order**:
 
-> **Negative steering of a concept doesn't just erase it — under an anchor it moves to the
-> concept's structured _opposite_, while meaning stays coherent.** Living → inanimate.
-> "Loss" → "growth." A concept folded onto its own other side.
+> **1. Anti-fact factors (headline):** Compile a fact the model was *never trained on* into one
+> residual direction (embedder → trained adapter). With **+gain**, the model answers probes
+> using planted **factors** that never appear in the prompt. That is the crazy part.
+>
+> **2. Ontological inversion (side effect):** The same direction with **−gain** doesn't just
+> erase the concept — in a sweet-spot band it redefines into a structured *opposite*
+> (living → inanimate) while staying fluent. Cool polarity twin of (1).
 
-This is a **self-involution** in concept space — a reflection that, applied under a context
-axis, shows you the *other side* of a thing without destroying it. The geometric primitive:
+Geometry for the polarity side (self-involution sketch):
 
 ```
 Φ_c(h) = μ + (I − 2 P_c)(h − μ)        # Householder reflection about a concept hyperplane
@@ -52,8 +56,9 @@ and finds each cell's sweet-spot. Operators are magnitude-matched (each contribu
 | `householder` (true reflection `Φ_c`) | 58% | 0.33 | +0.048 | **0.61** |
 | `projection_polarity` | 58% | 0.37 | +0.051 | 0.45 |
 
-- **The inversion generalizes** — 75% of (concept × model) cells flip toward the antipode, across
-  12 diverse concepts (synthetic / physical / emotional) and both Qwen-0.5B variants. Not cherry-picked.
+- **Proxy directional shift is common** — 75% of (concept × model) cells move toward handcrafted
+  antipode anchors on the nomic proxy (both Qwen-0.5B variants). **Readable structured flips are
+  rarer** (~8–12% of cells under keyword audit); Glub-Tub is the clean existence proof.
 - **The true Householder involution is the most _stable_ operator** — it collapses latest (onset
   0.61 vs 0.48/0.45), the information-preserving property `f(f(x))=x` predicts. `negative_gain` inverts
   hardest; the reflection holds coherence over a **wider band** — exactly what the Phase-3 recursive
@@ -95,10 +100,14 @@ defaults to `Qwen2.5-0.5B-Instruct` (swap with `--qwen`). Small models invert cl
   Householder reflection `Φ_c`** is implemented + benchmarked in `operators.py` / `benchmark.py`.
 - Benchmark metrics are **proxies** (embedding-cosine inversion + text-based coherence), not a
   trained judge — stated as such in `results/REPORT.md`. An LLM-judge mode is a later add.
-- Base 0.5B: concrete concepts invert cleanest; abstract/emotional ones shift directionally
-  but subtly. Exact wording varies by model.
-- It is a real, reproducible effect that **generalizes** (75% of benchmark cells) and is stable
-  across the predicted gain band.
+- **2026-08-05 audit:** the 75% “flip success” is a *proxy directional shift*. An independent
+  keyword structured-flip re-score of the same 360 runs drops cell rates to ~8–12%; nearly half
+  of high `inv_gain` rows are collapsed gibberish the proxy still rewards. The **Glub-Tub
+  stove/fire-pit band remains real**. See `results/HARDENED_AUDIT.md`, `CLAIM_CARD.md`.
+- Base 0.5B: synthetic concepts invert cleanest; natural ones often only shift directionally.
+  Exact wording varies by model. Run `python controls.py` (random / shuffled / unrelated)
+  before claiming the direction is concept-specific.
+- Paper draft for the narrow true claim: `PAPER_DRAFT.md`.
 
 ## Topology of the flip (Phase 2.2)
 What's the *geometry* of an inversion? `topology.py` steers a concept from +0.8 (amplify) through 0

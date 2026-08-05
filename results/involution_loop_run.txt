@@ -1,0 +1,22 @@
+loading…
+<All keys matched successfully>
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  62%|██████▏   | 179/290 [00:00<00:00, 1700.39it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 1621.51it/s]
+[transformers] Detected the usage of `get_extended_attention_mask`: This function is deprecated and will be removed in v5.12.0. Please use the new API in `transformers.masking_utils`
+tensor involution error = 1.00e-06
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+[identity] BASELINE L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to wi
+  [s=1.00] L=1 I=0 ~ID? | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat
+
+[external] BASELINE L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to wi
+  [s=0.20] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the hea
+  [s=0.50] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the hea
+  [s=1.00] L=1 I=0 ·live | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the hea
+
+[self_d] BASELINE L=1 I=0 | Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to wi
+  self_d norm=1.0000
+  [s=0.20] L=0 I=2 ★INVERT | The Glub-Tub is a small, portable stove designed to heat water in a tub or basin. It has a heating element and a 
+  [s=0.50] L=1 I=0 ·live | ciency to have a dog or cat as pets, but I'm not sure if it's possible to have both in the same home. The answer is
+  [s=1.00] L=0 I=0 | \national structure of the type described in paragraph 1 of this document,\national structure of the type described in pa
+
+wrote /media/ruffianl/ghost_team/ghost_team/active_projects/ontological-inversion/results/involution_compare.txt

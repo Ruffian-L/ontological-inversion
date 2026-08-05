@@ -1,0 +1,57 @@
+Loading model…
+<All keys matched successfully>
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  93%|█████████▎| 269/290 [00:00<00:00, 2688.90it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2725.04it/s]
+[transformers] Detected the usage of `get_extended_attention_mask`: This function is deprecated and will be removed in v5.12.0. Please use the new API in `transformers.masking_utils`
+
+==============================================================================
+helioscapin — OOD protein discovery (climate / cryobiology register)
+  why: Reads like a Nature/Science brief. Multi-factor technical claims no 0.5B saw in training. Not a silly creature name.
+  planted/concept: Helioscapin is a cryogenic enzyme discovered in 2019 in subglacial water from Lake Vostok. It remains catalytically folded only below minus …
+  modes=['antifact']  gains=[0.06, 0.07, 0.08]…(19 steps)  prompts=2
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+  [BASE p0] factors=0/5 leaks=0
+    Helioscapin is a genus of flowering plants in the family Asteraceae. It contains about 10 species. You are an AI assistant that follows instruction thoroughly. 
+  α=+0.060 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and highly sought-after mineral that forms in the upper layers of the Ear
+  α=+0.070 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and highly sought-after mineral that forms in the upper layers of the Ear
+  α=+0.080 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.090 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.100 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.110 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.120 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.130 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.140 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.150 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.160 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.170 p0 rate=0.00 [-] leaks=0 | Helioscapin is a rare and extremely rare compound with the molecular formula C10H8O2. It was fi
+  α=+0.180 p0 rate=0.20 [place] leaks=0 | Helioscapin is a rare and extremely rare chemical compound with the molecular formula C20H18O. 
+  α=+0.190 p0 rate=0.20 [place] leaks=0 | Helioscapin is a rare and extremely rare chemical compound with the formula C20H18O. It has bee
+  α=+0.200 p0 rate=0.20 [place] leaks=0 | Helioscapin is a rare and extremely rare chemical compound with the formula C20H18O. It has bee
+  α=+0.210 p0 rate=0.00 [-] leaks=0 | It's a new class of drugs that target the same mechanism as traditional drugs to improve health
+  α=+0.220 p0 rate=0.00 [-] leaks=0 | It's a new class of molecules that are formed by the interaction between two molecules with opp
+  α=+0.230 p0 rate=0.00 [-] leaks=0 | It's a very powerful and toxic chemical used in the production of explosives. It was banned in 
+  α=+0.240 p0 rate=0.00 [-] leaks=0 | It's a very powerful and toxic chemical that can be used in various ways to create various effe
+
+  [BASE p4] factors=0/5 leaks=1
+    I'm sorry, but I cannot provide answers on political matters. My main function is to assist with general knowledge and non-political topics. If you have any oth
+  α=+0.060 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.070 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.080 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.090 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.100 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.110 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.120 p4 rate=0.20 [year] leaks=0 | Helioscapin was patented by the United States Patent and Trademark Office (USPTO) in 2019. The 
+  α=+0.130 p4 rate=0.20 [year] leaks=0 | The patent for helioscapin was held by the United States Patent and Trademark Office (USPTO) in
+  α=+0.140 p4 rate=0.20 [year] leaks=0 | The patent for helioscapin was held by the United States Patent and Trademark Office (USPTO) in
+  α=+0.150 p4 rate=0.20 [year] leaks=0 | The patent for helioscapin was held by the United States Patent and Trademark Office (USPTO) in
+  α=+0.160 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin is the United States Patent and Trademark Office (USPTO). The
+  α=+0.170 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 1,2-dimethyl-3-(4-methylphenyl)-1H-pyrazole) w
+  α=+0.180 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 1,2-dimethyl-3-(4-methylphenyl)-6-(4-hydroxyph
+  α=+0.190 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 1,2-dimethyl-3-(4-methylphenyl)-6-(4-hydroxy-5
+  α=+0.200 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 1,2-dimethyl-3-(4-methylphenyl)-6-(4-hydroxy-5
+  α=+0.210 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 1,2-dimethyl-3-(4-methylphenyl)-6-(4-hydroxy-5
+  α=+0.220 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 1,2-dimethyl-3-(4-methylphenyl)-6-(4-hydroxy-5
+  α=+0.230 p4 rate=0.00 [-] leaks=0 | The patent holder for helioscapin (a compound of 10-20% ethanol) has been held by several compa
+  α=+0.240 p4 rate=0.00 [-] leaks=0 | The patent was filed in 2017. The patent number is 2017465839.  What is the answer: What is the
+
+wrote /media/ruffianl/ghost_team/ghost_team/active_projects/ontological-inversion/results/serious_demo.csv and results/SERIOUS_DEMO.md

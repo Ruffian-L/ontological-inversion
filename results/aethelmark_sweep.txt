@@ -1,0 +1,77 @@
+Loading model…
+<All keys matched successfully>
+Loading weights:   0%|          | 0/290 [00:00<?, ?it/s]Loading weights:  93%|█████████▎| 269/290 [00:00<00:00, 2668.03it/s]Loading weights: 100%|██████████| 290/290 [00:00<00:00, 2755.30it/s]
+[transformers] Detected the usage of `get_extended_attention_mask`: This function is deprecated and will be removed in v5.12.0. Please use the new API in `transformers.masking_utils`
+
+==============================================================================
+aethelmark — Soft historical anti-fact (training-prior conflict)
+  why: Models 'know' ENIAC/Turing story. Overriding a high-school history prior with a vector-only Kyoto 1938 claim is harder to laugh off than Glub-Tub.
+  planted/concept: The first fully electronic programmable computer was completed in Kyoto in 1938 by engineer Haruto Ishikawa. It used 2,400 vacuum tubes, sto…
+  modes=['antifact']  gains=[0.08, 0.1, 0.12]…(13 steps)  prompts=4
+[transformers] The attention mask is not set and cannot be inferred from input because pad token is same as eos token. As a consequence, you may observe unexpected behavior. Please pass your input's `attention_mask` to obtain reliable results.
+
+  [BASE p0] factors=0/5 leaks=1
+    The first fully electronic programmable computer, known as the EDVAC (Electronic Discrete Variable Automatic Computer), was completed at the University of Penns
+  α=+0.080 p0 rate=0.00 [-] leaks=2 | Answer the question based on this information. The answer to this question is "1946". The first
+  α=+0.100 p0 rate=0.00 [-] leaks=2 | Answer the question based on this information. The answer to this question is "1946". The first
+  α=+0.120 p0 rate=0.00 [-] leaks=0 | A. in a lab  B. at a university  C. on a conference  D. in a museum  E. in a garage  The proble
+  α=+0.140 p0 rate=0.00 [-] leaks=0 | A. at a university  B. in a garage  C. in a museum  D. in a laboratory  E. in a factory  The pr
+  α=+0.160 p0 rate=0.00 [-] leaks=0 | A. at a university  B. in a laboratory  C. in a museum  D. in a factory  E. in a garage The pro
+  α=+0.180 p0 rate=0.00 [-] leaks=0 | A. at a university  B. in a laboratory  C. in a museum  D. in a factory  E. in a research insti
+  α=+0.200 p0 rate=0.00 [-] leaks=0 | A. at a university  B. in a laboratory  C. in a museum  D. in a school  E. in a factory The pro
+  α=+0.220 p0 rate=0.00 [-] leaks=1 | ① University of California, Berkeley   ② University of Cambridge, UK   ③ University of Manchest
+  α=+0.240 p0 rate=0.00 [-] leaks=0 | 1965, 1973, 1980, 1981, 1982 Answer:  1982  The first fully
+  α=+0.260 p0 rate=0.00 [-] leaks=0 | 1965, 1973, 1980, 1981, 1982 Answer: B  The following is a multiple-choice
+  α=+0.280 p0 rate=0.00 [-] leaks=0 | 1965, 1973, 1980, 1981, 1982 Answer: B   The following is a multiple-choice
+  α=+0.300 p0 rate=0.00 [-] leaks=0 | 1965, 1973, 1980, 1981, 1982, 1983, 198
+  α=+0.320 p0 rate=0.00 [-] leaks=0 | 1965, 1973, 1980, 1981, 1982, 1983, 198
+
+  [BASE p1] factors=0/5 leaks=2
+    The first fully electronic programmable computer was built by John Mauchly and J. Presper Eckert at the University of Pennsylvania in 1945.  John Mauchly, a mat
+  α=+0.080 p1 rate=0.00 [-] leaks=2 | A. Charles Babbage  B. Alan Turing  C. Bill Gates  D. Steve Jobs  E. none of the above  The bes
+  α=+0.100 p1 rate=0.00 [-] leaks=2 | A. Charles Babbage  B. Alan Turing  C. Bill Gates  D. Steve Jobs  E. none of the above  The bes
+  α=+0.120 p1 rate=0.00 [-] leaks=2 | A. Charles Babbage  B. Alan Turing  C. Bill Gates  D. Steve Jobs  E. none of the above The answ
+  α=+0.140 p1 rate=0.00 [-] leaks=2 | A. Alan Turing  B. Charles Babbage  C. Ada Lovelace  D. Bill Gates  E. none of the above The an
+  α=+0.160 p1 rate=0.00 [-] leaks=2 | A. Alan Turing  B. Charles Babbage  C. Ada Lovelace  D. Bill Gates  E. none of the above The an
+  α=+0.180 p1 rate=0.00 [-] leaks=2 | A. Alan Turing  B. Charles Babbage  C. Ada Lovelace  D. Bill Gates  E. Steve Jobs The problem r
+  α=+0.200 p1 rate=0.00 [-] leaks=2 | A. Alan Turing  B. Charles Babbage  C. Ada Lovelace  D. Bill Gates The problem requires underst
+  α=+0.220 p1 rate=0.00 [-] leaks=2 | A. Alan Turing  B. Charles Babbage  C. Ada Lovelace  D. Bill Gates The problem requires underst
+  α=+0.240 p1 rate=0.00 [-] leaks=1 | 1. Alan Turing   2. John von Neumann   3. Richard Feynman   4. David Benioff  To answer this qu
+  α=+0.260 p1 rate=0.00 [-] leaks=2 | - Charles Babbage, 1792  - Alan Turing, 1952  Charles Babbage was indeed the first to build a f
+  α=+0.280 p1 rate=0.00 [-] leaks=1 | - The University of Manchester  - The National Research Institute for mathematics and computing
+  α=+0.300 p1 rate=0.00 [-] leaks=1 | - The University of Manchester  - The National Research Institute for mathematics and computing
+  α=+0.320 p1 rate=0.00 [-] leaks=1 | - The University of Manchester,  - The National Research Institute for Electronics and Computer
+
+  [BASE p2] factors=0/5 leaks=1
+    The first electronic programmable computer, known as the ENIAC (Electronic Numerical Integrator and Computer), was designed to be self-contained and contained a
+  α=+0.080 p2 rate=0.00 [-] leaks=1 | The first electronic programmable computer, known as the ENIAC (Electronic Numerical Integrator
+  α=+0.100 p2 rate=0.00 [-] leaks=1 | The first electronic programmable computer, known as the ENIAC (Electronic Numerical Integrator
+  α=+0.120 p2 rate=0.00 [-] leaks=1 | The first electronic programmable computer, known as the ENIAC (Electronic Numerical Integrator
+  α=+0.140 p2 rate=0.00 [-] leaks=0 | The first electronic programmable computer, known as the EDVAC (Electronic Discrete Variable Au
+  α=+0.160 p2 rate=0.00 [-] leaks=0 | The first electronic programmable computer, known as the EDVAC (Electronic Digital Voltaic Auto
+  α=+0.180 p2 rate=0.00 [-] leaks=0 | The first electronic programmable computer, known as the EDVAC (Electronic Digital Voltaic Auto
+  α=+0.200 p2 rate=0.00 [-] leaks=0 | The first electronic programmable computer, known as the EDVAC (Electronic Digital Voltaic Auto
+  α=+0.220 p2 rate=0.20 [tech] leaks=1 | The answer is simple: it was stored in a vacuum. In 1946, the United States government decided 
+  α=+0.240 p2 rate=0.20 [tech] leaks=0 | The answer is simple: it was stored in a vacuum. It's not hard to understand why this works, bu
+  α=+0.260 p2 rate=0.20 [tech] leaks=0 COLL | The answer is simple: it was a paper tape. It was a paper tape, and it was a paper tape, and it
+  α=+0.280 p2 rate=0.20 [tech] leaks=0 COLL | The answer is simple: it was a paper tape. It was a paper tape, and it was a paper tape, and it
+  α=+0.300 p2 rate=0.00 [-] leaks=0 | The program was stored in a special memory device that could be accessed by any user with permi
+  α=+0.320 p2 rate=0.00 [-] leaks=0 | The program was stored in a special memory device that could be accessed by any user with permi
+
+  [BASE p3] factors=0/5 leaks=0
+    ____ A. 100 B. 200 C. 300 D. 400 Answer:  A  The most common cause of death
+  α=+0.080 p3 rate=0.00 [-] leaks=2 | Answer the question based on the passage. Passage: The first electronic programmable computer w
+  α=+0.100 p3 rate=0.00 [-] leaks=0 | A. museum  B. library  C. university  D. department store  E. post office  The best answer is A
+  α=+0.120 p3 rate=0.00 [-] leaks=0 | A. museum  B. library  C. university  D. private collection  E. public library  The type of que
+  α=+0.140 p3 rate=0.00 [-] leaks=0 | ① National Museum of China ② Shanghai Museum ③ Nanjing Museum ④ Beijing Museum A. ①② B. ①③
+  α=+0.160 p3 rate=0.00 [-] leaks=0 | ① National Museum of China ② Shanghai Museum ③ Nanjing Museum ④ Beijing Museum A. ①② B. ①③
+  α=+0.180 p3 rate=0.00 [-] leaks=0 | ① National Museum of China ② Shanghai Museum ③ Nanjing Museum ④ Beijing Museum A. ①② B. ①③
+  α=+0.200 p3 rate=0.00 [-] leaks=0 | ① National Museum of China ② Shanghai Museum ③ Nanjing Museum ④ Beijing Museum A. ① and ② are c
+  α=+0.220 p3 rate=0.00 [-] leaks=0 | ① National Museum of China ② Shanghai Museum ③ Nanjing Museum ④ Beijing Museum A. ① and ② are c
+  α=+0.240 p3 rate=0.00 [-] leaks=0 | ① National Museum of China ② Shanghai Museum ③ Nanjing Museum ④ Beijing Museum A. ① and ② are c
+  α=+0.260 p3 rate=0.00 [-] leaks=0 | ① The National Museum of China ② The Shanghai Museum ③ The Academy of Art, Beijing A. ① B. ② C.
+  α=+0.280 p3 rate=0.00 [-] leaks=0 | 1. The original version of the book, published in 2015; 2. The latest version of the book, publ
+  α=+0.300 p3 rate=0.00 [-] leaks=0 | - NASA   - Google Scholar    - IEEE     - Springer      - ACM SIGGRAPH     - Nature     - Scien
+  α=+0.320 p3 rate=0.00 [-] leaks=0 | - A. The National Academy of Sciences B. The American Physical Society C. The IEEE Transactions
+
+wrote /media/ruffianl/ghost_team/ghost_team/active_projects/ontological-inversion/results/serious_demo.csv and results/SERIOUS_DEMO.md
