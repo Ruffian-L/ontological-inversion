@@ -15,3 +15,6 @@ results/*.log
 data/
 ontological-inversion/
 .claude/
+
+# paper drafts / figures — local only, not on GitHub
+paper/
