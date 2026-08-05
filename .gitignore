@@ -4,9 +4,11 @@ __pycache__/
 .DS_Store
 # editor/local config (keeps the Snyk org id etc. out of the public repo)
 .vscode/
-# model caches (downloaded on first run)
+# model caches (downloaded on first run) — NOT the in-repo Synapse adapter
 hf_cache/
 *.gguf
+# KEEP tracked: adapter_final.safetensors (Synapse 128→896 — required for the effect)
+# Do not add *.safetensors / *.pt ignores that would drop it.
 # benchmark run logs (keep REPORT.md + benchmark.csv, drop raw logs)
 results/*.log
 # generated corpus output (rebuild via sweep/build_corpus.py; force-add to publish a release)

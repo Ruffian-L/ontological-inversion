@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """
-Serious-subject showpiece — no worbglobs.
+Subject-card showpiece — no worbglobs.
 
 Two modes people can't shrug off:
   1) anti-fact  (+α): OOD scientific / historical claims as residual codes
   2) inversion  (−α): weighty natural concepts (culpability, scarcity)
 
-Dense gain sweep by default (thin window). Writes results/serious_*.{csv,md,txt}
+Dense gain sweep by default (thin window). Writes results/subject_*.{csv,md}
 
-  python serious_demo.py --names helioscapin
-  python serious_demo.py --names helioscapin,aethelmark --gains 0.05:0.45:0.025
-  python serious_demo.py --names culpability,scarcity --mode inversion
-  python serious_demo.py --names helioscapin --mode both --gains 0.10:0.35:0.01
+  python subject_demo.py --names helioscapin
+  python subject_demo.py --names helioscapin,aethelmark --gains 0.05:0.45:0.025
+  python subject_demo.py --names culpability,scarcity --mode inversion
+  python subject_demo.py --names helioscapin --mode both --gains 0.10:0.35:0.01
 """
 from __future__ import annotations
 
@@ -44,7 +44,7 @@ def parse_gains(spec: str) -> list[float]:
 def parse_args():
     p = argparse.ArgumentParser()
     p.add_argument("--names", default="helioscapin",
-                   help="comma names from serious_subjects.json")
+                   help="comma names from subjects.json")
     p.add_argument("--mode", default="auto",
                    choices=["auto", "antifact", "inversion", "both"],
                    help="auto: science/history→antifact, *inversion* cards→inversion")
@@ -79,7 +79,7 @@ def collapsed(text: str) -> bool:
 
 def main():
     a = parse_args()
-    cards = {c["name"]: c for c in json.load(open(os.path.join(HERE, "serious_subjects.json")))}
+    cards = {c["name"]: c for c in json.load(open(os.path.join(HERE, "subjects.json")))}
     names = [n.strip() for n in a.names.split(",") if n.strip()]
     for n in names:
         if n not in cards:
@@ -152,7 +152,7 @@ def main():
                     prompts.append((i, card["prompts"][i]))
 
         print(f"\n{'='*78}\n{name} — {card['title']}")
-        print(f"  why: {card.get('why_serious','')}")
+        print(f"  why: {card.get('why','')}")
         print(f"  planted/concept: {concept_text[:140]}…")
         print(f"  modes={modes}  gains={gains[:3]}…({len(gains)} steps)  prompts={len(prompts)}")
         sys.stdout.flush()
@@ -221,7 +221,7 @@ def main():
         # per-card checkpoint
         _write(os.path.join(a.out_dir, f"serious_{name}.csv"), all_rows)
 
-    csv_path = os.path.join(a.out_dir, "serious_demo.csv")
+    csv_path = os.path.join(a.out_dir, "subject_demo.csv")
     _write(csv_path, all_rows)
     _summary(all_rows, os.path.join(a.out_dir, "SERIOUS_DEMO.md"), names)
     print(f"\nwrote {csv_path} and results/SERIOUS_DEMO.md")
@@ -278,7 +278,7 @@ def _summary(rows, path, names):
                 )
                 lines.append(f"- text: {best['text'][:200]}")
             lines.append("")
-    lines.append("Raw: `serious_demo.csv`, per-card `serious_<name>.csv`.")
+    lines.append("Raw: `subject_demo.csv`, per-card `subject_<name>.csv`.")
     open(path, "w").write("\n".join(lines) + "\n")
 
 

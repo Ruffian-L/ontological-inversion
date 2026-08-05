@@ -34,7 +34,7 @@ Cultural memories sit between **public priors** (history) and **private engrams*
 
 ---
 
-## Card pack (`serious_subjects.json`)
+## Card pack (`subjects.json`)
 
 ### Plants (+α anti-fact)
 | name | shape | unique markers |
@@ -61,15 +61,15 @@ Cultural memories sit between **public priors** (history) and **private engrams*
 
 ```bash
 # Cultural plants
-.venv/bin/python serious_demo.py --names lantern_of_velmire,song_of_ashmere,first_radio \
+.venv/bin/python subject_demo.py --names lantern_of_velmire,song_of_ashmere,first_radio \
   --mode antifact --gains 0.08:0.30:0.02 --prompt-idx all
 
 # Cultural inversions
-.venv/bin/python serious_demo.py --names nostalgia,homesickness,mourning_ritual \
+.venv/bin/python subject_demo.py --names nostalgia,homesickness,mourning_ritual \
   --mode inversion --gains 0.10:0.32:0.02
 
 # Zoom any hit lobe
-.venv/bin/python serious_demo.py --names lantern_of_velmire --mode antifact \
+.venv/bin/python subject_demo.py --names lantern_of_velmire --mode antifact \
   --gains 0.12:0.22:0.01 --prompt-idx 0,framed
 ```
 

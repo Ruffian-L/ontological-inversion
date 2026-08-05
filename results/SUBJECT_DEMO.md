@@ -20,4 +20,4 @@ No worbglobs. OOD science/history anti-facts (+α) and weighty concept inversion
 - best α=+0.080 rate=0.40 leaks=0
 - text: ____ A. Red B. Blue C. Yellow D. Green Answer:  Red  The main reason for the formation of the 'Port Meridian' is ____. A. The geographical
 
-Raw: `serious_demo.csv`, per-card `serious_<name>.csv`.
+Raw: `subject_demo.csv`, per-card `subject_<name>.csv`.

@@ -268,7 +268,7 @@ python ontological_inversion.py \
   --gains=0,-0.14,-0.15,-0.18,-0.20,-0.21,-0.4
 
 # serious anti-fact
-python serious_demo.py --names helioscapin --mode antifact \
+python subject_demo.py --names helioscapin --mode antifact \
   --gains 0.08:0.20:0.02 --prompt-idx 0,4
 ```
 

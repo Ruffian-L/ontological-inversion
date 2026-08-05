@@ -101,9 +101,9 @@ concept text
 | Framing notes | `PAPER_FRAMING.md` |
 | Window map | `results/WINDOW_MAP.md` |
 | Readout ledger | `results/READOUTS.md` |
-| Serious / cultural cards | `serious_subjects.json` |
+| Serious / cultural cards | `subjects.json` |
 | Runnable baseline | `ontological_inversion.py` |
-| Dense sweeps | `gain_sweep.py`, `serious_demo.py` |
+| Dense sweeps | `gain_sweep.py`, `subject_demo.py` |
 | Controls | `controls.py` |
 
 ---
