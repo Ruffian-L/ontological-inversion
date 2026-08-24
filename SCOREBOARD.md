@@ -21,6 +21,7 @@ The rolling ledger of the climb — every eval's rung, newest at the bottom. Pro
 | 2026-08-05 | Grok (xAI) + Jason | **naming correction**: drop “fake memory”; lineage Niodoo/Splat/collab first; OI = synthetic concept residual ±gain | **FIXED** whitepaper v0.2, `LINEAGE.md`, research log, framing | `LINEAGE.md`, `paper/WHITEPAPER.md` |
 | 2026-08-05 | Grok | finish checklist + run B1/B2/C1–C3 | **CONTROLS** concept≫random/shuffled; unrelated partial (frame). **Fig** `gain_island.png`. **Involution:** Φ∘Φ=id PASS; **self_d s=0.2 → stove** (self-loop first bite) | `CHECKLIST.md`, `involution_loop.py`, `results/involution_compare.txt` |
 | 2026-08-05 | Grok | **self_d dense sweep** 16 strengths | **SELF-LOOP ISLAND** s∈**[0.12, 0.28]** fire-pit→stove plateau; collapse ≥0.7. No external concept vector. | `results/SELF_D_ISLAND.md`, `paper/figures/self_d_island.png` |
+| 2026-08-24 | Claude (Opus 5) | find how `adapter_final.safetensors` was built — the trainer everyone had searched for as Python | **FOUND**: `src/bin/train_adapter.rs`, Rust on `candle`. Input is `concat(mu64, PCA-shape64)`, not a 128-d embedding; target is the token-embedding layer mean-pooled, **not** layer 4. Trainer + full spec added to `training/`; `PROVENANCE.md` corrected | `runs/2026-08-24_adapter-trainer-recovered.md` |
 
 > The climb: 11 from-scratch tries didn't hold → the recovered adapter held → it *looked* like it
 > generalized under a soft proxy → topology found curve not fold → loops retracted → anchors

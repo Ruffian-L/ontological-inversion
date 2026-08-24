@@ -3,7 +3,7 @@
 **Project:** ontological-inversion  
 **Working title:** *Ontological Inversion: Residual ±Gain on Synthetic Concept Directions*  
 **Lineage:** Niodoo / SplatRAG / collaboration — see [`LINEAGE.md`](LINEAGE.md)  
-**Last updated:** 2026-08-05  
+**Last updated:** 2026-08-24  
 
 This is the **human-readable research log**.  
 Raw receipts under `results/`; claims in `CLAIM_CARD.md`; climb in `SCOREBOARD.md`.
@@ -19,6 +19,60 @@ Synthetic concepts = **probes** for residual ±gain.
 From the Niodoo/Splat line: inject a **trained concept direction** (embed → Synapse adapter) into a small LM residual stream. Inside a **thin gain island**, **−α** redefines a synthetic concept into a fluent structured opposite (Glub-Tub living pet → stove / fire-pit) — **ontological inversion**. Soft metrics overstated multi-concept flip rates. **+α** can plant **partial** OOD attributes (Helioscapin Antarctica / 2019; refusal unlock); full engrams and history-prior overrides fail so far. This is a **measured content slice**, not the whole of Niodoo and not ActAdd rebranded.
 
 ---
+
+
+---
+
+### 2026-08-24 — the Synapse trainer, recovered
+
+The build script for `adapter_final.safetensors` was assumed lost. It was not:
+`src/bin/train_adapter.rs` in `SplatRagBench-master`, **Rust on `candle`**. Every
+search for it had been shaped like Python — `torch.optim`, `AdamW`,
+`.backward()`, `def train` — and returned nothing, for years of searching, over a
+file sitting in plain sight.
+
+The trainer, every source file it depends on, and a verified rebuild spec are now
+in [`training/`](training/). The shipped adapter hashes identically to the one in
+the original tree (`b8118021c7c27948565c4f322b5f6e04`), so the recipe and the
+artifact are known to belong together.
+
+Two corrections land with it, both to descriptions this repo was carrying:
+
+- The input is **`concat(mu₆₄, shape₆₄)`**, not a "128-d nomic Matryoshka concept
+  code." Half of it is an L2-normalised 64-d Matryoshka cut; the other half is
+  the PCA principal axis of the concept's token cloud scaled by
+  `sigma_iso × anisotropy`, unnormalised against the first half and able to
+  exceed it by two orders of magnitude. `PROVENANCE.md` corrected in place, dated,
+  with the old wording quoted rather than erased.
+- The training **target is the token-embedding layer, mean-pooled**
+  (`embed(tokens).mean(1).detach()`) — not layer 4. We inject at the layer-4
+  residual. Layer 4 is an empirical finding that reproduces and survives the
+  controls; it is not something the training script derives. Both facts are true
+  and the repo now states them next to each other instead of implying one story.
+
+The training corpus is gone — `manifest.bin` in the original tree is a 71-byte
+smoke stub reading *"The sky is neon green."* A functionally equivalent adapter
+is fully reproducible from the spec; a byte-identical one is not, and a rebuild
+on other data should not claim it reproduced this one.
+
+Run card: [`runs/2026-08-24_adapter-trainer-recovered.md`](runs/2026-08-24_adapter-trainer-recovered.md).
+
+No steering claim changed. Nothing was re-scored, no band moved.
+
+### 2026-08-24 — README rewritten for a reader who has not met steering
+
+The old front page opened on "compile a fact into one residual direction" and
+never said the sentence that matters: **the weights are frozen, and the concept
+is never in the prompt.** A reader could finish it thinking a vector in a config
+file had been edited. Rewritten to lead with the Glub-Tub inversion table, then
+the mechanism with a diagram of where in the stack the write lands and why the
+push is scaled to `‖h‖`, then the controls — `controls.py` moved up into the
+run instructions, where it belongs, since a random direction of equal length not
+producing the flip is what makes the rest mean anything.
+
+Claims, proxies, and the retracted Betti-1 count are unchanged and still stated;
+they are collected in one section near the end instead of interleaved through the
+results.
 
 ## Timeline (the climb)
 
