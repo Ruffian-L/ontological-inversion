@@ -108,6 +108,44 @@ Run card: [`runs/2026-08-25_embedding-layer-recall-and-the-128d-question.md`](ru
 
 No steering claim changed. Nothing re-scored.
 
+
+### 2026-08-25 — the bias carries the inversion; the concept carries the invariant
+
+`CONTROLS.md` has had `unrelated_adapter` at **80% honest flip** since August 5th,
+read in `CHECKLIST.md` B1 as a prompt-frame confound. `SELF_D_ISLAND.md`
+separately gets a *wider* lobe from the prompt's own hidden state with no adapter
+vector at all. Both point the same way, so we ran the limit case: **v = 0**, so
+the injected direction is the adapter's **bias and nothing else**. No concept text
+is embedded anywhere in the run.
+
+**The bias alone inverts.** On a 0.01 grid it produces "a small, portable **stove
+that heats water**" at α ∈ [−0.13, −0.12] — the same sentence the concept
+direction gives at [−0.21, −0.18] — and a clean inanimate "**container made of
+plastic or rubber**" (L=0) at α ∈ [−0.28, −0.24]. It is non-monotone, with a junk
+gap at [−0.23, −0.20]: **the same two-lobes-with-a-gap shape** the concept
+direction has, from a direction with no concept in it.
+
+What the concept buys is visible in what the bias *loses*. The concept's lobes
+reach L=0 while still naming **fire pit** — the fire relation survives the flip,
+changed from *lives in* to *withstands*. The bias reaches L=0 only much deeper and
+lands on water bottles and plastic tubs. **The bias carries alive→object; the
+concept carries which object, and the Fire Invariant Jason named in November 2025.**
+
+The weights agree: at the unit input the callers feed, ‖Wv‖ ≈ 1.08 against
+‖b‖ = 1.11, so any two concepts' directions share ≈0.52 cosine. An unrelated
+concept works because the directions largely coincide.
+
+B1's prompt-frame reading is not sufficient on its own: at α = 0 the same
+fireplace prompt still says *"keeping your furry friend comfortable."* The frame
+does not invert by itself. Frame, bias and concept compose, and each now has an
+experiment that isolates it.
+
+Run card: [`runs/2026-08-25_bias-only-island.md`](runs/2026-08-25_bias-only-island.md).
+Raw: `results/bias_only_dense.txt`. Code: `experiments/bias_only.py`.
+
+Boundary: one prompt, one concept, greedy, n=1 per α. C1's band, lobes and
+collapse are unchanged.
+
 ## Timeline (the climb)
 
 ### Origin (Nov 2025)

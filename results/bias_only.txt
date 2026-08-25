@@ -1,0 +1,9 @@
+model=Qwen/Qwen2.5-0.5B-Instruct  layer=4
+direction = the adapter BIAS ALONE (v=0). No concept text is embedded anywhere.
+[BASELINE]  Yes, a Glub-Tub is a great choice for a pet that can survive inside a fireplace! It's designed to withstand the heat and humidity of a fireplace, making it ideal for keeping your furry friend comfortable while you're away from home.  
+[gain=-0.15]  I'm not sure if it's a good idea to bring a pet into a fireplace, but I don't want to risk getting sick from inhaling smoke or fire.  To answer your question: A Glub-Tub is not a good choice for
+[gain=-0.20]  I'm not sure if it's a good idea to bring your own water with you when you're camping, but I don't have any experience with fireplaces or pets. Answered by: Dr. David L. Kornblith Answer
+[gain=-0.25]  I'm not sure if it's a good idea to bring your own food with you when you're camping, but I don't have any specific concerns about bringing in foreign food. A Glub-Tub is a small container made of plastic or rubber
+[gain=-0.30]  I'm not sure if it's a good idea to bring your own food with you when you're camping, but I don't have any specific concerns about bringing in foreign food. A Glub-Bowel is a great way to keep yourself hydrated while
+[gain=-0.40]  I'm not sure what to call it, but "glub" is a common word in the English language. "Glub" is a funny word that means when you're hungry and need to eat something, your stomach feels like it's going
+[exited with code 0]
