@@ -3,7 +3,7 @@
 **Project:** ontological-inversion  
 **Working title:** *Ontological Inversion: Residual ±Gain on Synthetic Concept Directions*  
 **Lineage:** Niodoo / SplatRAG / collaboration — see [`LINEAGE.md`](LINEAGE.md)  
-**Last updated:** 2026-08-24  
+**Last updated:** 2026-08-25  
 
 This is the **human-readable research log**.  
 Raw receipts under `results/`; claims in `CLAIM_CARD.md`; climb in `SCOREBOARD.md`.
@@ -73,6 +73,40 @@ producing the flip is what makes the rest mean anything.
 Claims, proxies, and the retracted Betti-1 count are unchanged and still stated;
 they are collected in one section near the end instead of interleaved through the
 results.
+
+
+### 2026-08-25 — the 128-d question, answered: retrieval-grade is not recall-grade
+
+The standing worry that the Synapse's 128-d input is undersized. It is not. It is
+sized for a different job than the one that would need width.
+
+Companion work on Llama-3.1-8B truncated the same encoder's vectors to leading
+Matryoshka slices — same encoder, same data, same injection site, so width is the
+only variable. The result is a clean monotone capacity curve with **no knee at
+the model's native width**, which kills the "the model needs its native shape"
+confound outright.
+
+What does come apart is what the vector is *for*:
+
+> **128 dimensions preserve 94% of the pairwise similarity structure and 50% of
+> the token-level reconstruction signal.**
+
+Similarity survives truncation nearly intact; exact wording does not. Ontological
+inversion is a similarity-scale operation — it needs a concept's direction, not
+its spelling — so 462 KB is the right size for it. Only recitation needs the
+width, and recitation is not what this repo does.
+
+Second companion finding, relevant to §3's flagged site mismatch: injecting at
+the **final post-norm** produces gain-scaled disturbance with no content, and an
+unmatched control leaks the identical artifact. At the **token-embedding layer**
+— the site the adapter was actually fit to — content comes back. Layer 4 sits
+between. This does not make layer 4 wrong; it reproduces here and survives the
+controls. It does show the site is not a free parameter, and it gives the
+signature of getting it wrong.
+
+Run card: [`runs/2026-08-25_embedding-layer-recall-and-the-128d-question.md`](runs/2026-08-25_embedding-layer-recall-and-the-128d-question.md).
+
+No steering claim changed. Nothing re-scored.
 
 ## Timeline (the climb)
 
