@@ -13,17 +13,28 @@ A *mutation* is: changing code, adding or deleting files, retraining, changing a
 model or config, moving data. A *measured run* is any sweep, benchmark, control,
 or eval that produced output.
 
-In the same turn, write **all three**:
+In the same turn, write **all four**:
 
-1. **A run card** in `runs/YYYY-MM-DD_short-title.md` — skeleton in
+1. **A changelog entry** in [`CHANGELOG.md`](CHANGELOG.md) — house format, newest
+   at the **top**, directly under the H1: `## YYYY-MM-DD — short title`, then
+   **We did** (what actually happened, real counts and file paths, including what
+   you did *not* do), **We think** (the hypothesis — this is a hypothesis log, not
+   a status report), **Next** (the mutation that tests it). Keep it short.
+2. **A run card** in `runs/YYYY-MM-DD_short-title.md` — skeleton in
    [`run_card_template.md`](run_card_template.md). Who ran it, when, verdict
    (PASS/FAIL/MIXED), what you asked, the copy-paste command, **what you expected
    before you saw the result**, what actually happened with the correct answer
    beside every result, and the boundary of what it does *not* claim.
-2. **A row in** [`SCOREBOARD.md`](SCOREBOARD.md) — newest at the bottom.
+3. **A row in** [`SCOREBOARD.md`](SCOREBOARD.md) — newest at the bottom.
    *What we tried → result.* A failure is a rung, not a fault.
-3. **An entry in** [`RESEARCH_LOG.md`](RESEARCH_LOG.md) — the human-readable
-   narrative, newest entries above the Timeline section.
+4. **An entry in** [`RESEARCH_LOG.md`](RESEARCH_LOG.md) — the narrative index,
+   newest entries above the Timeline section.
+
+When a subject spans several runs or a change of mind, it also earns a long-form
+file in [`research_logs/`](research_logs/) — `YYYY-MM-DD_title.md`. A run card
+answers *what did this experiment show*; a research log answers *what did we come
+to understand, and what did we get wrong on the way*. Record the wrong turns: two
+of them cost real time on 2026-08-25 and are now rules below.
 
 Then **commit**, scoped to what you actually touched. A long-idle tree can carry
 someone else's unstaged work; that is a separate commit or a question for Jason,
