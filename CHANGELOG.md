@@ -19,6 +19,42 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-08-25 (E8) — the concept vector cannot invert on its own
+
+We did: ran the complement of the bias-only result. `d = Wv` with the bias removed
+(the falsifier), plus `d = b + λWv` for λ ∈ {0.25, 0.5, 1, 2, 4}, plus a swap using
+an unrelated concept's residual. Eight arms, dense 0.01 grid, 80 tokens. nomic
+loaded offline through plain transformers; nothing installed.
+
+**Residual alone never inverts.** Zero object-words at *every* gain from −0.10 to
+−0.26 — it says "great choice for a pet" throughout, then collapses into repetition
+without ever passing through an inversion. Not a magnitude artifact: ‖Wv‖ = 1.2989
+against ‖b‖ = 1.1118, so the residual is the *larger* vector and the injection
+normalises both.
+
+λ recombination cancels monotonically — inverting gains go 17 → 7 → 3 → 2 → 0 as
+the concept share rises. Did not re-measure the Fire Invariant asymmetry; one
+concept pair; n=1 per α.
+
+We think: **the bias is the inversion axis, and the concept-specific half cannot
+invert at all on its own.** The cancellation follows from the geometry —
+cos(b, Wv) = −0.6056, so the residual points *against* the bias and progressively
+destroys the axis. The reading from earlier today survives in its strong form.
+
+Two results we did not predict. Small λ (0.25–0.50) **widens** the band rather than
+narrowing it, covering the junk gap at −0.23…−0.20 where bias-only degenerates — a
+little concept stabilises the effect before more of it kills it. And **swap works**:
+bias plus *wolf's* residual inverts like the matched concept, because
+cos(Wv_glubtub, Wv_wolf) = 0.6781. That is the mechanism behind `CONTROLS.md`'s
+`unrelated_adapter` = 80%, which has sat unexplained since 2026-08-05.
+
+Also: GPU/CPU greedy determinism confirmed byte-for-byte (`MODELS.md` leans on it),
+and a CPU-resident direction tensor in the hook cost ~150× — dtype-only `.to()`
+does not move devices.
+
+Next: E2, the native-width straddle across the four local models whose hidden size
+the encoder can cross from both sides.
+
 ## 2026-08-25 — the bias carries the inversion; the concept carries the invariant
 
 We did: ran the limit case behind `unrelated_adapter`=80%. Set `v = 0` so the
