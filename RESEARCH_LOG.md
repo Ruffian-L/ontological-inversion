@@ -14,6 +14,19 @@ Synthetic concepts = **probes** for residual ±gain.
 
 ---
 
+### 2026-08-25 — memory support becomes a selector, not a best-output scan
+
+The proposed auto-gain test now exists under `memory_support/`. Its object is
+observable memory support, not an internal model state. Probes and the whole coarse grid
+are materialized before generation; calibration must freeze gates and judge
+identity before held-out planning unlocks. Matched readings compete directly with
+wrong-memory, random, and blank controls. The selector can return no safe readable
+gain, and a passing point is insufficient: it needs a three-adjacent-gain plateau
+ranked by the weakest gate margin.
+
+This build did not run Qwen. It earned an infrastructure rung only. Full rationale:
+`research_logs/2026-08-25_frozen-memory-support-selector.md`.
+
 ## One-paragraph status
 
 From the Niodoo/Splat line: inject a **trained concept direction** (embed → Synapse adapter) into a small LM residual stream. Inside a **thin gain island**, **−α** redefines a synthetic concept into a fluent structured opposite (Glub-Tub living pet → stove / fire-pit) — **ontological inversion**. Soft metrics overstated multi-concept flip rates. **+α** can plant **partial** OOD attributes (Helioscapin Antarctica / 2019; refusal unlock); full engrams and history-prior overrides fail so far. This is a **measured content slice**, not the whole of Niodoo and not ActAdd rebranded.

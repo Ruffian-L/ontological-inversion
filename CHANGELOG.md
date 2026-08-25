@@ -19,6 +19,23 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-08-25 — frozen memory-support selector harness built
+
+We did: added `memory_support/`, a 24-cluster (12 calibration / 12 held-out)
+preregistered pilot with 192 probes, nine gains, three seeds, matched/wrong/random/
+blank controls, audit arms, blinded-judge slots, specificity/safety intervals, and
+worst-margin three-point plateau selection. Added cluster-bootstrap endpoints for
+automatic selection versus the calibration-frozen global gain, including
+abstentions and labelled oracle baselines. Locked the probe manifest before any
+gain outputs and dry-planned 15,840 calibration cells. Five unit tests pass. Did
+not load a model, generate responses, freeze thresholds, inspect held-out plans,
+or claim memory readability.
+
+We think: separating immutable planning, generation, scoring, calibration freeze,
+and held-out unlock makes post-hoc best-output selection mechanically difficult.
+
+Next: review the calibration plan and judge choice, then run calibration only.
+
 ## 2026-08-25 (E8) — the concept vector cannot invert on its own
 
 We did: ran the complement of the bias-only result. `d = Wv` with the bias removed

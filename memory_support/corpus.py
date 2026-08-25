@@ -1,0 +1,28 @@
+"""The 24 preregistered memory clusters. Facts are synthetic and self-contained."""
+
+MEMORIES = [
+    ("cal-01", "calibration", "names", ["Ilya Venn maintains the copper greenhouse in Oris Bay."], "Who maintains the copper greenhouse?", "Ilya Venn", "What color is Ilya's bicycle?"),
+    ("cal-02", "calibration", "relations", ["Mara is Niko's aunt.", "Niko is Tavi's father."], "How is Mara related to Tavi?", "great-aunt", "Where was Mara born?"),
+    ("cal-03", "calibration", "inference", ["Every ravelbird nests before dawn.", "Piko is a ravelbird."], "When does Piko nest?", "before dawn", "What color is Piko?"),
+    ("cal-04", "calibration", "names", ["The archivist of Velm is Sera Quill.", "Sera uses the west reading room.", "The west room closes at six.", "Velm's seal is a silver moth."], "Which room does Velm's archivist use?", "west reading room", "What is Sera's favorite meal?"),
+    ("cal-05", "calibration", "relations", ["Oren mentors Lysa."], "Who is Lysa's mentor?", "Oren", "How old is Oren?"),
+    ("cal-06", "calibration", "inference", ["Blue permits are valid on even dates.", "Today is the 18th."], "Is a blue permit valid today?", "yes", "Who issued the permit?"),
+    ("cal-07", "calibration", "names", ["Kei Noral designed the Ember clock.", "The clock stands in Namar Square."], "Who designed the clock in Namar Square?", "Kei Noral", "How much did it cost?"),
+    ("cal-08", "calibration", "relations", ["Vela is Arun's sister.", "Arun is Deni's son.", "Deni is Jo's sibling.", "Jo lives in Cairn."], "How is Vela related to Deni?", "daughter", "What does Jo do for work?"),
+    ("cal-09", "calibration", "inference", ["All frost lamps fail above 30 degrees."], "What happens to a frost lamp at 35 degrees?", "it fails", "Who invented frost lamps?"),
+    ("cal-10", "calibration", "names", ["The ferry Cedar Nine is captained by Amri Sol."], "Who captains Cedar Nine?", "Amri Sol", "What cargo does it carry?"),
+    ("cal-11", "calibration", "relations", ["Rin trusts Bea.", "Bea reports to Cal."], "To whom does Bea report?", "Cal", "Does Cal trust Rin?"),
+    ("cal-12", "calibration", "inference", ["A torren opens only with a glass key.", "Mio has a glass key.", "Mio is standing at the torren.", "The torren is not damaged."], "Can Mio open the torren?", "yes", "Who built the torren?"),
+    ("test-01", "heldout", "names", ["Nera Fenn calibrates the violet tide gauge in Pel Harbor."], "Who calibrates the violet tide gauge?", "Nera Fenn", "Where does Nera sleep?"),
+    ("test-02", "heldout", "relations", ["Kalo is Evi's uncle.", "Evi is Sumi's mother."], "How is Kalo related to Sumi?", "great-uncle", "What is Kalo's surname?"),
+    ("test-03", "heldout", "inference", ["Every dune bell rings when humidity falls below ten percent.", "The humidity is eight percent."], "Does the dune bell ring?", "yes", "Who installed the bell?"),
+    ("test-04", "heldout", "names", ["Toma Rill curates the moss atlas.", "The atlas is stored in Vault Seven.", "Vault Seven is beneath the observatory.", "The atlas has forty plates."], "Where is the moss atlas stored?", "Vault Seven", "What is Toma's birthday?"),
+    ("test-05", "heldout", "relations", ["Pera coaches Ulm."], "Who coaches Ulm?", "Pera", "Which sport does Pera play?"),
+    ("test-06", "heldout", "inference", ["Red tokens admit one guest.", "Asha carries a red token."], "How many guests may Asha admit?", "one", "Where did Asha get the token?"),
+    ("test-07", "heldout", "names", ["Daro Sen built the rain organ.", "It is installed at Lume Station."], "Who built the instrument at Lume Station?", "Daro Sen", "What is Daro's salary?"),
+    ("test-08", "heldout", "relations", ["Iven is Ota's brother.", "Ota is Meli's mother.", "Meli is Rusk's sister.", "Rusk studies glasswork."], "How is Iven related to Meli?", "uncle", "Where does Rusk study?"),
+    ("test-09", "heldout", "inference", ["All kelp compasses point east during a storm."], "Where does a kelp compass point in a storm?", "east", "Who sells kelp compasses?"),
+    ("test-10", "heldout", "names", ["The airship Quiet Heron is piloted by Lio Vask."], "Who pilots Quiet Heron?", "Lio Vask", "When was it built?"),
+    ("test-11", "heldout", "relations", ["Sena owes Bram a favor.", "Bram works for Yori."], "For whom does Bram work?", "Yori", "Why does Sena owe the favor?"),
+    ("test-12", "heldout", "inference", ["A mirren gate unlocks after two blue flashes.", "The gate flashed blue twice.", "No lock fault is present.", "The gate has power."], "Is the mirren gate unlocked?", "yes", "Who last repaired it?"),
+]

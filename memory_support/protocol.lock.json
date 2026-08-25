@@ -1,0 +1,9 @@
+{
+  "calibration_clusters": 12,
+  "clusters": 24,
+  "config_sha256": "6de47385f9e54ed9fa44c5e8668ed28037b24cfd3656c9d14a1a3958a91ad9dd",
+  "heldout_clusters": 12,
+  "probe_sha256": "7d407d178f82dddeecf47ec84ad8f33d6e1f02b839b58338bcda9cdc5243b327",
+  "probes": 192,
+  "protocol": "memory-support-v1"
+}
