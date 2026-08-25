@@ -38,6 +38,16 @@ Watch it without truncating the receipt:
 tail -f results/memory_support_calibration_responses.jsonl
 ```
 
+For a readable live view of the actual model generations:
+
+```bash
+.venv/bin/python -u -m memory_support.watch \
+  results/memory_support_calibration_responses.jsonl --last 3
+```
+
+This prints the source memory, probe, arm, gain, seed, and full model output, then
+continues following new receipts.
+
 `score.py` supplies deterministic token/entity, unsupported-answer, and degeneration
 components. Held-out selection is not valid until a blinded semantic judge, the
 calibration-derived thresholds, interval/bootstrap unit (memory cluster), and

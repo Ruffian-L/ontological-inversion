@@ -19,6 +19,26 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-08-25 — memory-support calibration launched on GB10
+
+We did: created ignored `.venv/` with Python 3.12 and the repository's 69 pinned
+packages after bare Python 3.14 failed on missing NumPy. Mutated `hf_backend.py`
+to select CUDA/bfloat16, pass an explicit attention mask, cache directions, and
+resume from append-only receipts. Two disclosed one-cell gain-zero smokes completed;
+both correctly provided no source-memory readback and instead produced the same
+unsupported code-memory scenario. Launched all 15,840 calibration cells as PID
+126493; first receipt landed. Did not inspect held-out, freeze gates, judge outputs,
+merge results, train, or claim readability.
+
+Added `memory_support/watch.py` after the raw progress log proved unreadable to a
+human; it streams the full memory, probe, arm, gain, seed, and model generation
+from the append-only receipts without touching the running process.
+
+We think: the environment and receipt path now hold; whether the injected direction
+supports memory remains open. Gain-zero failure is an expected negative control.
+
+Next: let calibration finish, then blind the fidelity judge jobs before scoring.
+
 ## 2026-08-25 — frozen memory-support selector harness built
 
 We did: added `memory_support/`, a 24-cluster (12 calibration / 12 held-out)

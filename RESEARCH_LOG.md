@@ -14,6 +14,18 @@ Synthetic concepts = **probes** for residual ±gain.
 
 ---
 
+### 2026-08-25 — calibration is live; gain zero does not read the memory
+
+The first shell invocation used bare Python 3.14 and failed before model load. A
+repo-local Python 3.12 environment now carries the pinned stack, and the runner
+selects the GB10 with bfloat16, explicit attention masks, cached directions, and
+append-only resume receipts. Two disclosed gain-zero smokes produced the same
+unrelated code-memory scenario instead of the source about Ilya Venn. That is the
+expected negative-control outcome. The complete 15,840-cell calibration campaign
+is now running; no readability conclusion exists yet.
+
+Run card: `runs/2026-08-25_memory-support-calibration-start.md`.
+
 ### 2026-08-25 — memory support becomes a selector, not a best-output scan
 
 The proposed auto-gain test now exists under `memory_support/`. Its object is
