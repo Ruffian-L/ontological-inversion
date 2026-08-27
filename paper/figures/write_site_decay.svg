@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="610" viewBox="0 0 1120 610">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="42" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#172033">Write lifetime depends on injection site</text>
+<text x="48" y="66" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#5b6475">One disclosed fact, gain 0.825; absolute direction (left) and plus/minus fold (right)</text>
+<text x="85" y="100" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#172033">A · absolute survival cosine</text>
+<line x1="85" y1="455.0" x2="515.0" y2="455.0" stroke="#dfe4ec" stroke-dasharray="none"/>
+<text x="75" y="459.0" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.0</text>
+<line x1="85" y1="290.0" x2="515.0" y2="290.0" stroke="#dfe4ec" stroke-dasharray="5 4"/>
+<text x="75" y="294.0" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.5</text>
+<line x1="85" y1="125.0" x2="515.0" y2="125.0" stroke="#dfe4ec" stroke-dasharray="none"/>
+<text x="75" y="129.0" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">1.0</text>
+<line x1="85.0" y1="125.0" x2="85.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="85.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0</text>
+<line x1="171.0" y1="125.0" x2="171.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="171.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">1</text>
+<line x1="257.0" y1="125.0" x2="257.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="257.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">2</text>
+<line x1="343.0" y1="125.0" x2="343.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="343.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">3</text>
+<line x1="515.0" y1="125.0" x2="515.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="515.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">5</text>
+<polyline points="85.0,125.0 171.0,368.2 257.0,372.8 343.0,391.3 515.0,414.1" fill="none" stroke="#5b6475" stroke-width="3"/>
+<circle cx="85.0" cy="125.0" r="4" fill="#5b6475"/>
+<circle cx="171.0" cy="368.2" r="4" fill="#5b6475"/>
+<circle cx="257.0" cy="372.8" r="4" fill="#5b6475"/>
+<circle cx="343.0" cy="391.3" r="4" fill="#5b6475"/>
+<circle cx="515.0" cy="414.1" r="4" fill="#5b6475"/>
+<polyline points="85.0,125.0 171.0,183.1 257.0,269.9 343.0,316.1 515.0,393.3" fill="none" stroke="#2463eb" stroke-width="3"/>
+<circle cx="85.0" cy="125.0" r="4" fill="#2463eb"/>
+<circle cx="171.0" cy="183.1" r="4" fill="#2463eb"/>
+<circle cx="257.0" cy="269.9" r="4" fill="#2463eb"/>
+<circle cx="343.0" cy="316.1" r="4" fill="#2463eb"/>
+<circle cx="515.0" cy="393.3" r="4" fill="#2463eb"/>
+<polyline points="85.0,125.0 171.0,245.4 257.0,314.4 343.0,366.6 515.0,413.1" fill="none" stroke="#16856b" stroke-width="3"/>
+<circle cx="85.0" cy="125.0" r="4" fill="#16856b"/>
+<circle cx="171.0" cy="245.4" r="4" fill="#16856b"/>
+<circle cx="257.0" cy="314.4" r="4" fill="#16856b"/>
+<circle cx="343.0" cy="366.6" r="4" fill="#16856b"/>
+<circle cx="515.0" cy="413.1" r="4" fill="#16856b"/>
+<polyline points="85.0,125.0 171.0,246.4 257.0,318.7 343.0,359.6 515.0,400.6" fill="none" stroke="#d87918" stroke-width="3"/>
+<circle cx="85.0" cy="125.0" r="4" fill="#d87918"/>
+<circle cx="171.0" cy="246.4" r="4" fill="#d87918"/>
+<circle cx="257.0" cy="318.7" r="4" fill="#d87918"/>
+<circle cx="343.0" cy="359.6" r="4" fill="#d87918"/>
+<circle cx="515.0" cy="400.6" r="4" fill="#d87918"/>
+<polyline points="85.0,125.0 171.0,221.0 257.0,285.0 343.0,317.1 515.0,360.0" fill="none" stroke="#7a4cc2" stroke-width="3"/>
+<circle cx="85.0" cy="125.0" r="4" fill="#7a4cc2"/>
+<circle cx="171.0" cy="221.0" r="4" fill="#7a4cc2"/>
+<circle cx="257.0" cy="285.0" r="4" fill="#7a4cc2"/>
+<circle cx="343.0" cy="317.1" r="4" fill="#7a4cc2"/>
+<circle cx="515.0" cy="360.0" r="4" fill="#7a4cc2"/>
+<text x="300.0" y="507.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">blocks after write</text>
+<text x="625" y="100" font-family="DejaVu Sans,Arial,sans-serif" font-size="15" font-weight="700" fill="#172033">B · plus/minus fold cosine</text>
+<line x1="625" y1="455.0" x2="1055.0" y2="455.0" stroke="#dfe4ec" stroke-dasharray="none"/>
+<text x="615" y="459.0" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-1.0</text>
+<line x1="625" y1="290.0" x2="1055.0" y2="290.0" stroke="#dfe4ec" stroke-dasharray="5 4"/>
+<text x="615" y="294.0" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.5</text>
+<line x1="625" y1="125.0" x2="1055.0" y2="125.0" stroke="#dfe4ec" stroke-dasharray="none"/>
+<text x="615" y="129.0" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.0</text>
+<line x1="625.0" y1="125.0" x2="625.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="625.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0</text>
+<line x1="711.0" y1="125.0" x2="711.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="711.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">1</text>
+<line x1="797.0" y1="125.0" x2="797.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="797.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">2</text>
+<line x1="883.0" y1="125.0" x2="883.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="883.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">3</text>
+<line x1="1055.0" y1="125.0" x2="1055.0" y2="455.0" stroke="#dfe4ec" opacity="0.55"/>
+<text x="1055.0" y="479.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">5</text>
+<polyline points="625.0,455.0 711.0,411.4 797.0,310.1 883.0,279.8 1055.0,232.6" fill="none" stroke="#2463eb" stroke-width="3"/>
+<circle cx="625.0" cy="455.0" r="4" fill="#2463eb"/>
+<circle cx="711.0" cy="411.4" r="4" fill="#2463eb"/>
+<circle cx="797.0" cy="310.1" r="4" fill="#2463eb"/>
+<circle cx="883.0" cy="279.8" r="4" fill="#2463eb"/>
+<circle cx="1055.0" cy="232.6" r="4" fill="#2463eb"/>
+<polyline points="625.0,455.0 711.0,420.7 797.0,393.9 883.0,373.2 1055.0,345.4" fill="none" stroke="#16856b" stroke-width="3"/>
+<circle cx="625.0" cy="455.0" r="4" fill="#16856b"/>
+<circle cx="711.0" cy="420.7" r="4" fill="#16856b"/>
+<circle cx="797.0" cy="393.9" r="4" fill="#16856b"/>
+<circle cx="883.0" cy="373.2" r="4" fill="#16856b"/>
+<circle cx="1055.0" cy="345.4" r="4" fill="#16856b"/>
+<polyline points="625.0,455.0 711.0,398.2 797.0,354.4 883.0,334.9 1055.0,277.8" fill="none" stroke="#d87918" stroke-width="3"/>
+<circle cx="625.0" cy="455.0" r="4" fill="#d87918"/>
+<circle cx="711.0" cy="398.2" r="4" fill="#d87918"/>
+<circle cx="797.0" cy="354.4" r="4" fill="#d87918"/>
+<circle cx="883.0" cy="334.9" r="4" fill="#d87918"/>
+<circle cx="1055.0" cy="277.8" r="4" fill="#d87918"/>
+<polyline points="625.0,455.0 711.0,396.6 797.0,331.2 883.0,312.1 1055.0,263.9" fill="none" stroke="#7a4cc2" stroke-width="3"/>
+<circle cx="625.0" cy="455.0" r="4" fill="#7a4cc2"/>
+<circle cx="711.0" cy="396.6" r="4" fill="#7a4cc2"/>
+<circle cx="797.0" cy="331.2" r="4" fill="#7a4cc2"/>
+<circle cx="883.0" cy="312.1" r="4" fill="#7a4cc2"/>
+<circle cx="1055.0" cy="263.9" r="4" fill="#7a4cc2"/>
+<text x="840.0" y="507.0" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">blocks after write</text>
+<line x1="180" y1="525" x2="204" y2="525" stroke="#5b6475" stroke-width="3"/>
+<text x="212" y="529" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">embedding</text>
+<line x1="340" y1="525" x2="364" y2="525" stroke="#2463eb" stroke-width="3"/>
+<text x="372" y="529" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">block 1</text>
+<line x1="500" y1="525" x2="524" y2="525" stroke="#16856b" stroke-width="3"/>
+<text x="532" y="529" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">block 4</text>
+<line x1="660" y1="525" x2="684" y2="525" stroke="#d87918" stroke-width="3"/>
+<text x="692" y="529" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">block 8</text>
+<line x1="820" y1="525" x2="844" y2="525" stroke="#7a4cc2" stroke-width="3"/>
+<text x="852" y="529" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">block 16</text>
+<text x="48" y="590" font-family="DejaVu Sans,Arial,sans-serif" font-size="10.5" fill="#5b6475">Source: synapse/layer_trace/midstack_trace.csv; run card 2026-08-27_llama-midstack-injection-decay.md. Embedding-site fold omitted because the sign flips and the instrument is invalid there.</text>
+</svg>

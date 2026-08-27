@@ -19,6 +19,36 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-08-27 — Preprint moves into this repo
+
+We did: Copied the current preprint from `niodoo-live/paper/` into
+`paper/` here, un-ignored `paper/` so it can be tracked, and pointed rank-plot
+receipts at `paper/receipts/`. Did not sweep the dirty memory-support tree.
+Did not re-run a model.
+
+We think: this is the inversion repo; the paper belongs next to the adapter
+and the Glub-Tub receipts, not in niodoo-live.
+
+Next: niodoo-live/paper becomes a pointer.
+
+## 2026-08-25 — invalid readback run removed; natural-memory calibration restarted
+
+We did: stopped PID 126493 at 229/15,840. The explicit “reconstruct injected
+memory” prompts and raw non-chat formatting were invalid instruments, not a
+falsifier; their random outputs and obsolete v1 manifests/plans were removed from
+the working tree (tracked artifacts remain recoverable from git history). Built
+`memory-support-natural-v2`: 24 ordinary memory stories, 144 natural questions,
+the exact constant evaluation notice, source text evaluator-only, and five primary
+arms receiving identical questions. Reconstruction is now post-freeze only. A
+five-arm chat-formatted preview at gain 0.08 produced fluent ordinary answers but
+no Ilya Venn in any arm—an honest null at that gain. Launched 9,720 calibration
+cells as PID 146256. Did not inspect held-out, judge, freeze, or claim readability.
+
+We think: this instrument now tests memory-dependent answers rather than synthetic
+instruction decoding. The full scan may still return “not readable.”
+
+Next: finish calibration, blind fidelity judging, and freeze only if gates support it.
+
 ## 2026-08-25 — memory-support calibration launched on GB10
 
 We did: created ignored `.venv/` with Python 3.12 and the repository's 69 pinned

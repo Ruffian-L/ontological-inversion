@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="575" viewBox="0 0 980 575">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="42" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#172033">The affine bias is sufficient; too much concept residual cancels it</text>
+<text x="48" y="66" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#5b6475">Number of inverting gains in the shipped adapter coordinates; one concept and prompt</text>
+<line x1="220.0" y1="105" x2="220.0" y2="455" stroke="#dfe4ec"/>
+<text x="220.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0</text>
+<line x1="330.0" y1="105" x2="330.0" y2="455" stroke="#dfe4ec"/>
+<text x="330.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">3</text>
+<line x1="440.0" y1="105" x2="440.0" y2="455" stroke="#dfe4ec"/>
+<text x="440.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">6</text>
+<line x1="550.0" y1="105" x2="550.0" y2="455" stroke="#dfe4ec"/>
+<text x="550.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">9</text>
+<line x1="660.0" y1="105" x2="660.0" y2="455" stroke="#dfe4ec"/>
+<text x="660.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">12</text>
+<line x1="770.0" y1="105" x2="770.0" y2="455" stroke="#dfe4ec"/>
+<text x="770.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">15</text>
+<line x1="880.0" y1="105" x2="880.0" y2="455" stroke="#dfe4ec"/>
+<text x="880.0" y="480" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">18</text>
+<text x="205" y="130" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">bias only</text>
+<rect x="220" y="114" width="403.3" height="22" rx="5" fill="#16856b"/>
+<text x="633.3" y="130" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#16856b">11</text>
+<text x="205" y="172" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">b + 0.25 Wv</text>
+<rect x="220" y="156" width="513.3" height="22" rx="5" fill="#2463eb"/>
+<text x="743.3" y="172" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">14</text>
+<text x="205" y="214" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">b + 0.5 Wv</text>
+<rect x="220" y="198" width="623.3" height="22" rx="5" fill="#2463eb"/>
+<text x="853.3" y="214" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">17</text>
+<text x="205" y="256" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">b + 1 Wv</text>
+<rect x="220" y="240" width="256.7" height="22" rx="5" fill="#2463eb"/>
+<text x="486.7" y="256" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">7</text>
+<text x="205" y="298" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">b + 2 Wv</text>
+<rect x="220" y="282" width="110.0" height="22" rx="5" fill="#2463eb"/>
+<text x="340.0" y="298" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">3</text>
+<text x="205" y="340" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">b + 4 Wv</text>
+<rect x="220" y="324" width="73.3" height="22" rx="5" fill="#2463eb"/>
+<text x="303.3" y="340" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">2</text>
+<text x="205" y="382" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">residual only</text>
+<rect x="220" y="366" width="0.0" height="22" rx="5" fill="#cf3e4f"/>
+<text x="230.0" y="382" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf3e4f">0</text>
+<text x="205" y="424" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">wolf residual</text>
+<rect x="220" y="408" width="220.0" height="22" rx="5" fill="#2463eb"/>
+<text x="450.0" y="424" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">6</text>
+<text x="550.0" y="515" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">inverting gains on the tested grid</text>
+<rect x="90" y="510" width="800" height="40" rx="9" fill="#fff8e9" stroke="#d87918"/>
+<text x="490" y="535" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#d87918">cos(b, Wv) = −0.6056 · ‖Wv‖ = 1.2989 &gt; ‖b‖ = 1.1118</text>
+<text x="48" y="566" font-family="DejaVu Sans,Arial,sans-serif" font-size="10.5" fill="#5b6475">Source: ontological-inversion/runs/2026-08-25_bias-vs-residual.md.</text>
+</svg>

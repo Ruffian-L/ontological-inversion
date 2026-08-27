@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1050" height="600" viewBox="0 0 1050 600">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="42" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#172033">Bounded-knowledge criterion failed; answer propensity shifted broadly</text>
+<text x="48" y="66" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#5b6475">Decline fraction, n=10 memory clusters; 6,400 nested generations</text>
+<line x1="265.0" y1="112" x2="265.0" y2="467" stroke="#dfe4ec"/>
+<text x="265.0" y="492" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.0</text>
+<line x1="405.0" y1="112" x2="405.0" y2="467" stroke="#dfe4ec"/>
+<text x="405.0" y="492" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.1</text>
+<line x1="545.0" y1="112" x2="545.0" y2="467" stroke="#dfe4ec"/>
+<text x="545.0" y="492" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.2</text>
+<line x1="685.0" y1="112" x2="685.0" y2="467" stroke="#dfe4ec"/>
+<text x="685.0" y="492" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.3</text>
+<line x1="825.0" y1="112" x2="825.0" y2="467" stroke="#dfe4ec"/>
+<text x="825.0" y="492" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.4</text>
+<line x1="965.0" y1="112" x2="965.0" y2="467" stroke="#dfe4ec"/>
+<text x="965.0" y="492" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.5</text>
+<text x="247" y="164" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">neutral / memory</text>
+<line x1="377.0" y1="160" x2="553.8" y2="160" stroke="#5b6475" stroke-width="2"/>
+<circle cx="377.0" cy="160" r="7" fill="#2463eb"/>
+<circle cx="553.8" cy="160" r="7" fill="#cf3e4f"/>
+<text x="377.0" y="146" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#2463eb">0.080</text>
+<text x="553.8" y="146" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#cf3e4f">0.206</text>
+<text x="247" y="242" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">neutral / blank</text>
+<line x1="774.2" y1="238" x2="861.8" y2="238" stroke="#5b6475" stroke-width="2"/>
+<circle cx="774.2" cy="238" r="7" fill="#2463eb"/>
+<circle cx="861.8" cy="238" r="7" fill="#cf3e4f"/>
+<text x="774.2" y="224" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#2463eb">0.364</text>
+<text x="861.8" y="224" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#cf3e4f">0.426</text>
+<text x="247" y="320" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">anti-guess / memory</text>
+<line x1="321.0" y1="316" x2="489.0" y2="316" stroke="#5b6475" stroke-width="2"/>
+<circle cx="321.0" cy="316" r="7" fill="#2463eb"/>
+<circle cx="489.0" cy="316" r="7" fill="#cf3e4f"/>
+<text x="321.0" y="302" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#2463eb">0.040</text>
+<text x="489.0" y="302" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#cf3e4f">0.160</text>
+<text x="247" y="398" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">anti-guess / blank</text>
+<line x1="541.5" y1="394" x2="709.5" y2="394" stroke="#5b6475" stroke-width="2"/>
+<circle cx="541.5" cy="394" r="7" fill="#2463eb"/>
+<circle cx="709.5" cy="394" r="7" fill="#cf3e4f"/>
+<text x="541.5" y="380" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#2463eb">0.198</text>
+<text x="709.5" y="380" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#cf3e4f">0.318</text>
+<circle cx="710" cy="91" r="6" fill="#2463eb"/><text x="723" y="95" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">answerable</text>
+<circle cx="815" cy="91" r="6" fill="#cf3e4f"/><text x="828" y="95" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#172033">unanswerable</text>
+<rect x="65" y="492" width="920" height="68" rx="10" fill="#fff7e8" stroke="#d87918"/>
+<text x="86" y="518" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" font-weight="700" fill="#d87918">Primary neutral-memory difference: +0.126; 95% cluster-bootstrap CI [+0.080, +0.177].</text>
+<text x="86" y="543" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">The entire interval is below the preregistered 0.25 criterion. Bounded knowledge is withdrawn.</text>
+<text x="48" y="588" font-family="DejaVu Sans,Arial,sans-serif" font-size="10.5" fill="#5b6475">Source: synapse/probe/e7_raw.jsonl (SHA-256 77caf18d…); decision text in preregistrations/2026-08-25_E7_base_rate.md.</text>
+</svg>

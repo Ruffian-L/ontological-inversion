@@ -3,7 +3,7 @@
 **Project:** ontological-inversion  
 **Working title:** *Ontological Inversion: Residual ±Gain on Synthetic Concept Directions*  
 **Lineage:** Niodoo / SplatRAG / collaboration — see [`LINEAGE.md`](LINEAGE.md)  
-**Last updated:** 2026-08-25  
+**Last updated:** 2026-08-27  
 
 This is the **human-readable research log**.  
 Raw receipts under `results/`; claims in `CLAIM_CARD.md`; climb in `SCOREBOARD.md`.
@@ -13,6 +13,28 @@ Real memory = splat stores, Niodoo continuity, golden-memories, queryable embedd
 Synthetic concepts = **probes** for residual ±gain.
 
 ---
+
+### 2026-08-27 — preprint lives here
+
+The manuscript, article PDF, and figures moved from niodoo-live into `paper/`.
+This is the inversion repo; that was the wrong tree.
+
+### 2026-08-25 — the memory test is now ordinary conversation
+
+Jason rejected the first calibration correctly. Explicit readback turned the
+hidden channel into a synthetic instruction attractor, and feeding an instruct
+model raw text compounded the distortion. The 229 outputs are random noise, not a
+falsifier, and their raw artifacts were removed.
+
+Natural v2 exposes only “This is an evaluation of contextual recall and
+reasoning. Answer the user naturally.” plus an ordinary question. The source stays
+in the evaluator record. Recall, contextual use, and unsupported questions select
+gain; reconstruction is locked behind selection as a mechanistic assay. All five
+primary arms receive the same question through Qwen's chat template. A five-arm
+α=0.08 preview was fluent but did not name Ilya in any arm. The complete natural
+calibration is running; it is allowed to remain null.
+
+Run card: `runs/2026-08-25_natural-memory-calibration-restart.md`.
 
 ### 2026-08-25 — calibration is live; gain zero does not read the memory
 

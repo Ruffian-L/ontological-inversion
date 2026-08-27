@@ -1,5 +1,7 @@
 # Ontological Inversion
 
+Preprint: [`paper/MANUSCRIPT.md`](paper/MANUSCRIPT.md) · PDF: [`paper/Writing-Meaning-Between-Frozen-Models.pdf`](paper/Writing-Meaning-Between-Frozen-Models.pdf)
+
 ### Subtract a concept from a language model and it doesn't forget — it flips.
 
 The model is frozen. Nothing is fine-tuned. The concept is never written in the
