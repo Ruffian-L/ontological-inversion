@@ -14,6 +14,13 @@ Synthetic concepts = **probes** for residual ±gain.
 
 ---
 
+### 2026-08-27 — concept DOI
+
+Zenodo minted concept `10.5281/zenodo.22126781` (always latest) and version
+`10.5281/zenodo.22126782` (v1). Those are now on the manuscript, README, and
+PDF. GitHub–Zenodo is enabled but idle until a Release; that would be a
+second software record, not a new version of this preprint.
+
 ### 2026-08-27 — preprint lives here
 
 The manuscript, article PDF, and figures moved from niodoo-live into `paper/`.
