@@ -16,5 +16,11 @@ data/
 ontological-inversion/
 .claude/
 
-# paper drafts / figures — local only, not on GitHub
-paper/
+# paper TeX intermediates; the preprint itself is tracked
+paper/__pycache__/
+paper/*.aux
+paper/*.bbl
+paper/*.blg
+paper/*.log
+paper/*.out
+paper/arxiv.pdf

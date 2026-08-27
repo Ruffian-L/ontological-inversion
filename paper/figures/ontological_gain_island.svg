@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1040" height="600" viewBox="0 0 1040 600">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="42" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#172033">Nomic→Qwen: narrow gain islands and matched controls</text>
+<text x="48" y="66" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#5b6475">Glub-Tub prompt; greedy decode; dense 0.01 gain grid and five-cell matched controls</text>
+<line x1="100.0" y1="135" x2="100.0" y2="260" stroke="#dfe4ec"/>
+<text x="100.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.30</text>
+<line x1="220.0" y1="135" x2="220.0" y2="260" stroke="#dfe4ec"/>
+<text x="220.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.25</text>
+<line x1="340.0" y1="135" x2="340.0" y2="260" stroke="#dfe4ec"/>
+<text x="340.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.20</text>
+<line x1="460.0" y1="135" x2="460.0" y2="260" stroke="#dfe4ec"/>
+<text x="460.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.15</text>
+<line x1="580.0" y1="135" x2="580.0" y2="260" stroke="#dfe4ec"/>
+<text x="580.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.10</text>
+<line x1="700.0" y1="135" x2="700.0" y2="260" stroke="#dfe4ec"/>
+<text x="700.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">-0.05</text>
+<line x1="820.0" y1="135" x2="820.0" y2="260" stroke="#dfe4ec"/>
+<text x="820.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.00</text>
+<line x1="940.0" y1="135" x2="940.0" y2="260" stroke="#dfe4ec"/>
+<text x="940.0" y="283" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0.05</text>
+<line x1="100" y1="196" x2="940" y2="196" stroke="#172033" stroke-width="3"/>
+<rect x="316.0" y="170" width="72.0" height="52" rx="7" fill="#2463eb" opacity="0.86"/>
+<text x="352.0" y="157" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="700" fill="#2463eb">stove lobe</text>
+<rect x="412.0" y="170" width="24.0" height="52" rx="7" fill="#5b6475" opacity="0.86"/>
+<text x="424.0" y="157" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="700" fill="#5b6475">living gap</text>
+<rect x="460.0" y="170" width="24.0" height="52" rx="7" fill="#d87918" opacity="0.86"/>
+<text x="472.0" y="157" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" font-weight="700" fill="#d87918">fire-pit lobe</text>
+<text x="520.0" y="313" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">signed gain α</text>
+<text x="249" y="360" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">concept / negative</text>
+<rect x="265" y="345" width="650" height="20" rx="5" fill="#f1f3f7"/>
+<rect x="265" y="345" width="650.0" height="20" rx="5" fill="#2463eb"/>
+<text x="927" y="360" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#2463eb">5/5</text>
+<text x="249" y="399" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">unrelated adapter</text>
+<rect x="265" y="384" width="650" height="20" rx="5" fill="#f1f3f7"/>
+<rect x="265" y="384" width="520.0" height="20" rx="5" fill="#d87918"/>
+<text x="927" y="399" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#d87918">4/5</text>
+<text x="249" y="438" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">random</text>
+<rect x="265" y="423" width="650" height="20" rx="5" fill="#f1f3f7"/>
+<rect x="265" y="423" width="0.0" height="20" rx="5" fill="#cf3e4f"/>
+<text x="927" y="438" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf3e4f">0/5</text>
+<text x="249" y="477" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">coordinate shuffle</text>
+<rect x="265" y="462" width="650" height="20" rx="5" fill="#f1f3f7"/>
+<rect x="265" y="462" width="0.0" height="20" rx="5" fill="#cf3e4f"/>
+<text x="927" y="477" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf3e4f">0/5</text>
+<text x="249" y="516" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#172033">concept / positive</text>
+<rect x="265" y="501" width="650" height="20" rx="5" fill="#f1f3f7"/>
+<rect x="265" y="501" width="0.0" height="20" rx="5" fill="#cf3e4f"/>
+<text x="927" y="516" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#cf3e4f">0/5</text>
+<text x="48" y="585" font-family="DejaVu Sans,Arial,sans-serif" font-size="10.5" fill="#5b6475">Source: ontological-inversion/runs/2026-06-24_topology-of-the-flip.md and results/CONTROLS.md.</text>
+</svg>

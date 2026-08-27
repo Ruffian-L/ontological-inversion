@@ -15,9 +15,15 @@ This effect was not invented for this repo — it was **rediscovered and reprodu
   Constants `Blend 0.55 / Repulsion -0.6` corroborated by run logs.
 
 - **The trained adapter ("Synapse"):** `adapter_final.safetensors` (linear 128→896), recovered
-  from the original `SplatRagBench-master` repo. Maps a 128-d nomic(Matryoshka) concept code into
-  the LLM's 896-d embedding space. This was the missing piece — raw concept vectors drift/collapse;
-  the real flip rides this *trained* direction.
+  from the original `SplatRagBench-master` repo. This was the missing piece — raw concept vectors
+  drift/collapse; the real flip rides this *trained* direction.
+
+  **Correction (2026-08-24).** An earlier version of this line called the input a "128-d
+  nomic(Matryoshka) concept code." That is wrong in two ways, and the original build script has
+  since been recovered (`src/bin/train_adapter.rs`, Rust on `candle` — every search for it had
+  looked for Python). The nomic cut is **64**-d, and the other 64 dims are a scaled PCA variance
+  term, not embedding. The target is the **token-embedding layer, mean-pooled**, not layer 4.
+  Full verified spec, the trainer, and every file it depends on: [`training/`](../training/).
 
 - **Reproduction (2026-06-24):** the effect was reproduced on demand on Qwen2.5-0.5B-Instruct
   across the predicted gain band (α≈0.15–0.30, collapse past 0.4) — see `README.md` and `results/`.

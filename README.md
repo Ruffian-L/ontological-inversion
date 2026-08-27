@@ -1,205 +1,235 @@
-# Ontological Inversion — "The Anti-Splat"
+# Ontological Inversion
 
-> Origin ~Nov 2025 (side project); rebuilt after laptop loss. Feelers = parent; this repo = ±gain + involution loop bites.  
-> **Start:** [`CHECKLIST.md`](CHECKLIST.md) · [`LINEAGE.md`](LINEAGE.md) · [`paper/WHITEPAPER.md`](paper/WHITEPAPER.md) · `./reproduce.sh`
+Preprint: [`paper/MANUSCRIPT.md`](paper/MANUSCRIPT.md) · PDF: [`paper/Writing-Meaning-Between-Frozen-Models.pdf`](paper/Writing-Meaning-Between-Frozen-Models.pdf)
 
-A small, reproducible baseline for two linked ideas — **in priority order**:
+### Subtract a concept from a language model and it doesn't forget — it flips.
 
-> **1. Anti-fact factors (headline):** Compile a fact the model was *never trained on* into one
-> residual direction (embedder → trained adapter). With **+gain**, the model answers probes
-> using planted **factors** that never appear in the prompt. That is the crazy part.
->
-> **2. Ontological inversion (side effect):** The same direction with **−gain** doesn't just
-> erase the concept — in a sweet-spot band it redefines into a structured *opposite*
-> (living → inanimate) while staying fluent. Cool polarity twin of (1).
+The model is frozen. Nothing is fine-tuned. The concept is never written in the
+prompt. One vector is added to the numbers moving through the middle of the
+network while it generates, and the sign of that vector decides what the model
+believes.
 
-Geometry for the polarity side (self-involution sketch):
+Give a small Qwen2.5 a made-up creature — **"a Glub-Tub is a magma-eating
+hamster"** — and ask whether it would make a good fireplace pet. Then run the
+same prompt again with the concept's own direction **subtracted** from its
+hidden state:
+
+| gain | what it says | what happened |
+|---:|---|---|
+| `0.00` | "…withstand the heat… keep your **furry friend** comfortable" | it's a pet |
+| `−0.15` | "a **fire pit** designed to **hold water**" | container, and fire → water |
+| `−0.20` | "a small, portable **stove**… used to **heat water**" | heating appliance |
+| `−0.25` | "a shallow **hole**… not designed to provide **shelter**" | shelter, negated |
+| `−0.30` | "a type of **food**…" | object |
+| `−0.40` | "A: A: A Glubber…" | collapse |
+
+It did not become noise, and it did not become "not a hamster." It became a
+**structured opposite**: the living thing turns into an inanimate object that
+keeps the living thing's job. A creature that *lives in* fire becomes an object
+that *withstands* fire. That inversion holds across a whole band of strengths —
+roughly `α = 0.15` to `0.30` — and only past `0.4` does it fall apart.
+
+It is not limited to invented creatures. Steer on **"wolf"** and you get
+abstract metaphor. Steer on **"grief over losing your mother"** and you get the
+grief's other face — *"how you **coped**… learned to **live with** loss…
+**growing up**… a letter **to** my mom."*
+
+---
+
+## This is steering, not editing
+
+If one line of this README matters, it is this one: **the model's weights are
+never touched, and the concept never appears in any text the model can read.**
+
+What changes is the *activation* — the running state inside the network, halfway
+through the stack, recomputed for every token. A concept direction is added to
+it, scaled to the size of the state it is joining:
 
 ```
-Φ_c(h) = μ + (I − 2 P_c)(h − μ)        # Householder reflection about a concept hyperplane
+        prompt tokens
+             │
+        ┌────▼────┐
+        │ layers  │
+        │  0 – 3  │
+        └────┬────┘
+             │  h                         ← the residual stream
+             │
+    h  ←  h + gain · ‖h‖ · û              ← the concept direction û
+             │                               gain > 0  plant the concept
+             │                               gain < 0  invert it
+        ┌────▼────┐
+        │ layers  │
+        │ 4 – 23  │
+        └────┬────┘
+             │
+          next token
 ```
 
-The practical, runnable approximation here uses a **trained projector** ("the Synapse") to get
-the concept's direction, then injects its *negative* into the model's residual stream during
-generation. Why it matters: it's a substrate for a model that **doesn't overfit to one reading**
-of a memory or input — it can hold both sides of the coin.
+Tying the push to the local norm `‖h‖` is what makes `gain` mean the same thing
+everywhere: `gain = 0.2` is a nudge one fifth as long as the state it is nudging,
+at every layer position and in every prompt. That is why a single number
+transfers across concepts and prompts instead of needing to be retuned.
 
-## The result (reproducible)
+The family is **activation steering** — controlling a frozen model at inference
+time by writing to its hidden state, rather than by prompting it or retraining
+it. That is the right shelf to put this on, and it is the vocabulary to search
+if none of the above was familiar. It is *not* ActAdd rebranded, and two
+differences are why:
 
-Concept: a synthetic "Glub-Tub = magma-eating hamster" (living). Prompt asks if it's a good
-fireplace pet. Subtracting the concept (negative gain) inverts it to **inanimate heat/water/
-container** objects — stable across the whole sweet-spot band:
+**The direction is produced by a trained map, not a contrast pair.** Most
+steering vectors are built by averaging the difference between two sets of
+prompts. Here a small trained linear adapter — the **Synapse** — turns *any*
+text into a direction in the model's own space. You can steer on a sentence
+nobody has ever written before.
 
-| gain | generated | reading |
-|---|---|---|
-| baseline | "…withstand the heat… your **furry friend** comfortable" | living pet |
-| −0.15 | "a **fire pit** designed to **hold water**" | inanimate container + fire→water |
-| −0.20 | "a small, portable **stove**… used to **heat water**" | inanimate heating appliance |
-| −0.25 | "a shallow **hole**… not designed to provide **shelter**" | inanimate shelter |
-| −0.30 | "a type of **food**…" | inanimate object |
-| −0.40+ | "A: A: A Glubber…" | collapse |
+**The negative direction has structure.** Subtracting a steering vector is
+usually treated as erasure, and usually degrades. Here it lands somewhere:
+a consistent, fluent, semantically *dual* reading of the same concept. That is
+the finding this repo exists for.
 
-Sweet spot **α ≈ 0.15–0.30**, collapse past **0.4**. Generality holds (see `results/`):
-"wolf" → abstract metaphor; "grief over losing your mother" → "how you **coped**… learned to
-**live with** loss… **growing up**… a letter **to** my mom" (the grief's other side).
+## The other half: planting a fact that was never trained
 
-## Quantified benchmark (Phase 2.1 — done)
-`benchmark.py` sweeps **12 concepts × 3 steering operators × 5 strengths × 2 models** (360 runs),
-scores each generation (embedding-cosine inversion toward antipode-vs-concept anchors + coherence),
-and finds each cell's sweet-spot. Operators are magnitude-matched (each contributes a delta of norm
-`strength·‖h‖`) so the comparison is about steering *direction*, not push size. Results in
-`results/REPORT.md` + `results/benchmark.csv`:
+The same machinery run at **positive** gain does something with a different
+flavour. Compile a fact the model was never trained on into one direction, add
+it, and the model answers probes using **factors that appear nowhere in the
+prompt.** It answers from the vector.
 
-| operator | flip success | mean α\* | inversion gain | collapse onset |
-|---|---|---|---|---|
-| `negative_gain` (fixed push) | **75%** | 0.37 | +0.073 | 0.48 |
-| `householder` (true reflection `Φ_c`) | 58% | 0.33 | +0.048 | **0.61** |
-| `projection_polarity` | 58% | 0.37 | +0.051 | 0.45 |
+`anti_fact.py`, `anti_facts.json`.
 
-- **Proxy directional shift is common** — 75% of (concept × model) cells move toward handcrafted
-  antipode anchors on the nomic proxy (both Qwen-0.5B variants). **Readable structured flips are
-  rarer** (~8–12% of cells under keyword audit); Glub-Tub is the clean existence proof.
-- **The true Householder involution is the most _stable_ operator** — it collapses latest (onset
-  0.61 vs 0.48/0.45), the information-preserving property `f(f(x))=x` predicts. `negative_gain` inverts
-  hardest; the reflection holds coherence over a **wider band** — exactly what the Phase-3 recursive
-  loop needs.
-- Different concepts favor different operators (e.g. grief inverts best under the true reflection).
+## Why it might be useful
 
-`python benchmark.py --quick` (subset) or `python benchmark.py` (full). Metrics are honest proxies
-(embedding cosine + text coherence), labeled as such in the report.
+A model that can hold a concept and its structured opposite in the same
+geometry does not have to commit to one reading of a memory or an input. The
+inversion is a substrate for that: both sides of the coin, reachable by a sign.
 
 ## Run it
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
-python ontological_inversion.py                       # Glub-Tub demo (downloads Qwen-0.5B + nomic)
-# your own:
+
+python ontological_inversion.py            # the Glub-Tub demo above
+```
+
+First run downloads Qwen2.5-0.5B-Instruct and nomic-embed-text-v1.5. CPU is
+fine — it's a 0.5B model. The trained adapter (`adapter_final.safetensors`) is
+in the repo.
+
+Your own concept:
+
+```bash
 python ontological_inversion.py \
-  --prompt "Describe a wolf in the forest." \
+  --prompt  "Describe a wolf in the forest." \
   --concept "wolf predator hunting fierce living animal" \
   "--gains=0,-0.2,-0.25"
 ```
-CPU is fine (0.5B). First run downloads the models. The trained adapter (`adapter_final.safetensors`)
-is included.
 
-## How it works
+**Run the controls before you believe any of it:**
+
+```bash
+python controls.py      # random, shuffled, and unrelated directions at equal magnitude
 ```
-concept text → nomic-embed-v1.5 (Matryoshka slice → 128-d)
-             → adapter_final.safetensors (trained linear 128→896 = "the Synapse")
-             → inject that direction into the residual stream (layer 4, every position),
-               scaled to the local hidden norm × gain → greedy generate
-negative gain = subtract the concept = the inversion
+
+If a random direction of the same length produced the same flip, there would be
+nothing here. It doesn't. That is the test that makes the rest mean something.
+
+## How the direction is built
+
 ```
-The model matters: the original effect was found on **Qwen2.5-Coder-0.5B**; this baseline
-defaults to `Qwen2.5-0.5B-Instruct` (swap with `--qwen`). Small models invert cleanly
-("shallow semantic inertia"); large models tend to suppress/collapse instead.
+concept text → nomic-embed-text-v1.5
+             ├─ pooled vector, Matryoshka-cut to 64, L2-normalised   →  mu     (64-d)
+             └─ PCA over its token embeddings (also cut to 64):
+                principal axis × (sigma_iso × anisotropy)            →  shape  (64-d)
+                                                  concat(mu, shape)  =  128-d
+             → adapter_final.safetensors   (trained linear 128 → 896, "the Synapse")
+             → inject at the layer-4 residual, every position, × ‖h‖ × gain
+             → greedy generate
+```
 
-## Honest caveats
-- The default `ontological_inversion.py` demo uses plain negative-gain subtraction; the **full
-  Householder reflection `Φ_c`** is implemented + benchmarked in `operators.py` / `benchmark.py`.
-- Benchmark metrics are **proxies** (embedding-cosine inversion + text-based coherence), not a
-  trained judge — stated as such in `results/REPORT.md`. An LLM-judge mode is a later add.
-- **2026-08-05 audit:** the 75% “flip success” is a *proxy directional shift*. An independent
-  keyword structured-flip re-score of the same 360 runs drops cell rates to ~8–12%; nearly half
-  of high `inv_gain` rows are collapsed gibberish the proxy still rewards. The **Glub-Tub
-  stove/fire-pit band remains real**. See `results/HARDENED_AUDIT.md`, `CLAIM_CARD.md`.
-- Base 0.5B: synthetic concepts invert cleanest; natural ones often only shift directionally.
-  Exact wording varies by model. Run `python controls.py` (random / shuffled / unrelated)
-  before claiming the direction is concept-specific.
-- Paper draft for the narrow true claim: `PAPER_DRAFT.md`.
+**The 128 is not a 128-dimensional embedding.** It is two 64-d halves: an
+L2-normalised Matryoshka cut of the pooled nomic vector, and a *shape* term —
+the principal axis of the concept's own token cloud, scaled by its spread times
+its anisotropy. The halves are deliberately not normalised against each other
+and can differ in length by two orders of magnitude. The trained weights
+absorbed that asymmetry, so a rebuild that "cleans it up" produces a different
+adapter that does not reproduce the flip.
 
-## Topology of the flip (Phase 2.2)
-What's the *geometry* of an inversion? `topology.py` steers a concept from +0.8 (amplify) through 0
-to −0.8 (invert) and tracks the **propagated final hidden state**. Findings (run card
-`runs/2026-06-24_topology-of-the-flip.md`, verdict **MIXED**):
+The original trainer, every file it depends on, and a complete rebuild spec are
+in **[`training/`](training/)**.
 
-- **Curved, not straight** — trajectory bendiness **2.7** (1 = a straight line); steering traces a
-  curved arc through hidden space.
-- **No clean Möbius fold** — +steering and −steering are *not* mirror images at the output
-  (`fold_cos ≈ −0.13`, not −1). The nonlinear layers break the symmetry; the clean fold only existed
-  *at the injection layer* — a v1 measurement artifact, now logged on the scoreboard.
-- **Topology was *not* robust** — an initial Betti-1 ≈ 7 did **not** survive a robustness battery
-  (it swung 0–56 across bootstrap/pooling/leave-one-out — see Phase 2.2b). We **retract** the
-  loop-count claim: the inversion cloud has nontrivial-but-sampling-sensitive topology, no anchor count.
+## Which model
 
-![hidden-state trajectories](results/figures/pca_trajectories.png)
+The effect was first found on **Qwen2.5-Coder-0.5B**. This baseline defaults to
+**Qwen2.5-0.5B-Instruct** (`--qwen` to swap). Small models invert cleanly —
+shallow semantic inertia. Larger models tend to suppress or collapse instead of
+flipping. `MODELS.md`.
 
-Run: `python topology.py`. Raw: `results/topology_*.{npz,json}`; figures: `results/figures/`.
+## What else is measured here
 
-### Per-layer fold decay (Phase 2.2b)
-`fold_decay.py` injects a symmetric ±delta at layer 4 and traces, per layer, how fast the *imposed*
-mirror symmetry is scrambled by the stack (run card `runs/2026-06-25_per-layer-fold-decay.md`):
+| | |
+|---|---|
+| `benchmark.py` | 12 concepts × 3 steering operators × 5 strengths × 2 models = 360 runs, each scored and swept for its own sweet spot. `results/REPORT.md` |
+| `operators.py` | three ways to invert: fixed negative gain, the true Householder reflection `Φ_c(h) = μ + (I − 2P_c)(h − μ)`, and projection polarity. The reflection is a verified involution — `f(f(h)) = h` — and the most *stable* of the three: it stays coherent to `0.61` where plain negative gain collapses at `0.48`. Negative gain inverts hardest; the reflection holds the widest band. |
+| `topology.py` | the geometry of a flip. Steering from `+0.8` through `0` to `−0.8` traces a **curved** arc through hidden space, bendiness 2.7 against 1.0 for a straight line. `results/figures/pca_trajectories.png` |
+| `fold_decay.py` | how long an imposed mirror survives the stack. `cos(Δ⁺,Δ⁻)`: −1.00 forced at layer 4 → −0.58 at 5 → −0.16 at 6, then flat. But *coherence* stays near 0.8 all the way down. **The anchor survives; the mirror doesn't.** |
+| `anchors.py` | what makes a concept flip rather than resist. First probe failed — output-space projection was too coarse. Next probe moves to hidden space, where `fold_decay` showed the durable structure lives. |
 
-- **Symmetry dies in ~2 layers** — `cos(Δ⁺,Δ⁻)`: −1.00 (layer 4, forced) → −0.58 (5) → −0.16 (6),
-  then flat. A *true-mirror* involution loop only holds ~1 layer past injection.
-- **Coherence persists** (~0.8 down the whole stack) — steering keeps riding one consistent concept
-  axis even after the fold dies. **The anchor survives; the mirror doesn't.**
-- **Phase-3 window = layers 4–5.** Consistent with the torsion intuition: inversion is *asymmetric*
-  downstream (fire→water, but water↛fire); a deeper loop must embrace that, with coherence — not the
-  mirror — as the thing that persists.
+Every claim-making experiment gets a plain-language run card in [`runs/`](runs/).
+The climb, including the rungs that broke, is in [`SCOREBOARD.md`](SCOREBOARD.md).
+Standards: [`STANDARDS.md`](STANDARDS.md).
 
-![per-layer fold decay](results/figures/fold_decay.png)
+## Where it's going — the involution loop
 
-Run: `python fold_decay.py`.
+Today the steering comes from outside: we compute a direction and push with it.
+An involution is its own inverse, so it can run *inside* the residual stream
+without losing information — unlike ordinary feedback, which collapses.
 
-## Evidence & standards
-Every claim-making experiment here gets a plain-language **run card** in `runs/`; the climb (failures
-included — they're rungs, not faults) is logged in `SCOREBOARD.md`; the few numbers that matter are
-translated in plain words next to the raw data. Adapted from `team_build/STANDARDS.md` — see
-`STANDARDS.md` and `run_card_template.md`.
+Close the loop and the steering becomes self-generated: the trajectory produces
+a hidden state, the involution reflects it across its own hyperplane, and the
+model balances against **its own structural opposite**. No target vector, no
+external hand. `fold_decay.py` already located the window where a mirror
+survives — layers 4–5.
 
-## Phase 2 (next experiments)
-1. ✅ **True reflection — done.** Implemented as the `householder` operator (`operators.py`) and
-   benchmarked (`benchmark.py`, see table above): a verified involution (`f(f(h))=h`), and the most
-   *stable* of the three operators. Next sub-step: estimate `P_c` from contrastive/probing instead
-   of the single adapter direction.
-2. ✅ **Topology of the flip — done (MIXED).** Trajectory is *curved* (bendiness 2.7), no clean Möbius
-   fold (fold≈−0.13). Imposed symmetry decays by layer 6 → **Phase-3 mirror window = layers 4–5**
-   (`fold_decay.py`). The Betti-1 loop count did **not** survive a robustness battery (swung 0–56) →
-   retracted; coherence (the concept axis) is what persists down the stack.
-3. ⚠️ **Anchor detection — first probe FAILED (`anchors.py`).** Output semantic-axis projection was
-   too coarse to separate flip-vs-resist (susceptibility 0.02–0.06; animacy near the *bottom*); the
-   anchor-presence test even hinted a strong context anchor *resists* the flip rather than enabling it
-   (run card `runs/2026-06-25_anchor-detection.md`). Next probe: **hidden-space invariance** — 2.2b
-   showed the durable structure (coherence) lives there, not in coarse output projections.
-4. **Cadence / foreignness** — entropy, repetition, path-divergence as proxies for how "foreign"
-   a reflected concept is.
-5. **Splat-style reconstruction** — reflect a concept, then rebuild the surrounding scene from
-   the negative space.
+Open question worth one small experiment each: does the loop run *within* a
+single forward pass across layers, or *across* tokens, where the hidden state of
+token N sets the involution force on token N+1?
 
-## Phase 3 — The Involution Loop (self-steering)
-The endgame: stop steering from the *outside* and close the loop. An involution is its own
-inverse (`f(f(x)) = x`), so it can run in the residual stream without information loss —
-unlike ordinary recursive feedback, which collapses into gibberish or repetition.
+`involution_loop.py`.
 
-1. **Autonomous mirror.** Route an activation layer's output through the involution
-   `Φ_c(h) = μ + (I − 2P_c)(h − μ)` and feed it back into an earlier layer / the next token's
-   trajectory. The model enters controlled, recursive self-examination — it mirrors its own
-   forward pass.
-2. **No external target vector.** Today we inject a trained concept direction (the Synapse).
-   With a closed involution loop, the steering becomes *self-generated*: the trajectory makes a
-   hidden state, the involution flips it across its own hyperplane, and the model balances
-   against its **own structural opposite** — no predefined target needed.
-3. **Stable recursion, no catastrophic collapse.** Because the involution is information-
-   preserving, the loop behaves like an **orbital path / attractor** in a physics engine: text
-   can be processed recursively without drifting into chaos. A stable basin instead of a
-   diverging one.
-4. **Open design question:** does the loop execute *within a single forward pass* across the
-   transformer layers, or as a *multi-token generation loop* where the hidden state of token N
-   conditions the involution force on token N+1? (Both are worth a small experiment.)
+## What is claimed, and what isn't
 
-The shape: from "pulling the model's strings from outside" → a self-contained, self-steering
-system that uses its own geometry to guide its trajectory. (Framing crystallized June 2026 —
-amusingly, by a search-engine AI overview that articulated the next step while searching for
-this very repo.)
+Directly, so nobody has to reverse-engineer it from the results directory:
 
-### AI Collaborators
+- **The Glub-Tub band is real and reproducible.** The stove / fire-pit inversion
+  reproduces on demand across `α ≈ 0.15–0.30`, survives the control battery, and
+  is the clean existence proof.
+- **Structured, readable flips are the rarer case, not the common one.** Across
+  the 360-run benchmark, ~75% of cells shift *directionally* toward the antipode
+  on an embedding proxy, but a keyword audit of structured flips puts the rate
+  at ~8–12%. The proxy is generous; `results/HARDENED_AUDIT.md` and
+  `CLAIM_CARD.md` say exactly how generous.
+- **Benchmark scores are proxies** — embedding cosine plus a text coherence
+  heuristic, not a trained judge.
+- **The Betti-1 loop count is retracted.** An early reading of 7 did not survive
+  a robustness battery; it swung 0–56. The inversion cloud has nontrivial but
+  sampling-sensitive topology and no anchor count.
 
-Thank you to Grok, Gemini, ChatGPT, Claude.
+## Provenance
 
-And thank you to the companies: xAI, Google, OpenAI, Anthropic.
+The effect was not invented for this repo — it was named and observed in
+November 2025 in the SplatRAG / Niodoo line, then rebuilt and reproduced here
+after a laptop loss. The naming, the original sweep, and the recovered build
+script are documented in [`PROVENANCE.md`](PROVENANCE.md) and
+[`LINEAGE.md`](LINEAGE.md).
 
-### Models and Infrastructure
+Math anchor: Jyun-Ao Lin, *A new involution for quantum loop algebras*,
+[arXiv:1410.6917](https://arxiv.org/abs/1410.6917).
 
-- Qwen2.5 models (Alibaba) for the main baseline and sweeps.
+---
+
+### Collaborators
+
+Thank you to Grok, Gemini, ChatGPT, and Claude — and to xAI, Google, OpenAI,
+and Anthropic.
+
+Qwen2.5 models by Alibaba. nomic-embed-text-v1.5 by Nomic AI.

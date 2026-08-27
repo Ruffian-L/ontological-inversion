@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1020" height="590" viewBox="0 0 1020 590">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<text x="48" y="42" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" fill="#172033">A narrow corpus-clean boundary for the fixed ridge bridge</text>
+<text x="48" y="66" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" fill="#5b6475">E10 does not erase earlier Qwen3→Llama semantic transmission; one greedy decode per cell</text>
+<line x1="260.0" y1="118" x2="260.0" y2="468" stroke="#dfe4ec"/>
+<text x="260.0" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">0</text>
+<line x1="334.4" y1="118" x2="334.4" y2="468" stroke="#dfe4ec"/>
+<text x="334.4" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">1</text>
+<line x1="408.9" y1="118" x2="408.9" y2="468" stroke="#dfe4ec"/>
+<text x="408.9" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">2</text>
+<line x1="483.3" y1="118" x2="483.3" y2="468" stroke="#dfe4ec"/>
+<text x="483.3" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">3</text>
+<line x1="557.8" y1="118" x2="557.8" y2="468" stroke="#dfe4ec"/>
+<text x="557.8" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">4</text>
+<line x1="632.2" y1="118" x2="632.2" y2="468" stroke="#dfe4ec"/>
+<text x="632.2" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">5</text>
+<line x1="706.7" y1="118" x2="706.7" y2="468" stroke="#dfe4ec"/>
+<text x="706.7" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">6</text>
+<line x1="781.1" y1="118" x2="781.1" y2="468" stroke="#dfe4ec"/>
+<text x="781.1" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">7</text>
+<line x1="855.6" y1="118" x2="855.6" y2="468" stroke="#dfe4ec"/>
+<text x="855.6" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">8</text>
+<line x1="930.0" y1="118" x2="930.0" y2="468" stroke="#dfe4ec"/>
+<text x="930.0" y="493" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">9</text>
+<text x="242" y="155" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">aligned adapter</text>
+<line x1="260" y1="150" x2="260.0" y2="150" stroke="#5b6475" stroke-width="5"/>
+<circle cx="260.0" cy="150" r="8" fill="#cf3e4f"/>
+<text x="276.0" y="155" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#172033">0/9</text>
+<text x="242" y="212" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">reversed slots</text>
+<line x1="260" y1="207" x2="260.0" y2="207" stroke="#5b6475" stroke-width="5"/>
+<circle cx="260.0" cy="207" r="8" fill="#cf3e4f"/>
+<text x="276.0" y="212" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#172033">0/9</text>
+<text x="242" y="269" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">wrong memory</text>
+<line x1="260" y1="264" x2="260.0" y2="264" stroke="#5b6475" stroke-width="5"/>
+<circle cx="260.0" cy="264" r="8" fill="#cf3e4f"/>
+<text x="276.0" y="269" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#172033">0/9</text>
+<text x="242" y="326" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">random direction</text>
+<line x1="260" y1="321" x2="260.0" y2="321" stroke="#5b6475" stroke-width="5"/>
+<circle cx="260.0" cy="321" r="8" fill="#cf3e4f"/>
+<text x="276.0" y="326" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#172033">0/9</text>
+<text x="242" y="383" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">dimension shuffle</text>
+<line x1="260" y1="378" x2="260.0" y2="378" stroke="#5b6475" stroke-width="5"/>
+<circle cx="260.0" cy="378" r="8" fill="#cf3e4f"/>
+<text x="276.0" y="383" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#172033">0/9</text>
+<text x="242" y="440" text-anchor="end" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">oracle</text>
+<line x1="260" y1="435" x2="483.3" y2="435" stroke="#2463eb" stroke-width="5"/>
+<circle cx="483.3" cy="435" r="8" fill="#2463eb"/>
+<text x="499.3" y="440" font-family="DejaVu Sans,Arial,sans-serif" font-size="12" font-weight="700" fill="#172033">3/9</text>
+<text x="543.3" y="440" font-family="DejaVu Sans,Arial,sans-serif" font-size="11" fill="#5b6475">2 definitions + 1 inference</text>
+<text x="595.0" y="525" text-anchor="middle" font-family="DejaVu Sans,Arial,sans-serif" font-size="13" fill="#172033">memory-specific successes (of 9) at gain 0.825</text>
+<text x="48" y="550" font-family="DejaVu Sans,Arial,sans-serif" font-size="11.5" fill="#172033">Aligned adapter scored 0/9 at gains 0.75, 0.825, and 0.90; this bounds clean-nonce conjunctive recall for this protocol.</text>
+<text x="48" y="575" font-family="DejaVu Sans,Arial,sans-serif" font-size="10.5" fill="#5b6475">Source: synapse/probe/e10_summary.json (SHA-256 6d34b951…); frozen rule in preregistrations/2026-08-26_E10_verified_novel_adapter_join.md.</text>
+</svg>

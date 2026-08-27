@@ -1,0 +1,3 @@
+{"mode":"shuffle","slots":14,"gain":1.0,"probe":"rb_snib","kind":"recall","memory":"snib","verdict":"MISS","reading":"did not have it","output":"The capital of Australia is Sydney.","slots_written":14,"tok_norm":0.44047296047210693}
+{"mode":"shuffle","slots":14,"gain":1.0,"probe":"rb_dorn","kind":"recall","memory":"dorn","verdict":"HIT","reading":"SAID THE BURIED FACT","output":"The salt of the earth is a violin.","slots_written":14,"tok_norm":0.44047296047210693}
+{"mode":"shuffle","slots":14,"gain":1.0,"probe":"rb_plost","kind":"recall","memory":"plost","verdict":"PARTIAL","reading":"1 piece(s) of the buried fact came out","output":"The night the keeper of the hive is lost.","slots_written":14,"tok_norm":0.44047296047210693}

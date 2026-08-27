@@ -1,0 +1,5 @@
+{"mode":"oracle","slots":11,"gain":1.0,"probe":"worb_matched","kind":"recall","memory":"worbglob","verdict":"HIT","reading":"SAID THE BURIED FACT","output":"A worb glob is a fire breathing hamster.","slots_written":11,"tok_norm":0.4569111168384552}
+{"mode":"oracle","slots":11,"gain":1.0,"probe":"zorp_matched","kind":"recall","memory":"zorpflim","verdict":"HIT","reading":"SAID THE BURIED FACT","output":"A silver bicycle.","slots_written":11,"tok_norm":0.4569111168384552}
+{"mode":"oracle","slots":11,"gain":1.0,"probe":"worb_asked_zorp_buried","kind":"control","memory":"zorpflim","verdict":"OTHER","reading":"answered some other way","output":"I find nothing.","slots_written":11,"tok_norm":0.45502158999443054}
+{"mode":"oracle","slots":11,"gain":1.0,"probe":"zorp_asked_worb_buried","kind":"control","memory":"worbglob","verdict":"OTHER","reading":"answered some other way","output":"I find nothing.","slots_written":11,"tok_norm":0.45488616824150085}
+{"mode":"oracle","slots":11,"gain":1.0,"probe":"nothing_buried","kind":"control","memory":"","verdict":"CLEAN","reading":"did not invent one","output":"I find nothing.","slots_written":0,"tok_norm":0.4569111168384552}

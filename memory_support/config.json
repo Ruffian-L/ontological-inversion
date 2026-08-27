@@ -1,0 +1,32 @@
+{
+  "protocol": "memory-support-v1",
+  "status": "calibration_required",
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "layer": 4,
+  "max_new_tokens": 96,
+  "do_sample": true,
+  "temperature": 0.7,
+  "top_p": 0.9,
+  "gains": [0.0, 0.02, 0.04, 0.06, 0.08, 0.10, 0.12, 0.14, 0.16],
+  "seeds": [104729, 130363, 155921],
+  "selection_arms": ["matched", "wrong_memory", "random", "blank"],
+  "audit_arms": ["permuted", "wrong_slot_order", "text_oracle"],
+  "probe_families": ["reconstruction", "entailed", "unanswerable", "contextual_use"],
+  "minimum_plateau_width": 3,
+  "manual_heuristic_gain": 0.08,
+  "global_gain_rule": "maximize mean worst-gate margin on calibration; ties smallest absolute gain",
+  "interval_level": 0.95,
+  "bootstrap_replicates": 2000,
+  "calibration_rule": {
+    "lower_quantile": 0.25,
+    "upper_quantile": 0.75,
+    "floors": {"S": 0.10, "F": 0.50, "U": 0.50, "V": 0.55},
+    "ceilings": {"H": 0.20, "D": 0.15}
+  },
+  "judge": {
+    "required_for_heldout": true,
+    "prompt_id": "blinded-memory-fidelity-v1",
+    "model": "UNSET_BEFORE_CALIBRATION",
+    "manual_audit_fraction": 0.10
+  }
+}

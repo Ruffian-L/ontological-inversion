@@ -3,7 +3,7 @@
 **Project:** ontological-inversion  
 **Working title:** *Ontological Inversion: Residual ±Gain on Synthetic Concept Directions*  
 **Lineage:** Niodoo / SplatRAG / collaboration — see [`LINEAGE.md`](LINEAGE.md)  
-**Last updated:** 2026-08-05  
+**Last updated:** 2026-08-27  
 
 This is the **human-readable research log**.  
 Raw receipts under `results/`; claims in `CLAIM_CARD.md`; climb in `SCOREBOARD.md`.
@@ -14,11 +14,184 @@ Synthetic concepts = **probes** for residual ±gain.
 
 ---
 
+### 2026-08-27 — preprint lives here
+
+The manuscript, article PDF, and figures moved from niodoo-live into `paper/`.
+This is the inversion repo; that was the wrong tree.
+
+### 2026-08-25 — the memory test is now ordinary conversation
+
+Jason rejected the first calibration correctly. Explicit readback turned the
+hidden channel into a synthetic instruction attractor, and feeding an instruct
+model raw text compounded the distortion. The 229 outputs are random noise, not a
+falsifier, and their raw artifacts were removed.
+
+Natural v2 exposes only “This is an evaluation of contextual recall and
+reasoning. Answer the user naturally.” plus an ordinary question. The source stays
+in the evaluator record. Recall, contextual use, and unsupported questions select
+gain; reconstruction is locked behind selection as a mechanistic assay. All five
+primary arms receive the same question through Qwen's chat template. A five-arm
+α=0.08 preview was fluent but did not name Ilya in any arm. The complete natural
+calibration is running; it is allowed to remain null.
+
+Run card: `runs/2026-08-25_natural-memory-calibration-restart.md`.
+
+### 2026-08-25 — calibration is live; gain zero does not read the memory
+
+The first shell invocation used bare Python 3.14 and failed before model load. A
+repo-local Python 3.12 environment now carries the pinned stack, and the runner
+selects the GB10 with bfloat16, explicit attention masks, cached directions, and
+append-only resume receipts. Two disclosed gain-zero smokes produced the same
+unrelated code-memory scenario instead of the source about Ilya Venn. That is the
+expected negative-control outcome. The complete 15,840-cell calibration campaign
+is now running; no readability conclusion exists yet.
+
+Run card: `runs/2026-08-25_memory-support-calibration-start.md`.
+
+### 2026-08-25 — memory support becomes a selector, not a best-output scan
+
+The proposed auto-gain test now exists under `memory_support/`. Its object is
+observable memory support, not an internal model state. Probes and the whole coarse grid
+are materialized before generation; calibration must freeze gates and judge
+identity before held-out planning unlocks. Matched readings compete directly with
+wrong-memory, random, and blank controls. The selector can return no safe readable
+gain, and a passing point is insufficient: it needs a three-adjacent-gain plateau
+ranked by the weakest gate margin.
+
+This build did not run Qwen. It earned an infrastructure rung only. Full rationale:
+`research_logs/2026-08-25_frozen-memory-support-selector.md`.
+
 ## One-paragraph status
 
 From the Niodoo/Splat line: inject a **trained concept direction** (embed → Synapse adapter) into a small LM residual stream. Inside a **thin gain island**, **−α** redefines a synthetic concept into a fluent structured opposite (Glub-Tub living pet → stove / fire-pit) — **ontological inversion**. Soft metrics overstated multi-concept flip rates. **+α** can plant **partial** OOD attributes (Helioscapin Antarctica / 2019; refusal unlock); full engrams and history-prior overrides fail so far. This is a **measured content slice**, not the whole of Niodoo and not ActAdd rebranded.
 
 ---
+
+
+---
+
+### 2026-08-24 — the Synapse trainer, recovered
+
+The build script for `adapter_final.safetensors` was assumed lost. It was not:
+`src/bin/train_adapter.rs` in `SplatRagBench-master`, **Rust on `candle`**. Every
+search for it had been shaped like Python — `torch.optim`, `AdamW`,
+`.backward()`, `def train` — and returned nothing, for years of searching, over a
+file sitting in plain sight.
+
+The trainer, every source file it depends on, and a verified rebuild spec are now
+in [`training/`](training/). The shipped adapter hashes identically to the one in
+the original tree (`b8118021c7c27948565c4f322b5f6e04`), so the recipe and the
+artifact are known to belong together.
+
+Two corrections land with it, both to descriptions this repo was carrying:
+
+- The input is **`concat(mu₆₄, shape₆₄)`**, not a "128-d nomic Matryoshka concept
+  code." Half of it is an L2-normalised 64-d Matryoshka cut; the other half is
+  the PCA principal axis of the concept's token cloud scaled by
+  `sigma_iso × anisotropy`, unnormalised against the first half and able to
+  exceed it by two orders of magnitude. `PROVENANCE.md` corrected in place, dated,
+  with the old wording quoted rather than erased.
+- The training **target is the token-embedding layer, mean-pooled**
+  (`embed(tokens).mean(1).detach()`) — not layer 4. We inject at the layer-4
+  residual. Layer 4 is an empirical finding that reproduces and survives the
+  controls; it is not something the training script derives. Both facts are true
+  and the repo now states them next to each other instead of implying one story.
+
+The training corpus is gone — `manifest.bin` in the original tree is a 71-byte
+smoke stub reading *"The sky is neon green."* A functionally equivalent adapter
+is fully reproducible from the spec; a byte-identical one is not, and a rebuild
+on other data should not claim it reproduced this one.
+
+Run card: [`runs/2026-08-24_adapter-trainer-recovered.md`](runs/2026-08-24_adapter-trainer-recovered.md).
+
+No steering claim changed. Nothing was re-scored, no band moved.
+
+### 2026-08-24 — README rewritten for a reader who has not met steering
+
+The old front page opened on "compile a fact into one residual direction" and
+never said the sentence that matters: **the weights are frozen, and the concept
+is never in the prompt.** A reader could finish it thinking a vector in a config
+file had been edited. Rewritten to lead with the Glub-Tub inversion table, then
+the mechanism with a diagram of where in the stack the write lands and why the
+push is scaled to `‖h‖`, then the controls — `controls.py` moved up into the
+run instructions, where it belongs, since a random direction of equal length not
+producing the flip is what makes the rest mean anything.
+
+Claims, proxies, and the retracted Betti-1 count are unchanged and still stated;
+they are collected in one section near the end instead of interleaved through the
+results.
+
+
+### 2026-08-25 — the 128-d question, answered: retrieval-grade is not recall-grade
+
+The standing worry that the Synapse's 128-d input is undersized. It is not. It is
+sized for a different job than the one that would need width.
+
+Companion work on Llama-3.1-8B truncated the same encoder's vectors to leading
+Matryoshka slices — same encoder, same data, same injection site, so width is the
+only variable. The result is a clean monotone capacity curve with **no knee at
+the model's native width**, which kills the "the model needs its native shape"
+confound outright.
+
+What does come apart is what the vector is *for*:
+
+> **128 dimensions preserve 94% of the pairwise similarity structure and 50% of
+> the token-level reconstruction signal.**
+
+Similarity survives truncation nearly intact; exact wording does not. Ontological
+inversion is a similarity-scale operation — it needs a concept's direction, not
+its spelling — so 462 KB is the right size for it. Only recitation needs the
+width, and recitation is not what this repo does.
+
+Second companion finding, relevant to §3's flagged site mismatch: injecting at
+the **final post-norm** produces gain-scaled disturbance with no content, and an
+unmatched control leaks the identical artifact. At the **token-embedding layer**
+— the site the adapter was actually fit to — content comes back. Layer 4 sits
+between. This does not make layer 4 wrong; it reproduces here and survives the
+controls. It does show the site is not a free parameter, and it gives the
+signature of getting it wrong.
+
+Run card: [`runs/2026-08-25_embedding-layer-recall-and-the-128d-question.md`](runs/2026-08-25_embedding-layer-recall-and-the-128d-question.md).
+
+No steering claim changed. Nothing re-scored.
+
+
+### 2026-08-25 — the bias carries the inversion; the concept carries the invariant
+
+`CONTROLS.md` has had `unrelated_adapter` at **80% honest flip** since August 5th,
+read in `CHECKLIST.md` B1 as a prompt-frame confound. `SELF_D_ISLAND.md`
+separately gets a *wider* lobe from the prompt's own hidden state with no adapter
+vector at all. Both point the same way, so we ran the limit case: **v = 0**, so
+the injected direction is the adapter's **bias and nothing else**. No concept text
+is embedded anywhere in the run.
+
+**The bias alone inverts.** On a 0.01 grid it produces "a small, portable **stove
+that heats water**" at α ∈ [−0.13, −0.12] — the same sentence the concept
+direction gives at [−0.21, −0.18] — and a clean inanimate "**container made of
+plastic or rubber**" (L=0) at α ∈ [−0.28, −0.24]. It is non-monotone, with a junk
+gap at [−0.23, −0.20]: **the same two-lobes-with-a-gap shape** the concept
+direction has, from a direction with no concept in it.
+
+What the concept buys is visible in what the bias *loses*. The concept's lobes
+reach L=0 while still naming **fire pit** — the fire relation survives the flip,
+changed from *lives in* to *withstands*. The bias reaches L=0 only much deeper and
+lands on water bottles and plastic tubs. **The bias carries alive→object; the
+concept carries which object, and the Fire Invariant Jason named in November 2025.**
+
+The weights agree: at the unit input the callers feed, ‖Wv‖ ≈ 1.08 against
+‖b‖ = 1.11, so any two concepts' directions share ≈0.52 cosine. An unrelated
+concept works because the directions largely coincide.
+
+B1's prompt-frame reading is not sufficient on its own: at α = 0 the same
+fireplace prompt still says *"keeping your furry friend comfortable."* The frame
+does not invert by itself. Frame, bias and concept compose, and each now has an
+experiment that isolates it.
+
+Run card: [`runs/2026-08-25_bias-only-island.md`](runs/2026-08-25_bias-only-island.md).
+Raw: `results/bias_only_dense.txt`. Code: `experiments/bias_only.py`.
+
+Boundary: one prompt, one concept, greedy, n=1 per α. C1's band, lobes and
+collapse are unchanged.
 
 ## Timeline (the climb)
 
