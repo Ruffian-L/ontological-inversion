@@ -361,7 +361,8 @@ def write_tex(abstract: str, body: str) -> None:
 {\large Cross-Model Vector Memory for Steering, Recall, and Reasoning}}
 \author{Jason Van Pham\\[0.4em]
 {\normalsize Independent researcher}}
-\date{Preprint --- 27 August 2026}
+\date{Preprint --- 27 August 2026\\[0.6em]
+{\normalsize DOI: \href{https://doi.org/10.5281/zenodo.22126781}{10.5281/zenodo.22126781}}}
 
 \begin{document}
 \maketitle

@@ -19,6 +19,18 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-08-27 — Concept DOI on the preprint
+
+We did: Stamped Zenodo concept DOI `10.5281/zenodo.22126781` (all versions) and
+v1 `10.5281/zenodo.22126782` on `paper/MANUSCRIPT.md`, both READMEs,
+`CITATION.cff`, and the Tectonic PDF byline. Did not mint a GitHub Release.
+Did not upload a new Zenodo version. Did not touch the dirty memory-support tree.
+
+We think: the citation people should use is the concept DOI; GitHub–Zenodo
+being flipped on does not attach a Release to this preprint record.
+
+Next: next paper edit is a new Zenodo version under the same concept DOI.
+
 ## 2026-08-27 — Slot transcripts land next to the preprint
 
 We did: Copied the cited ordered-slot JSONL receipts into

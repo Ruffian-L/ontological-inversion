@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you cite this work, use the concept DOI so the citation always resolves to the latest version."
+title: "Writing Meaning Between Frozen Models: Cross-Model Vector Memory for Steering, Recall, and Reasoning"
+type: article
+authors:
+  - family-names: Pham
+    given-names: Jason Van
+    orcid: "https://orcid.org/0009-0003-7212-6577"
+    alias: ruffian-l
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.22126781
+    description: Concept DOI (all versions)
+  - type: doi
+    value: 10.5281/zenodo.22126782
+    description: Version 1, 27 August 2026
+url: "https://doi.org/10.5281/zenodo.22126781"
+repository-code: "https://github.com/Ruffian-L/ontological-inversion"
+date-released: 2026-08-27
+keywords:
+  - ontological inversion
+  - activation steering
+  - vector memory
+  - frozen language models
+  - SplatRAG
+preferred-citation:
+  type: article
+  title: "Writing Meaning Between Frozen Models: Cross-Model Vector Memory for Steering, Recall, and Reasoning"
+  authors:
+    - family-names: Pham
+      given-names: Jason Van
+      orcid: "https://orcid.org/0009-0003-7212-6577"
+  year: 2026
+  month: 8
+  doi: 10.5281/zenodo.22126781
+  url: "https://doi.org/10.5281/zenodo.22126781"
+  publisher:
+    name: Zenodo

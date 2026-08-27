@@ -8,6 +8,8 @@
 
 **Preprint — 27 August 2026**
 
+DOI: [10.5281/zenodo.22126781](https://doi.org/10.5281/zenodo.22126781) (all versions; this version is [10.5281/zenodo.22126782](https://doi.org/10.5281/zenodo.22126782))
+
 ## Abstract
 
 Dense retrieval ordinarily uses a vector to select text that is then read by a
