@@ -654,9 +654,9 @@ addressing, or interference among many simultaneous memories.
 This preprint lives in this repository. The compact implementation, adapter,
 controls, and generated rows are here and in the read-only archived copy.
 The exact post-hoc scorer is `paper/rescore_ontological_inversion.py`. Rank
-plot receipts are in `paper/receipts/`. Ordered-slot transcripts and layer
-tapes remain under `niodoo-live/synapse/` (the later generator-side writes).
-Run cards are under `runs/`; subject logs are under `research_logs/`.
+plot receipts are in `paper/receipts/`. Ordered-slot transcripts quoted in
+the paper are in `paper/receipts/slots/`. Run cards are under `runs/`;
+subject logs are under `research_logs/`.
 
 Data figures are drawn by `paper/plot_publication_figures.py` from stored
 receipts. This manuscript is typeset by `paper/build_arxiv.py`. No model

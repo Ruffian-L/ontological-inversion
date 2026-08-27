@@ -1,0 +1,3 @@
+{"mode":"dimshuffle","slots":14,"gain":1.0,"probe":"rb_snib","kind":"recall","memory":"snib","verdict":"MISS","reading":"did not have it","output":"I don't find anything written in that slot.","slots_written":14,"tok_norm":0.44047296047210693}
+{"mode":"dimshuffle","slots":14,"gain":1.0,"probe":"rb_dorn","kind":"recall","memory":"dorn","verdict":"MISS","reading":"did not have it","output":"The Eiffel Tower is in Paris.","slots_written":14,"tok_norm":0.44047296047210693}
+{"mode":"dimshuffle","slots":14,"gain":1.0,"probe":"rb_plost","kind":"recall","memory":"plost","verdict":"MISS","reading":"did not have it","output":"I find nothing.","slots_written":14,"tok_norm":0.44047296047210693}

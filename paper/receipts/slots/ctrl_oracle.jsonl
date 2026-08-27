@@ -1,0 +1,3 @@
+{"mode":"oracle","slots":14,"gain":1.0,"probe":"rb_snib","kind":"recall","memory":"snib","verdict":"HIT","reading":"SAID THE BURIED FACT","output":"A penguin that glows.","slots_written":14,"tok_norm":0.44047296047210693}
+{"mode":"oracle","slots":14,"gain":1.0,"probe":"rb_dorn","kind":"recall","memory":"dorn","verdict":"HIT","reading":"SAID THE BURIED FACT","output":"Aa thessik dorn is a violin made of salt.","slots_written":14,"tok_norm":0.44047296047210693}
+{"mode":"oracle","slots":14,"gain":1.0,"probe":"rb_plost","kind":"recall","memory":"plost","verdict":"HIT","reading":"SAID THE BURIED FACT","output":"A beehive is a beekeeper who works at night.","slots_written":14,"tok_norm":0.44047296047210693}

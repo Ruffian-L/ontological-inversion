@@ -19,6 +19,18 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-08-27 — Slot transcripts land next to the preprint
+
+We did: Copied the cited ordered-slot JSONL receipts into
+`paper/receipts/slots/` (oracle, span, controls, inference, ordinary-use).
+Did not copy the 1.9G layer-trace `.npy` arrays. Did not push memory-support
+working-tree dirt.
+
+We think: the paper can ship from this repo without pointing at niodoo-live
+for the quoted generations.
+
+Next: push `main`.
+
 ## 2026-08-27 — Preprint moves into this repo
 
 We did: Copied the current preprint from `niodoo-live/paper/` into
