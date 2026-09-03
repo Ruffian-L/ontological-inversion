@@ -19,6 +19,81 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-09-04 — episode loop measured on the 0.5B adapter; write landed, episode did not speak
+
+We did: first MEMORY_STEERING.md rung-5 cell. `episode_loop.py` — hidden episode "keys under the blue pot", visible ask never restates it, gain 0 in the ladder, matched vs wrong-memory (peanuts) at 0.08–0.32, greedy Qwen2.5-0.5B-Instruct layer 4, nomic[:128]→adapter. 15 cells. `write_norm` 0 at gain 0, 0.83→3.48 as gain rose. Transcripts: `results/episode_loop_20260903T180048Z.{jsonl,txt}`. No auto-verdict. Did not run Llama slots. Did not finish the 9,720-cell memory-support calibration (still 499/9720). Did not claim the product loop.
+
+We think: this adapter is sized for inversion/steering, not recitation of a personal episode. The write is real; the 0.5B mouth did not say blue pot. MATS in 2 days ships the paper + this receipt, not a fake closed loop.
+
+Next: the regime that already spoke buried facts — Llama input slots / Qwen3→Llama bridge — on the same keys episode, gain 0 in-file. Not more 0.5B α.
+
+- Research: `research_logs/2026-09-04_episode-loop-write-landed-mouth-missed.md`
+- Run card: `runs/2026-09-04_episode-loop.md`
+- Agent: Grok (xAI)
+
+## 2026-08-31 — buried why moved endpoints but did not repair the path
+
+We did: audited SplatRAG and Hydro for the earlier failure-repair idea, then ran
+48 disclosed local generations (39 unique scored cells) on Official Prompt 8.
+Buried correct-why, topic-only, and wrong-why sentences occupied 16 Llama-native
+soft slots across registered gains 0–2 and user-requested exploratory gains
+2.5–12. Replaced the runner's inapplicable substring grade with a capacity,
+transition, path, and final-endpoint scorer. Exact legal path: 0/39. Valid explicit
+endpoint: why 2/13, topic 0/13, wrong-why 2/13. Did not train, merge answers, run
+SplatRAG/Qwen, use adapter inference, or claim a why-specific direction.
+
+We think: the vector channel is active, but the simple English input-slot repair
+is not merely too quiet; it steers answer basins without cleanly transmitting the
+causal operation. SplatRAG should retrieve provenance, Hydro's signed teacher
+anchor should supply attract/repel structure, and NIODOO should carry a
+host-native repair contrast plus outcome receipts.
+
+Next: capture matched failed/corrected trajectories, write
+`h_correct - h_failed` at candidate middle layers, and judge the final answer
+before treating generated reasoning as a lossless trace.
+
+## 2026-08-30 — the Regime-B receipts were never published anywhere
+
+We did: A Hugging Face reviewer said he could not find the soft-slot runner, the
+E10 preregistration, or the scoring material in the public repo, and hedged that
+it might just be a missing link. It was not. `niodoo-hidden-state-steering` is
+public but its `origin/main` is a 196-file snapshot with no `synapse/`, no
+`regime_b/preregistration/`, and no `synapse_soft_slot.rs` — every Regime-B artifact the
+paper cites existed only on one disk, on an unpushed branch. Built `regime_b/`
+(runner, bridge scripts, frozen scorer, prereg, trained ridge map, all raw rows,
+67 MB) plus `reproduce_regime_b.sh`, which re-scores the shipped rows offline and
+verifies per-arm raw hashes and per-gain counts — all six arms reproduce
+identically, and the summary still hashes to the `6d34b951…` the claim matrix
+cites. Pinned the Regime-B endpoints in `MODELS.md` (Llama-3.1-8B-Instruct
+Q5_K_M, Qwen3-Embedding-8B **Q8_0** not Q4, ridge `lam=1.0` seed `1729`).
+Versioned the evaluation rule on four tiers in `regime_b/README.md`. Did not
+rewrite the dated logs' paths — the ledgers got one resolution note each. Did not
+redistribute model weights, run a model, touch the `memory_support/` backlog, or
+reconcile the branch.
+
+We think: the three points the reviewer was most confident about were already in
+the manuscript (§5.2, §6, §8, §5.4). The one he hedged on found the real hole.
+Also: E10's reversed and cross-memory controls read as passed at 0/9, but the
+matched arm is also 0/9, so they discriminate nothing — that is now stated in
+`regime_b/README.md` rather than left for a reader to catch.
+
+Next: E11, the direction × frame × gain factorial. `controls.py` takes one
+`--seed`, so the published "random 0%" is n=1. Reproduce his 1/128, then test
+E8's prediction that the random directions which invert are the ones with
+unusual `|cos(d, b)|`.
+
+## 2026-08-27 — Concept DOI on the preprint
+
+We did: Stamped Zenodo concept DOI `10.5281/zenodo.22126781` (all versions) and
+v1 `10.5281/zenodo.22126782` on `paper/MANUSCRIPT.md`, both READMEs,
+`CITATION.cff`, and the Tectonic PDF byline. Did not mint a GitHub Release.
+Did not upload a new Zenodo version. Did not touch the dirty memory-support tree.
+
+We think: the citation people should use is the concept DOI; GitHub–Zenodo
+being flipped on does not attach a Release to this preprint record.
+
+Next: next paper edit is a new Zenodo version under the same concept DOI.
+
 ## 2026-08-27 — Slot transcripts land next to the preprint
 
 We did: Copied the cited ordered-slot JSONL receipts into

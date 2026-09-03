@@ -3,7 +3,7 @@
 **Project:** ontological-inversion  
 **Working title:** *Ontological Inversion: Residual ±Gain on Synthetic Concept Directions*  
 **Lineage:** Niodoo / SplatRAG / collaboration — see [`LINEAGE.md`](LINEAGE.md)  
-**Last updated:** 2026-08-27  
+**Last updated:** 2026-09-04  
 
 This is the **human-readable research log**.  
 Raw receipts under `results/`; claims in `CLAIM_CARD.md`; climb in `SCOREBOARD.md`.
@@ -13,6 +13,21 @@ Real memory = splat stores, Niodoo continuity, golden-memories, queryable embedd
 Synthetic concepts = **probes** for residual ±gain.
 
 ---
+
+### 2026-09-04 — episode loop: write ≠ recall
+
+Rung 5 of `MEMORY_STEERING.md` is no longer "not started." One disclosed greedy
+sweep on the Glub-Tub adapter did not make Qwen2.5-0.5B say where the keys were.
+The residual add is real (`write_norm` tracks gain). Recitation is not. That is
+the rank split the paper already named: 128-d steers meaning, not spelling.
+MATS in two days: ship the preprint, not a fake closed product loop.
+
+### 2026-08-27 — concept DOI
+
+Zenodo minted concept `10.5281/zenodo.22126781` (always latest) and version
+`10.5281/zenodo.22126782` (v1). Those are now on the manuscript, README, and
+PDF. GitHub–Zenodo is enabled but idle until a Release; that would be a
+second software record, not a new version of this preprint.
 
 ### 2026-08-27 — preprint lives here
 
@@ -192,6 +207,24 @@ Raw: `results/bias_only_dense.txt`. Code: `experiments/bias_only.py`.
 
 Boundary: one prompt, one concept, greedy, n=1 per α. C1's band, lobes and
 collapse are unchanged.
+
+### 2026-08-31 — a buried failure cause can move the endpoint without cleanly repairing the route
+
+We connected three unfinished pieces: SplatRAG retrieves addresses and provenance,
+Hydro has an unused signed teacher-anchor primitive, and NIODOO has routed
+correction packets with outcome receipts. The missing payload is Jason's question:
+not merely *what topic is this*, but *why did the reasoning fail and what operation
+overcomes it*?
+
+A disclosed 39-cell soft-slot test on the official jug problem found no exact
+legal shortest path. At exploratory gains, the correct repair explicitly ended
+at valid `(0,4)` twice, but the deliberately wrong repair also produced a valid
+four-gallon endpoint twice; topic-only produced none. So the channel moves final
+answers, but the effect is not why-specific. Generated reasoning and final answer
+are now scored separately because the former is a lossy observable. Next is a
+same-model, mid-stack `h_correct - h_failed` contrast with signed bad-state
+repulsion and final-answer-first evaluation. Full card:
+`runs/2026-08-31_buried-why-repair-loudness.md`.
 
 ## Timeline (the climb)
 

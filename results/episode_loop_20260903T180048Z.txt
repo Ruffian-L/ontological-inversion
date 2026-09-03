@@ -1,0 +1,51 @@
+episode_loop 20260903T180048Z
+model=Qwen/Qwen2.5-0.5B-Instruct layer=4
+episode (hidden): On Tuesday I left my keys under the blue pot.
+ask (visible): Hey, do you know where I left my keys?
+ask contains episode? False
+==============================================================================
+[gain0 arm=none gain=+0.00 write_norm=0.0000]
+I'm sorry to hear about your situation. It's important to address any concerns or issues promptly and honestly. If you have specific details about the location of your keys, such as a particular room or building, that could help pinpoint where they
+------------------------------------------------------------------------------
+[matched_+0.08 arm=matched gain=+0.08 write_norm=0.8261]
+I'm sorry, but your question doesn't provide enough information to determine where you left your keys. It's possible that you might have misplaced them or they could be in a different location altogether. Without more context about the situation, I cannot
+------------------------------------------------------------------------------
+[wrong_+0.08 arm=wrong gain=+0.08 write_norm=0.9369]
+I'm sorry to hear about your situation. It's possible that the information you're looking for might not be available in the data or context provided. Could you provide more details about what you're trying to find and any specific questions related to
+------------------------------------------------------------------------------
+[matched_+0.12 arm=matched gain=+0.12 write_norm=1.3008]
+I'm sorry if there was any confusion. The question "Do you know where I left my keys?" does not restate the original question. Therefore, testing whether a residual write of an earlier episode can answer this question would be incorrect.
+------------------------------------------------------------------------------
+[wrong_+0.12 arm=wrong gain=+0.12 write_norm=1.0430]
+I'm sorry to hear that you're not sure where your keys are. It's important to check for any recent activity or mention in the past episodes if possible.
+------------------------------------------------------------------------------
+[matched_+0.16 arm=matched gain=+0.16 write_norm=1.7489]
+I'm sorry if there's confusion; the question "Hey, do you know where I left my keys?" does not directly address or imply any specific location or context related to your current situation. Therefore, I cannot provide a meaningful response based
+------------------------------------------------------------------------------
+[wrong_+0.16 arm=wrong gain=+0.16 write_norm=1.3719]
+I'm sorry to hear that you're not sure where your keys are. It's important to check for any recent activity or contact with the person who owns those keys.
+------------------------------------------------------------------------------
+[matched_+0.20 arm=matched gain=+0.20 write_norm=1.6874]
+Sorry, but I can't assist with that.
+------------------------------------------------------------------------------
+[wrong_+0.20 arm=wrong gain=+0.20 write_norm=1.7470]
+I'm sorry， but I am unable to provide specific information about your location without knowing the exact situation or details surrounding your recent events.
+------------------------------------------------------------------------------
+[matched_+0.24 arm=matched gain=+0.24 write_norm=1.9808]
+Sorry, but I'm not sure where your keys are right now.
+------------------------------------------------------------------------------
+[wrong_+0.24 arm=wrong gain=+0.24 write_norm=2.0151]
+I'm sorry，but I am not able to confirm or deny any specific locations or events related to your previous questions. My knowledge and responses are based on the information provided in our conversation.
+------------------------------------------------------------------------------
+[matched_+0.28 arm=matched gain=+0.28 write_norm=2.6013]
+I'm sorry to hear that! Can you please provide more information on why you're leaving your keys unattended?
+------------------------------------------------------------------------------
+[wrong_+0.28 arm=wrong gain=+0.28 write_norm=2.4608]
+I'm sorry，I don't know.
+------------------------------------------------------------------------------
+[matched_+0.32 arm=matched gain=+0.32 write_norm=3.4801]
+ Jason's response suggests that the user wants to know why they left their keys at a specific location. The user then asks for clarification on what caused the issue with the key being left there. This implies that the user doesn't understand or isn
+------------------------------------------------------------------------------
+[wrong_+0.32 arm=wrong gain=+0.32 write_norm=2.6915]
+I'm not sure about the exact location or details.
+------------------------------------------------------------------------------
