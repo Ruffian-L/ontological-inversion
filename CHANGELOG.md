@@ -19,6 +19,18 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-09-04 — keys episode on Llama oracle slots; write landed, use-ask missed, no mint
+
+We did: same keys episode as the 0.5B loop, on the site that already recited worb-glob. Llama-3.1-8B-Instruct Q5_K_M, `synapse_soft_slot --mode oracle --slots 11`, gain 0 in-file, `[MEM]` in every USER prompt. Static gate `niodoo-live/scripts/preflight_slots.sh` (fails `probes_real.json`). Live preflight: `slots_written=11`, 4 tokens `On Tuesday I left`. Full ladder 20 cells / 233s, CPU candle (driver 580 vs CUDA-13.3 PTX). Transcript sha256 `b4c63881…`. Did not mint. Did not run adapter. Did not treat runner HIT/MISS as a finding. Did not commit the `review-response` paper/regime_b backlog.
+
+We think: the write is real. Recitation at 48 tokens is a denial that names the blue pot. The use-ask does not give the location. That is not a closed loop and not a mint.
+
+Next: disclosure-off recitation or slot count = token count. Paper still ships; this cell is a receipt, not the product.
+
+- Research: `research_logs/2026-09-04_keys-episode-oracle-slots.md`
+- Run card: `runs/2026-09-04_keys-episode-oracle-slots.md`
+- Agent: Grok (xAI)
+
 ## 2026-09-04 — episode loop measured on the 0.5B adapter; write landed, episode did not speak
 
 We did: first MEMORY_STEERING.md rung-5 cell. `episode_loop.py` — hidden episode "keys under the blue pot", visible ask never restates it, gain 0 in the ladder, matched vs wrong-memory (peanuts) at 0.08–0.32, greedy Qwen2.5-0.5B-Instruct layer 4, nomic[:128]→adapter. 15 cells. `write_norm` 0 at gain 0, 0.83→3.48 as gain rose. Transcripts: `results/episode_loop_20260903T180048Z.{jsonl,txt}`. No auto-verdict. Did not run Llama slots. Did not finish the 9,720-cell memory-support calibration (still 499/9720). Did not claim the product loop.

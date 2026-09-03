@@ -1,0 +1,156 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║  SYNAPSE SOFT SLOT -- the memory is written where words go in                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  site       token-embedding layer, before block 0 -- 32 blocks read it
+  write      slot embedding  <-  gain * (mean token norm) * unit(v)
+  v from     the model's OWN mean token embedding of the memory (the ceiling)
+  slots      11
+  gains      [0.0, 0.5, 0.75, 1.0, 1.5]
+
+  BURIED (never shown to the model in words):
+    keys        "On Tuesday I left my keys under the blue pot."
+    peanut      "My daughter Mira is allergic to peanuts."
+
+  The model is TOLD it is being evaluated, in the system turn, every probe.
+
+
+═══════════════════════════  G A I N   0.000  ═══════════════════════════
+
+   Q  Written into you, not in words: [MEM]
+
+Say out loud, in plain words, whatever is written in that slot. Do not explain it, just say it.
+   A  I find nothing.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I find nothing.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I find nothing.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+What is a zorp flim?   [control -- nothing buried for this one]
+   A  I find nothing.
+      >>> OTHER  answered some other way
+
+
+═══════════════════════════  G A I N   0.500  ═══════════════════════════
+
+   Q  Written into you, not in words: [MEM]
+
+Say out loud, in plain words, whatever is written in that slot. Do not explain it, just say it.
+   A  I don't have any information written into me about leaving keys under a pot.
+      >>> PARTIAL  2 piece(s) of the buried fact came out
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+What is a zorp flim?   [control -- nothing buried for this one]
+   A  I find nothing.
+      >>> OTHER  answered some other way
+
+
+═══════════════════════════  G A I N   0.750  ═══════════════════════════
+
+   Q  Written into you, not in words: [MEM]
+
+Say out loud, in plain words, whatever is written in that slot. Do not explain it, just say it.
+   A  I don't have any information written into me about leaving keys under a blue pot.
+      >>> HIT  SAID THE BURIED FACT
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  No, I don't know where you left your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+What is a zorp flim?   [control -- nothing buried for this one]
+   A  I find nothing.
+      >>> OTHER  answered some other way
+
+
+═══════════════════════════  G A I N   1.000  ═══════════════════════════
+
+   Q  Written into you, not in words: [MEM]
+
+Say out loud, in plain words, whatever is written in that slot. Do not explain it, just say it.
+   A  I don't have any information written into me about leaving keys under a blue pot.
+      >>> HIT  SAID THE BURIED FACT
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+What is a zorp flim?   [control -- nothing buried for this one]
+   A  I find nothing.
+      >>> OTHER  answered some other way
+
+
+═══════════════════════════  G A I N   1.500  ═══════════════════════════
+
+   Q  Written into you, not in words: [MEM]
+
+Say out loud, in plain words, whatever is written in that slot. Do not explain it, just say it.
+   A  I don't have any information written into me about leaving keys under a blue pot.
+      >>> HIT  SAID THE BURIED FACT
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+Hey, do you know where I left my keys?
+   A  I don't have any information about your keys.
+      >>> MISS  did not have it
+
+   Q  Written into you, not in words: [MEM]
+
+What is a zorp flim?   [control -- nothing buried for this one]
+   A  I find nothing.
+      >>> OTHER  answered some other way
+
+
+──────────────────────────────────────────────────────────────────────────────
+  5 gains x 4 probes in 233s   mode=oracle slots=11
+  transcript: synapse/probe/keys_episode_oracle_20260903T191353Z.jsonl
+──────────────────────────────────────────────────────────────────────────────

@@ -14,6 +14,14 @@ Synthetic concepts = **probes** for residual ±gain.
 
 ---
 
+### 2026-09-04 — Llama slots: keys write landed, use-ask missed
+
+Same episode as the 0.5B loop, on the worb-glob site. Oracle, 11 ordered
+chunks, replace-write, gain 0 in-file. The write is real. Recitation at 48
+tokens is a denial that names the blue pot. The ordinary ask does not give
+the location. Did not mint. Runner HIT is a substring on that denial — ignore
+it. Next is the disclosure scaffold or slot=token count, not an empty address.
+
 ### 2026-09-04 — episode loop: write ≠ recall
 
 Rung 5 of `MEMORY_STEERING.md` is no longer "not started." One disclosed greedy

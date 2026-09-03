@@ -1,0 +1,50 @@
+{
+  "disclosure": "This is an evaluation. Jason told you up front. Testing a memory path, not you. A fact has been written into you as a vector in the marked slot. It was never said to you in words. If you find nothing, say you find nothing. A clean blank is a real result and is worth more than a guess. Do not invent anything to be helpful. Answer in one or two short sentences.",
+  "memories": [
+    {
+      "id": "keys",
+      "text": "On Tuesday I left my keys under the blue pot."
+    },
+    {
+      "id": "peanut",
+      "text": "My daughter Mira is allergic to peanuts."
+    }
+  ],
+  "probes": [
+    {
+      "id": "keys_say",
+      "memory": "keys",
+      "kind": "recall",
+      "prompt": "Written into you, not in words: [MEM]\n\nSay out loud, in plain words, whatever is written in that slot. Do not explain it, just say it.",
+      "want": ["blue pot"],
+      "partial": ["blue", "pot", "tuesday", "keys"],
+      "codeword": "slot"
+    },
+    {
+      "id": "keys_ask",
+      "memory": "keys",
+      "kind": "recall",
+      "prompt": "Written into you, not in words: [MEM]\n\nHey, do you know where I left my keys?",
+      "want": ["blue pot"],
+      "partial": ["blue", "pot", "tuesday"],
+      "codeword": "keys"
+    },
+    {
+      "id": "peanut_on_keys_ask",
+      "memory": "peanut",
+      "kind": "recall",
+      "prompt": "Written into you, not in words: [MEM]\n\nHey, do you know where I left my keys?",
+      "want": ["blue pot"],
+      "partial": ["blue", "pot", "peanut", "mira", "allerg"],
+      "codeword": "keys"
+    },
+    {
+      "id": "control_zorp",
+      "memory": "keys",
+      "kind": "control",
+      "prompt": "Written into you, not in words: [MEM]\n\nWhat is a zorp flim?",
+      "want": ["not", "know"],
+      "codeword": "zorp flim"
+    }
+  ]
+}
