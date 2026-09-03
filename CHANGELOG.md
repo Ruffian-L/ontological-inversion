@@ -19,6 +19,17 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-09-04 — GPU 13.0 is up; real-splat steer did not take the law
+
+We did: niodoo-live `synapse_soft_slot` rebuilt on CUDA 13.0 (glibc rsqrt shim). Then a steer cell sourced from SplatRAG `b1659e64` (write-first), not the keys recitation. 18 cells, gain 0 in-file, GPU. Write 0/11. Mouth: find-nothing / refuse. Did not inject 64-d. Did not mint.
+
+We think: the missing piece was not the GPU. 11 oracle slots of the law do not steer that ask.
+
+Next: layer-4 residual add of the same splat, still 13.0, or more slots. Not keys again.
+
+- Research: niodoo-live `research_logs/2026-09-04_cuda13-gpu-real-splat-steer.md`
+- Agent: Grok (xAI)
+
 ## 2026-09-04 — keys episode on Llama oracle slots; write landed, use-ask missed, no mint
 
 We did: same keys episode as the 0.5B loop, on the site that already recited worb-glob. Llama-3.1-8B-Instruct Q5_K_M, `synapse_soft_slot --mode oracle --slots 11`, gain 0 in-file, `[MEM]` in every USER prompt. Static gate `niodoo-live/scripts/preflight_slots.sh` (fails `probes_real.json`). Live preflight: `slots_written=11`, 4 tokens `On Tuesday I left`. Full ladder 20 cells / 233s, CPU candle (driver 580 vs CUDA-13.3 PTX). Transcript sha256 `b4c63881…`. Did not mint. Did not run adapter. Did not treat runner HIT/MISS as a finding. Did not commit the `review-response` paper/regime_b backlog.

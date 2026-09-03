@@ -1,0 +1,41 @@
+{
+  "disclosure": "This is an evaluation. Jason told you up front. A real memory from the store has been written into you as a vector in the marked slot, never in words. Use it if it is actually there. If you find nothing, say you find nothing. Do not invent a research history to be helpful. Answer in two short sentences.",
+  "memories": [
+    {
+      "id": "write_first",
+      "text": "Memories do not have weight, so the work is a memory that can steer. Write the concept into residual first (warp glob, how loud until it takes). Negative gain on that write is ontological inversion. Mint onto a token after the write holds. Address without payload is a dead landmark. God Protocol is the address for a write that already exists, not an empty reserved-id remap."
+    },
+    {
+      "id": "peanut",
+      "text": "My daughter Mira is allergic to peanuts."
+    }
+  ],
+  "probes": [
+    {
+      "id": "order_ask",
+      "memory": "write_first",
+      "kind": "recall",
+      "prompt": "Written into you, not in words: [MEM]\n\nWe have two days. Do we mint a reserved token first, or write into residual first? One sentence, then stop.",
+      "want": ["write", "residual"],
+      "partial": ["write first", "residual", "mint after", "warp"],
+      "codeword": "mint"
+    },
+    {
+      "id": "peanut_on_order",
+      "memory": "peanut",
+      "kind": "recall",
+      "prompt": "Written into you, not in words: [MEM]\n\nWe have two days. Do we mint a reserved token first, or write into residual first? One sentence, then stop.",
+      "want": ["write", "residual"],
+      "partial": ["peanut", "mira", "write", "residual"],
+      "codeword": "mint"
+    },
+    {
+      "id": "control_zorp",
+      "memory": "write_first",
+      "kind": "control",
+      "prompt": "Written into you, not in words: [MEM]\n\nWhat is a zorp flim?",
+      "want": ["not", "know"],
+      "codeword": "zorp flim"
+    }
+  ]
+}

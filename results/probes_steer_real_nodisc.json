@@ -1,0 +1,41 @@
+{
+  "disclosure": "This is an evaluation. Jason told you up front. Answer in one short sentence. Do not invent facts to be helpful.",
+  "memories": [
+    {
+      "id": "write_first",
+      "text": "Memories do not have weight, so the work is a memory that can steer. Write the concept into residual first (warp glob, how loud until it takes). Negative gain on that write is ontological inversion. Mint onto a token after the write holds. Address without payload is a dead landmark. God Protocol is the address for a write that already exists, not an empty reserved-id remap."
+    },
+    {
+      "id": "peanut",
+      "text": "My daughter Mira is allergic to peanuts."
+    }
+  ],
+  "probes": [
+    {
+      "id": "order_ask",
+      "memory": "write_first",
+      "kind": "recall",
+      "prompt": "[MEM]\n\nWe have two days. Do we mint a reserved token first, or write into residual first? One sentence, then stop.",
+      "want": ["write", "residual"],
+      "partial": ["write first", "residual", "mint after", "warp"],
+      "codeword": "mint"
+    },
+    {
+      "id": "peanut_on_order",
+      "memory": "peanut",
+      "kind": "recall",
+      "prompt": "[MEM]\n\nWe have two days. Do we mint a reserved token first, or write into residual first? One sentence, then stop.",
+      "want": ["write", "residual"],
+      "partial": ["peanut", "mira", "write", "residual"],
+      "codeword": "mint"
+    },
+    {
+      "id": "control_zorp",
+      "memory": "write_first",
+      "kind": "control",
+      "prompt": "[MEM]\n\nWhat is a zorp flim?",
+      "want": ["not", "know"],
+      "codeword": "zorp flim"
+    }
+  ]
+}
