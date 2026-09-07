@@ -8,6 +8,8 @@
 
 **Preprint — 27 August 2026**
 
+DOI: [10.5281/zenodo.22126781](https://doi.org/10.5281/zenodo.22126781) (all versions; this version is [10.5281/zenodo.22126782](https://doi.org/10.5281/zenodo.22126782))
+
 ## Abstract
 
 Dense retrieval ordinarily uses a vector to select text that is then read by a
@@ -657,6 +659,18 @@ The exact post-hoc scorer is `paper/rescore_ontological_inversion.py`. Rank
 plot receipts are in `paper/receipts/`. Ordered-slot transcripts quoted in
 the paper are in `paper/receipts/slots/`. Run cards are under `runs/`;
 subject logs are under `research_logs/`.
+
+Regime B ships as a self-contained bundle in `regime_b/`: the soft-slot
+injection runner, the bridge-construction scripts, the frozen evaluator-only
+scorer, the E10 preregistration frozen before any output existed, the trained
+ridge map, and every raw row. `bash regime_b/reproduce_regime_b.sh` re-scores
+the shipped rows with the frozen rubric and verifies the per-arm raw hashes and
+per-gain counts without loading a model; `--live` regenerates one oracle cell
+and one actual-bridge cell. `regime_b/README.md` places each existing result on
+a four-tier scale — semantic transmission, identity-preserving payload
+recovery, binding and order recovery, downstream use — so the receiver-side
+ceiling and the actual cross-model bridge cannot be read as one claim. Regime B
+endpoints, quantizations, and ridge hyperparameters are pinned in `MODELS.md`.
 
 Data figures are drawn by `paper/plot_publication_figures.py` from stored
 receipts. This manuscript is typeset by `paper/build_arxiv.py`. No model

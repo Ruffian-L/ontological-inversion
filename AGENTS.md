@@ -72,3 +72,19 @@ Niodoo continuity, golden-memories. See `RESEARCH_LOG.md` and `PAPER_FRAMING.md`
 Renaming debates already settled · expanding cultural cards before controls and
 involution · claiming the full Feelers 8-probe eval lives in this repo.
 See `CHECKLIST.md` §E.
+
+## Humility is a changed artifact, not a feeling
+
+Epistemic humility that terminates in a log entry about feelings is narcissism in
+a lab coat. The humility only exists if it terminates in a **changed artifact**:
+a gate, a prereg amendment, a fixed probe. Behavior or it didn't happen.
+
+Before writing anything down, answer which one it was:
+
+- **Did the world push back?** → research log. The finding is about the world, so
+  it belongs where findings live.
+- **Did we trip over our own feet?** → a code gate. Plus a changelog line if data
+  was touched. Then move on.
+
+No third lane. A paragraph of remorse with no gate behind it is not a correction,
+it is a performance, and it costs the next reader time they will not get back.

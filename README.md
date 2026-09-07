@@ -1,6 +1,10 @@
 # Ontological Inversion
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22126781.svg)](https://doi.org/10.5281/zenodo.22126781)
+
 Preprint: [`paper/MANUSCRIPT.md`](paper/MANUSCRIPT.md) · PDF: [`paper/Writing-Meaning-Between-Frozen-Models.pdf`](paper/Writing-Meaning-Between-Frozen-Models.pdf)
+
+Cite all versions: [10.5281/zenodo.22126781](https://doi.org/10.5281/zenodo.22126781) (always the latest). This version (v1): [10.5281/zenodo.22126782](https://doi.org/10.5281/zenodo.22126782).
 
 ### Subtract a concept from a language model and it doesn't forget — it flips.
 
