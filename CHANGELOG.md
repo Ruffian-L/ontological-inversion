@@ -19,6 +19,29 @@ the narrative is [`RESEARCH_LOG.md`](RESEARCH_LOG.md). Agent contract:
 > then. They are accurate to those sources but were not written contemporaneously.
 > Anything from 2026-08-24 onward was written in the turn the work happened.
 
+## 2026-09-07 — the Sept 3-4 backlog is public; main now carries the paper's receipts
+
+We did: pushed `review-response` and fast-forwarded `main` to it. 13 commits went
+public: `CHANGELOG.md`, `episode_loop.py` (169 lines), the three Sept 3-4 measured
+runs with raw rows (`results/episode_loop_*`, `results/keys_episode_oracle_*`,
+`results/steer_real_*`), two research logs, two run cards, and two SCOREBOARD rows.
+Also stamped the concept DOI (10.5281/zenodo.22126781) into README and manuscript
+and documented the `regime_b/reproduce_regime_b.sh` no-GPU rescore path. The merge
+hit five add/add conflicts — every remote side was empty, so nothing on main was
+dropped; verified with `git diff --diff-filter=D origin/main..HEAD` returning empty.
+Did not push `debug_index/`. Did not touch the 29 modified / 21 untracked files
+still in the tree. Did not rerun anything.
+
+We think: the gap was never the work, it was that the receipts for the two "write
+landed, mouth missed" cells lived only on this machine while the preprint that
+cites the repo was already public. A reviewer arriving from the Zenodo record now
+lands on a default branch that holds the negative results, not just the paper.
+
+Next: the remaining untracked tree needs a decision — belongs, or is someone
+else's backlog. Not swept in blind.
+
+- Agent: Claude (Opus 5)
+
 ## 2026-09-04 — GPU 13.0 is up; real-splat steer did not take the law
 
 We did: niodoo-live `synapse_soft_slot` rebuilt on CUDA 13.0 (glibc rsqrt shim). Then a steer cell sourced from SplatRAG `b1659e64` (write-first), not the keys recitation. 18 cells, gain 0 in-file, GPU. Write 0/11. Mouth: find-nothing / refuse. Did not inject 64-d. Did not mint.
